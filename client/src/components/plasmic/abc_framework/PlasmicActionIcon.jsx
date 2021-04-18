@@ -27,6 +27,7 @@ export const PlasmicActionIcon__ArgProps = new Array("children");
 
 function PlasmicActionIcon__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
+  null;
   return (
     <div
       data-plasmic-name={"root"}

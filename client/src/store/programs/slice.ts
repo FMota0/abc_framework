@@ -1,36 +1,35 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { ResearchProgram } from '../../types';
 
-interface StudyProgram {
-  title: string;
-  description: string;
-  studies: any[];
-};
+import { ProgramsState } from './types';
 
-const initialState: {
-  programs: StudyProgram[];
-} = {
-  programs: [
-    {
-      title: "Teste",
-      description: "Um teste simples",
-      studies: [],
-    },
-    {
-      title: "Teste",
-      description: "Um teste simples",
-      studies: [1, 2, 3],
-    },
-  ],
+const initialState: ProgramsState = {
+  programs: {},
 };
 
 const programsSlice = createSlice({
   name: "programsSlice",
   initialState,
   reducers: {
-    setPrograms: (programs) => {
-      
-    }
+    setPrograms: (state, action) => {
+      const programsArr = action.payload;
+      state.programs = programsArr.reduce((acc: Record<string, ResearchProgram>, cur: ResearchProgram) => {
+        return {
+          ...acc,
+          [cur._id]: cur,
+        };
+      }, {});
+    },
+    setProgram: (state, action) => {
+      const program = action.payload;
+      state.programs[program._id] = program;
+    },
   },
 });
+
+export const {
+  setPrograms,
+  setProgram,
+} = programsSlice.actions;
 
 export default programsSlice.reducer;

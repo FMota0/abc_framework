@@ -20,11 +20,7 @@
 .root > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
   margin-top: 20px;
 }
-.slotMessage {
-  color: #ffffff;
-  text-align: center;
-}
-.box {
+.box__tOsfp {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -34,16 +30,23 @@
   height: auto;
   min-width: 0;
 }
-.box > :global(.__wab_flex-container) {
+.box__tOsfp > :global(.__wab_flex-container) {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   margin-top: calc(0px - 20px);
   height: calc(100% + 20px);
 }
-.box > :global(.__wab_flex-container) > *,
-.box > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
+.box__tOsfp > :global(.__wab_flex-container) > *,
+.box__tOsfp > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
   margin-top: 20px;
+}
+.box__yebzF {
+  position: relative;
+  color: #ffffff;
+  text-align: justify;
+  width: auto;
+  display: inline-block;
 }
 .textbox {
   width: 100%;

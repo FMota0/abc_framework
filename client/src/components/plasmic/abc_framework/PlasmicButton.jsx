@@ -27,6 +27,7 @@ export const PlasmicButton__ArgProps = new Array("children");
 
 function PlasmicButton__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
+  null;
   return (
     <div
       data-plasmic-name={"root"}

@@ -27,6 +27,7 @@ export const PlasmicModalWrapper__ArgProps = new Array();
 
 function PlasmicModalWrapper__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
+  null;
   return (
     hasVariant(variants, "withAddStudy", "withAddStudy") ? true : false
   ) ? (

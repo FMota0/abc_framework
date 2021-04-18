@@ -11,6 +11,7 @@
 import * as React from "react";
 import * as p from "@plasmicapp/react-web";
 import {
+  hasVariant,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts
@@ -23,9 +24,9 @@ import * as projectcss from "./plasmic_abc_framework.module.css"; // plasmic-imp
 import * as sty from "./PlasmicHeader.module.css"; // plasmic-import: b995Ls5eZP/css
 import LogosvgIcon from "./icons/PlasmicIcon__Logosvg"; // plasmic-import: 67BwsWVLcL/icon
 
-export const PlasmicHeader__VariantProps = new Array();
+export const PlasmicHeader__VariantProps = new Array("withUserOptions");
 
-export const PlasmicHeader__ArgProps = new Array("left");
+export const PlasmicHeader__ArgProps = new Array("left", "options");
 
 function PlasmicHeader__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
@@ -35,24 +36,31 @@ function PlasmicHeader__RenderFunc(props) {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(defaultcss.all, projectcss.root_reset, sty.root, {
+        [sty.root__withUserOptions]: hasVariant(
+          variants,
+          "withUserOptions",
+          "withUserOptions"
+        )
+      })}
     >
       <p.Stack
         as={"div"}
+        data-plasmic-name={"logoAreaContainer"}
+        data-plasmic-override={overrides.logoAreaContainer}
         hasGap={true}
-        className={classNames(defaultcss.all, sty.box__p2YaS)}
+        className={classNames(defaultcss.all, sty.logoAreaContainer)}
       >
         <p.PlasmicSlot
           defaultContents={
-            <React.Fragment>
-              <ActionIcon
-                className={classNames("__wab_instance", sty.actionIcon__tCnUz)}
-                large={"large"}
-              >
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(defaultcss.all, sty.box__pwQlb)}
+            >
+              <ActionIcon large={"large"}>
                 <LogosvgIcon
-                  data-plasmic-name={"svg"}
-                  data-plasmic-override={overrides.svg}
-                  className={classNames(defaultcss.all, sty.svg)}
+                  className={classNames(defaultcss.all, sty.svg___8759U)}
                   role={"img"}
                 />
               </ActionIcon>
@@ -66,7 +74,7 @@ function PlasmicHeader__RenderFunc(props) {
               >
                 {"ABC Framework"}
               </div>
-            </React.Fragment>
+            </p.Stack>
           }
           value={args.left}
         />
@@ -79,19 +87,83 @@ function PlasmicHeader__RenderFunc(props) {
       />
 
       <ActionIcon
-        className={classNames("__wab_instance", sty.actionIcon__l8Jw0)}
+        data-plasmic-name={"userPic"}
+        data-plasmic-override={overrides.userPic}
+        className={classNames("__wab_instance", sty.userPic)}
         large={"large"}
       >
-        <div className={classNames(defaultcss.all, sty.box__i0Npp)} />
+        <div
+          data-plasmic-name={"placeholdPic"}
+          data-plasmic-override={overrides.placeholdPic}
+          className={classNames(defaultcss.all, sty.placeholdPic, {
+            [sty.placeholdPic__withUserOptions]: hasVariant(
+              variants,
+              "withUserOptions",
+              "withUserOptions"
+            )
+          })}
+        />
       </ActionIcon>
+
+      {(
+        hasVariant(variants, "withUserOptions", "withUserOptions")
+          ? true
+          : false
+      ) ? (
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"options"}
+          data-plasmic-override={overrides.options}
+          hasGap={
+            hasVariant(variants, "withUserOptions", "withUserOptions")
+              ? true
+              : false
+          }
+          className={classNames(defaultcss.all, sty.options, {
+            [sty.options__withUserOptions]: hasVariant(
+              variants,
+              "withUserOptions",
+              "withUserOptions"
+            )
+          })}
+        >
+          <p.PlasmicSlot
+            defaultContents={
+              <div className={classNames(defaultcss.all, sty.box__cBFg8)}>
+                <div
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.box__uCAkG
+                  )}
+                >
+                  {"Logout"}
+                </div>
+              </div>
+            }
+            value={args.options}
+          />
+        </p.Stack>
+      ) : null}
     </div>
   );
 }
 
 const PlasmicDescendants = {
-  root: ["root", "svg", "spacer"],
-  svg: ["svg"],
-  spacer: ["spacer"]
+  root: [
+    "root",
+    "logoAreaContainer",
+    "spacer",
+    "userPic",
+    "placeholdPic",
+    "options"
+  ],
+
+  logoAreaContainer: ["logoAreaContainer"],
+  spacer: ["spacer"],
+  userPic: ["userPic", "placeholdPic"],
+  placeholdPic: ["placeholdPic"],
+  options: ["options"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -123,8 +195,11 @@ export const PlasmicHeader = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    svg: makeNodeComponent("svg"),
+    logoAreaContainer: makeNodeComponent("logoAreaContainer"),
     spacer: makeNodeComponent("spacer"),
+    userPic: makeNodeComponent("userPic"),
+    placeholdPic: makeNodeComponent("placeholdPic"),
+    options: makeNodeComponent("options"),
     // Metadata about props expected for PlasmicHeader
     internalVariantProps: PlasmicHeader__VariantProps,
     internalArgProps: PlasmicHeader__ArgProps

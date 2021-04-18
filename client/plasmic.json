@@ -79,41 +79,15 @@
           "componentType": "component"
         },
         {
-          "id": "b995Ls5eZP",
-          "name": "Header",
-          "type": "managed",
-          "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
-          "renderModuleFilePath": "plasmic/abc_framework/PlasmicHeader.jsx",
-          "importSpec": {
-            "modulePath": "Header.jsx"
-          },
-          "cssFilePath": "plasmic/abc_framework/PlasmicHeader.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
-          "id": "GYWi95vLfh",
-          "name": "StudyProgram",
-          "type": "managed",
-          "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
-          "renderModuleFilePath": "plasmic/abc_framework/PlasmicStudyProgram.jsx",
-          "importSpec": {
-            "modulePath": "StudyProgram.jsx"
-          },
-          "cssFilePath": "plasmic/abc_framework/PlasmicStudyProgram.module.css",
-          "scheme": "blackbox",
-          "componentType": "page"
-        },
-        {
           "id": "VmjFCzlhl8",
-          "name": "StudyProgramCard",
+          "name": "ResearchProgramCard",
           "type": "managed",
           "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
-          "renderModuleFilePath": "plasmic/abc_framework/PlasmicStudyProgramCard.jsx",
+          "renderModuleFilePath": "plasmic/abc_framework/PlasmicResearchProgramCard.jsx",
           "importSpec": {
-            "modulePath": "StudyProgramCard.jsx"
+            "modulePath": "ResearchProgramCard.jsx"
           },
-          "cssFilePath": "plasmic/abc_framework/PlasmicStudyProgramCard.module.css",
+          "cssFilePath": "plasmic/abc_framework/PlasmicResearchProgramCard.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         },
@@ -181,6 +155,97 @@
           "cssFilePath": "plasmic/abc_framework/PlasmicModalWrapper.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "gK4A7lO4Rf",
+          "name": "SelectedResearch",
+          "type": "managed",
+          "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+          "renderModuleFilePath": "plasmic/abc_framework/PlasmicSelectedResearch.jsx",
+          "importSpec": {
+            "modulePath": "SelectedResearch.jsx"
+          },
+          "cssFilePath": "plasmic/abc_framework/PlasmicSelectedResearch.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "p3zItY3nmn",
+          "name": "SelectedStrategy",
+          "type": "managed",
+          "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+          "renderModuleFilePath": "plasmic/abc_framework/PlasmicSelectedStrategy.jsx",
+          "importSpec": {
+            "modulePath": "SelectedStrategy.jsx"
+          },
+          "cssFilePath": "plasmic/abc_framework/PlasmicSelectedStrategy.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "wpvaXd42G3",
+          "name": "ResearchCard",
+          "type": "managed",
+          "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+          "renderModuleFilePath": "plasmic/abc_framework/PlasmicResearchCard.jsx",
+          "importSpec": {
+            "modulePath": "ResearchCard.jsx"
+          },
+          "cssFilePath": "plasmic/abc_framework/PlasmicResearchCard.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "PCrhC-FAHV",
+          "name": "ServerSleeping",
+          "type": "managed",
+          "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+          "renderModuleFilePath": "plasmic/abc_framework/PlasmicServerSleeping.jsx",
+          "importSpec": {
+            "modulePath": "ServerSleeping.jsx"
+          },
+          "cssFilePath": "plasmic/abc_framework/PlasmicServerSleeping.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "GYWi95vLfh",
+          "name": "ResearchProgram",
+          "type": "managed",
+          "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+          "renderModuleFilePath": "plasmic/abc_framework/PlasmicResearchProgram.jsx",
+          "importSpec": {
+            "modulePath": "ResearchProgram.jsx"
+          },
+          "cssFilePath": "plasmic/abc_framework/PlasmicResearchProgram.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "aDdmyUpmHQB",
+          "name": "SelectedStrategyResearches",
+          "type": "managed",
+          "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+          "renderModuleFilePath": "plasmic/abc_framework/PlasmicSelectedStrategyResearches.jsx",
+          "importSpec": {
+            "modulePath": "SelectedStrategyResearches.jsx"
+          },
+          "cssFilePath": "plasmic/abc_framework/PlasmicSelectedStrategyResearches.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "b995Ls5eZP",
+          "name": "Header",
+          "type": "managed",
+          "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+          "renderModuleFilePath": "plasmic/abc_framework/PlasmicHeader.jsx",
+          "importSpec": {
+            "modulePath": "Header.jsx"
+          },
+          "cssFilePath": "plasmic/abc_framework/PlasmicHeader.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -203,6 +268,21 @@
           "id": "67BwsWVLcL",
           "name": "LogosvgIcon",
           "moduleFilePath": "plasmic/abc_framework/icons/PlasmicIcon__Logosvg.jsx"
+        },
+        {
+          "id": "da00zvXJE5",
+          "name": "IconIcon",
+          "moduleFilePath": "plasmic/abc_framework/icons/PlasmicIcon__Icon.jsx"
+        },
+        {
+          "id": "mEOQMd16YT",
+          "name": "Icon2Icon",
+          "moduleFilePath": "plasmic/abc_framework/icons/PlasmicIcon__Icon2.jsx"
+        },
+        {
+          "id": "JuwcPNA-Iu",
+          "name": "RestsvgIcon",
+          "moduleFilePath": "plasmic/abc_framework/icons/PlasmicIcon__Restsvg.jsx"
         }
       ],
       "images": [],
@@ -219,6 +299,6 @@
       }
     ]
   },
-  "cliVersion": "0.1.135",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.135/dist/plasmic.schema.json"
+  "cliVersion": "0.1.136",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.136/dist/plasmic.schema.json"
 }

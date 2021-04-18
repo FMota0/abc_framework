@@ -2,7 +2,8 @@ name: Api Deploy
 
 on:
   push:
-    branches: [master]
+    branches: [main]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -19,3 +20,5 @@ jobs:
           appdir: "api"
         env:
           HD_MONGO_URL: ${{secrets.MONGO_URL}}
+          HD_GOOGLE_AUDIENCE: ${{secrets.GOOGLE_AUDIENCE}}
+          HD_GOOGLE_ID: ${{secrets.GOOGLE_ID}}

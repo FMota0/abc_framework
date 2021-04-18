@@ -1,0 +1,121 @@
+.root {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  padding: 20px;
+  background: #393e46;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: column;
+  margin-top: calc(0px - 0px);
+  height: calc(100% + 0px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
+  margin-top: 0px;
+}
+.root__empty > :global(.__wab_flex-container) {
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: calc(0px - 0px);
+  width: calc(100% + 0px);
+  margin-top: calc(0px - 20px);
+  height: calc(100% + 20px);
+}
+.root__empty > :global(.__wab_flex-container) > *,
+.root__empty > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
+  margin-left: 0px;
+  margin-top: 20px;
+}
+.box__h40Fh {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: auto;
+}
+.slotTitle {
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+.box__y5GNh {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  min-width: 0;
+  padding: 10px 10px 20px;
+  border-bottom: 1px solid #eeeeeee6 /* plasmic-token: frGkWCQWa */;
+}
+.box__y5GNh > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: calc(0px - 20px);
+  height: calc(100% + 20px);
+}
+.box__y5GNh > :global(.__wab_flex-container) > *,
+.box__y5GNh > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
+  margin-top: 20px;
+}
+.slotDescription {
+  color: #ffffff;
+}
+.more {
+  position: relative;
+  left: auto;
+  top: auto;
+  color: #ffffff;
+  align-self: flex-end;
+  cursor: pointer;
+  border-radius: 10px;
+  background: #222831;
+  border: 1px solid #eeeeeee6 /* plasmic-token: frGkWCQWa */;
+}
+.selectedStrategyResearches:global(.__wab_instance) {
+  position: relative;
+}
+.researchCard__juIds:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.researchCard__qQxYc:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.researchCard___5V0Di:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.researchCard__lnOjt:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.svg {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__empty {
+  width: 128px;
+  height: 128px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+.box__eiRqa {
+  position: relative;
+}
+.box__empty__eiRqAojVp {
+  color: #ffffff;
+  text-align: justify;
+}

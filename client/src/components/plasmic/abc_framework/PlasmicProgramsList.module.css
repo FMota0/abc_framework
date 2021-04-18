@@ -7,7 +7,7 @@
   align-items: flex-start;
   padding-left: 20px;
   padding-right: 20px;
-  max-width: 1000px;
+  max-width: 1500px;
   overflow: auto;
   position: relative;
   padding-bottom: 20px;
@@ -32,13 +32,13 @@
   align-content: space-between;
   margin-left: calc(0px - 10px);
   width: calc(100% + 10px);
-  margin-top: calc(0px - 20px);
-  height: calc(100% + 20px);
+  margin-top: calc(0px - 10px);
+  height: calc(100% + 10px);
 }
 .box__aUBa9 > :global(.__wab_flex-container) > *,
 .box__aUBa9 > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
   margin-left: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .box__empty__aUBa9B2Nfe {
   height: auto;
@@ -66,19 +66,19 @@
   margin-left: 0px;
   margin-top: 0px;
 }
-.studyProgramCard__yuI5E:global(.__wab_instance) {
+.researchProgramCard__yuI5E:global(.__wab_instance) {
   position: relative;
 }
-.studyProgramCard___1Mt1Q:global(.__wab_instance) {
+.researchProgramCard___1Mt1Q:global(.__wab_instance) {
   position: relative;
 }
-.studyProgramCard__hqBif:global(.__wab_instance) {
+.researchProgramCard__hqBif:global(.__wab_instance) {
   position: relative;
 }
-.studyProgramCard__awigo:global(.__wab_instance) {
+.researchProgramCard__awigo:global(.__wab_instance) {
   position: relative;
 }
-.studyProgramCard__bSm43:global(.__wab_instance) {
+.researchProgramCard__bSm43:global(.__wab_instance) {
   position: relative;
 }
 .svg {

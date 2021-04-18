@@ -19,18 +19,19 @@ import ColumnSpacer from "../../ColumnSpacer"; // plasmic-import: 08Del2QF4A/com
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "./plasmic_abc_framework.module.css"; // plasmic-import: vpcYHrXbsH6LUnbKFzgKAs/projectcss
-import * as sty from "./PlasmicStudyProgramCard.module.css"; // plasmic-import: VmjFCzlhl8/css
+import * as sty from "./PlasmicResearchProgramCard.module.css"; // plasmic-import: VmjFCzlhl8/css
 
-export const PlasmicStudyProgramCard__VariantProps = new Array();
+export const PlasmicResearchProgramCard__VariantProps = new Array();
 
-export const PlasmicStudyProgramCard__ArgProps = new Array(
+export const PlasmicResearchProgramCard__ArgProps = new Array(
   "title",
   "description",
   "registered"
 );
 
-function PlasmicStudyProgramCard__RenderFunc(props) {
+function PlasmicResearchProgramCard__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
+  null;
   return (
     <p.Stack
       as={"div"}
@@ -84,11 +85,11 @@ function makeNodeComponent(nodeName) {
     const { variants, args, overrides } = deriveRenderOpts(props, {
       name: nodeName,
       descendantNames: [...PlasmicDescendants[nodeName]],
-      internalArgPropNames: PlasmicStudyProgramCard__ArgProps,
-      internalVariantPropNames: PlasmicStudyProgramCard__VariantProps
+      internalArgPropNames: PlasmicResearchProgramCard__ArgProps,
+      internalVariantPropNames: PlasmicResearchProgramCard__VariantProps
     });
 
-    return PlasmicStudyProgramCard__RenderFunc({
+    return PlasmicResearchProgramCard__RenderFunc({
       variants,
       args,
       overrides,
@@ -96,24 +97,24 @@ function makeNodeComponent(nodeName) {
     });
   };
   if (nodeName === "root") {
-    func.displayName = "PlasmicStudyProgramCard";
+    func.displayName = "PlasmicResearchProgramCard";
   } else {
-    func.displayName = `PlasmicStudyProgramCard.${nodeName}`;
+    func.displayName = `PlasmicResearchProgramCard.${nodeName}`;
   }
   return func;
 }
 
-export const PlasmicStudyProgramCard = Object.assign(
-  // Top-level PlasmicStudyProgramCard renders the root element
+export const PlasmicResearchProgramCard = Object.assign(
+  // Top-level PlasmicResearchProgramCard renders the root element
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
     columnSpacer: makeNodeComponent("columnSpacer"),
-    // Metadata about props expected for PlasmicStudyProgramCard
-    internalVariantProps: PlasmicStudyProgramCard__VariantProps,
-    internalArgProps: PlasmicStudyProgramCard__ArgProps
+    // Metadata about props expected for PlasmicResearchProgramCard
+    internalVariantProps: PlasmicResearchProgramCard__VariantProps,
+    internalArgProps: PlasmicResearchProgramCard__ArgProps
   }
 );
 
-export default PlasmicStudyProgramCard;
+export default PlasmicResearchProgramCard;
 /* prettier-ignore-end */

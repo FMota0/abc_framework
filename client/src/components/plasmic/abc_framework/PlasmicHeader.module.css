@@ -9,52 +9,31 @@
   padding: 20px;
   background: #222831;
 }
-.box__p2YaS {
+.logoAreaContainer {
   display: inline-flex;
   position: relative;
   width: auto;
   height: 64px;
   flex-direction: row;
 }
-.box__p2YaS > :global(.__wab_flex-container) {
+.logoAreaContainer > :global(.__wab_flex-container) {
   flex-direction: row;
   align-items: center;
   margin-left: calc(0px - 10px);
   width: calc(100% + 10px);
 }
-.box__p2YaS > :global(.__wab_flex-container) > *,
-.box__p2YaS > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
+.logoAreaContainer > :global(.__wab_flex-container) > *,
+.logoAreaContainer > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
   margin-left: 10px;
-}
-.actionIcon__tCnUz:global(.__wab_instance) {
-  position: relative;
-  left: auto;
-  top: auto;
-  flex-shrink: 0;
-}
-.svg {
-  position: relative;
-  object-fit: cover;
-  width: 64px;
-  height: 64px;
-}
-.box___53Q1R {
-  position: relative;
-  width: 102px;
-  height: 46px;
-  color: #ffffff;
-  left: auto;
-  top: auto;
-  flex-shrink: 0;
 }
 .spacer:global(.__wab_instance) {
   position: relative;
 }
-.actionIcon__l8Jw0:global(.__wab_instance) {
+.userPic:global(.__wab_instance) {
   position: relative;
   flex-shrink: 0;
 }
-.box__i0Npp {
+.placeholdPic {
   display: block;
   position: relative;
   width: 100%;
@@ -63,4 +42,38 @@
   min-height: 0;
   border-radius: 100%;
   background: rgba(68, 192, 255, 0.2);
+}
+.options {
+  display: block;
+  position: relative;
+}
+.options__withUserOptions {
+  position: absolute;
+  left: auto;
+  top: auto;
+  width: 120px;
+  z-index: 10;
+  height: 34px;
+  display: flex;
+  flex-direction: row;
+  right: 20px;
+  bottom: -20px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #393e46;
+  border: 1px solid #eeeeeee6 /* plasmic-token: frGkWCQWa */;
+}
+.options__withUserOptions > :global(.__wab_flex-container) {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: calc(0px - 0px);
+  height: calc(100% + 0px);
+}
+.options__withUserOptions > :global(.__wab_flex-container) > *,
+.options__withUserOptions
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > * {
+  margin-top: 0px;
 }

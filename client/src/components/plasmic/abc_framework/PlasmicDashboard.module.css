@@ -16,6 +16,43 @@
 .header__withAddStudy:global(.__wab_instance) {
   flex-shrink: 0;
 }
+.logoArea {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  top: auto;
+  left: auto;
+  cursor: pointer;
+}
+.logoArea > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: calc(0px - 10px);
+  width: calc(100% + 10px);
+}
+.logoArea > :global(.__wab_flex-container) > *,
+.logoArea > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
+  margin-left: 10px;
+}
+.actionIcon:global(.__wab_instance) {
+  flex-shrink: 0;
+}
+.svg__yxAx1 {
+  position: relative;
+  object-fit: cover;
+  width: 64px;
+  height: 64px;
+}
+.box__phwDc {
+  position: relative;
+  width: 102px;
+  height: 46px;
+  color: #ffffff;
+  left: auto;
+  top: auto;
+  flex-shrink: 0;
+}
 .modalWrapper:global(.__wab_instance) {
   position: relative;
 }
@@ -28,22 +65,7 @@
 .programsList:global(.__wab_instance) {
   position: relative;
 }
-.studyProgramCard__ds9Hs:global(.__wab_instance) {
-  position: relative;
-}
-.studyProgramCard__bvWc2:global(.__wab_instance) {
-  position: relative;
-}
-.studyProgramCard__bqQx:global(.__wab_instance) {
-  position: relative;
-}
-.studyProgramCard__z0Azf:global(.__wab_instance) {
-  position: relative;
-}
-.studyProgramCard__f0Ut:global(.__wab_instance) {
-  position: relative;
-}
-.actionIcon:global(.__wab_instance) {
+.addProgram:global(.__wab_instance) {
   position: absolute;
   left: auto;
   top: auto;
@@ -53,7 +75,7 @@
   height: 70px;
   flex-shrink: 0;
 }
-.box {
+.box__bkfwA {
   display: flex;
   position: relative;
   width: 70px;
@@ -68,15 +90,15 @@
   align-items: center;
   border-radius: 100%;
   background: #373b43fc;
-  border: 1px solid #eeeeee6b;
+  border: 2px solid #eeeeee6b;
 }
-.box__empty {
+.box__empty__bkfwAw9A7F {
   left: auto;
   top: auto;
   bottom: auto;
   right: auto;
 }
-.svg {
+.svg__pcCn {
   position: relative;
   object-fit: cover;
   left: auto;
@@ -85,4 +107,35 @@
   height: 40px;
   color: #ffffffcc;
   flex-shrink: 0;
+}
+.editStudyBackground {
+  display: block;
+  position: relative;
+}
+.modal:global(.__wab_instance) {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.box__fwAm5 {
+  position: relative;
+  color: #ffffff;
+  text-align: justify;
+  width: auto;
+  display: inline-block;
+}
+.box___4QHx {
+  position: relative;
+}
+.textbox {
+  width: 100%;
+  min-width: 0;
+}
+.textarea {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.button:global(.__wab_instance) {
+  position: relative;
 }

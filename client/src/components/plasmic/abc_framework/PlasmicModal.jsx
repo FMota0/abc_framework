@@ -23,10 +23,11 @@ import * as sty from "./PlasmicModal.module.css"; // plasmic-import: DJ5ohi16iS/
 
 export const PlasmicModal__VariantProps = new Array();
 
-export const PlasmicModal__ArgProps = new Array("children", "message");
+export const PlasmicModal__ArgProps = new Array("children");
 
 function PlasmicModal__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
+  null;
   return (
     <p.Stack
       as={"div"}
@@ -37,22 +38,24 @@ function PlasmicModal__RenderFunc(props) {
       hasGap={true}
       className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
     >
-      <p.PlasmicSlot
-        defaultContents={"Adicione seu programa de pesquisa"}
-        value={args.message}
-        className={classNames(sty.slotMessage)}
-      />
-
       <p.Stack
         as={"div"}
-        data-plasmic-name={"box"}
-        data-plasmic-override={overrides.box}
         hasGap={true}
-        className={classNames(defaultcss.all, sty.box)}
+        className={classNames(defaultcss.all, sty.box__tOsfp)}
       >
         <p.PlasmicSlot
           defaultContents={
             <React.Fragment>
+              <div
+                className={classNames(
+                  defaultcss.all,
+                  defaultcss.__wab_text,
+                  sty.box__yebzF
+                )}
+              >
+                {"Adicione seu programa de pesquisa"}
+              </div>
+
               <input
                 data-plasmic-name={"textbox"}
                 data-plasmic-override={overrides.textbox}
@@ -88,8 +91,7 @@ function PlasmicModal__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "box", "textbox", "textarea", "button"],
-  box: ["box", "textbox", "textarea", "button"],
+  root: ["root", "textbox", "textarea", "button"],
   textbox: ["textbox"],
   textarea: ["textarea"],
   button: ["button"]
@@ -124,7 +126,6 @@ export const PlasmicModal = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    box: makeNodeComponent("box"),
     textbox: makeNodeComponent("textbox"),
     textarea: makeNodeComponent("textarea"),
     button: makeNodeComponent("button"),

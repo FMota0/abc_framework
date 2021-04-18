@@ -25,6 +25,7 @@ export const PlasmicColumnSpacer__ArgProps = new Array();
 
 function PlasmicColumnSpacer__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
+  null;
   return (
     <div
       data-plasmic-name={"root"}

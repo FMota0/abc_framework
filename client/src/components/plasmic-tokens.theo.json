@@ -11,6 +11,16 @@
       }
     },
     {
+      "name": "black40",
+      "type": "color",
+      "value": "#FFFFFF66",
+      "category": "color",
+      "meta": {
+        "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+        "id": "lczn7Ke_Q"
+      }
+    },
+    {
       "name": "eee - 90",
       "type": "color",
       "value": "#EEEEEEE6",

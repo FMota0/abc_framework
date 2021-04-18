@@ -16,7 +16,7 @@ import {
   createPlasmicElementProxy,
   deriveRenderOpts
 } from "@plasmicapp/react-web";
-import StudyProgramCard from "../../StudyProgramCard"; // plasmic-import: VmjFCzlhl8/component
+import ResearchProgramCard from "../../ResearchProgramCard"; // plasmic-import: VmjFCzlhl8/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "./plasmic_abc_framework.module.css"; // plasmic-import: vpcYHrXbsH6LUnbKFzgKAs/projectcss
@@ -29,6 +29,7 @@ export const PlasmicProgramsList__ArgProps = new Array("children", "message");
 
 function PlasmicProgramsList__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
+  null;
   return (
     <div
       data-plasmic-name={"root"}
@@ -50,44 +51,44 @@ function PlasmicProgramsList__RenderFunc(props) {
           <p.PlasmicSlot
             defaultContents={
               <React.Fragment>
-                <StudyProgramCard
+                <ResearchProgramCard
                   className={classNames(
                     "__wab_instance",
-                    sty.studyProgramCard__yuI5E
+                    sty.researchProgramCard__yuI5E
                   )}
                 />
 
-                <StudyProgramCard
+                <ResearchProgramCard
                   className={classNames(
                     "__wab_instance",
-                    sty.studyProgramCard___1Mt1Q
+                    sty.researchProgramCard___1Mt1Q
                   )}
                   description={"Scalable applications and its demands"}
                   registered={"Registered studies: 2/10"}
                   title={"Scalable applications"}
                 />
 
-                <StudyProgramCard
+                <ResearchProgramCard
                   className={classNames(
                     "__wab_instance",
-                    sty.studyProgramCard__hqBif
+                    sty.researchProgramCard__hqBif
                   )}
                 />
 
-                <StudyProgramCard
+                <ResearchProgramCard
                   className={classNames(
                     "__wab_instance",
-                    sty.studyProgramCard__awigo
+                    sty.researchProgramCard__awigo
                   )}
                   description={
                     "A study program about how study methodology impacts students results A study program about how study methodology impacts students results"
                   }
                 />
 
-                <StudyProgramCard
+                <ResearchProgramCard
                   className={classNames(
                     "__wab_instance",
-                    sty.studyProgramCard__bSm43
+                    sty.researchProgramCard__bSm43
                   )}
                   description={
                     "A study program about how study methodology impacts students results A study program about how study methodology impacts students results"

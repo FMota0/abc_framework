@@ -14,17 +14,22 @@ import {
   hasVariant,
   classNames,
   createPlasmicElementProxy,
-  deriveRenderOpts
+  deriveRenderOpts,
+  ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: b995Ls5eZP/component
 import ActionIcon from "../../ActionIcon"; // plasmic-import: 7MQ1w3J5JA/component
 import ModalWrapper from "../../ModalWrapper"; // plasmic-import: MWE-QmNJhs/component
 import ProgramsList from "../../ProgramsList"; // plasmic-import: MYCwyjoLXCa/component
-import StudyProgramCard from "../../StudyProgramCard"; // plasmic-import: VmjFCzlhl8/component
+import ResearchProgramCard from "../../ResearchProgramCard"; // plasmic-import: VmjFCzlhl8/component
+import Modal from "../../Modal"; // plasmic-import: DJ5ohi16iS/component
+import Button from "../../Button"; // plasmic-import: ryMEoCge3-/component
+import { useScreenVariants } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Ua1ivJLBAEJb/globalVariant
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "./plasmic_abc_framework.module.css"; // plasmic-import: vpcYHrXbsH6LUnbKFzgKAs/projectcss
 import * as sty from "./PlasmicDashboard.module.css"; // plasmic-import: UwWUDm9S7t/css
+import LogosvgIcon from "./icons/PlasmicIcon__Logosvg"; // plasmic-import: 67BwsWVLcL/icon
 import PlusCircleOutlinesvgIcon from "./icons/PlasmicIcon__PlusCircleOutlinesvg"; // plasmic-import: 7Ds520VAXj/icon
 
 export const PlasmicDashboard__VariantProps = new Array(
@@ -36,6 +41,10 @@ export const PlasmicDashboard__ArgProps = new Array("programs");
 
 function PlasmicDashboard__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariants()
+  });
+
   return (
     <React.Fragment>
       <div
@@ -62,6 +71,42 @@ function PlasmicDashboard__RenderFunc(props) {
               "withAddStudy"
             )
           })}
+          left={
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"logoArea"}
+              data-plasmic-override={overrides.logoArea}
+              hasGap={true}
+              className={classNames(defaultcss.all, sty.logoArea)}
+            >
+              <ActionIcon
+                data-plasmic-name={"actionIcon"}
+                data-plasmic-override={overrides.actionIcon}
+                large={"large"}
+              >
+                <LogosvgIcon
+                  className={classNames(defaultcss.all, sty.svg__yxAx1)}
+                  role={"img"}
+                />
+              </ActionIcon>
+
+              {(
+                hasVariant(globalVariants, "screen", "mobileOnly")
+                  ? false
+                  : true
+              ) ? (
+                <div
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.box__phwDc
+                  )}
+                >
+                  {"ABC Framework"}
+                </div>
+              ) : null}
+            </p.Stack>
+          }
         />
 
         {(
@@ -101,44 +146,44 @@ function PlasmicDashboard__RenderFunc(props) {
           <p.PlasmicSlot
             defaultContents={
               <React.Fragment>
-                <StudyProgramCard
+                <ResearchProgramCard
                   className={classNames(
                     "__wab_instance",
-                    sty.studyProgramCard__ds9Hs
+                    sty.researchProgramCard__ds9Hs
                   )}
                 />
 
-                <StudyProgramCard
+                <ResearchProgramCard
                   className={classNames(
                     "__wab_instance",
-                    sty.studyProgramCard__bvWc2
+                    sty.researchProgramCard__bvWc2
                   )}
                   description={"Scalable applications and its demands"}
                   registered={"Registered studies: 2/10"}
                   title={"Scalable applications"}
                 />
 
-                <StudyProgramCard
+                <ResearchProgramCard
                   className={classNames(
                     "__wab_instance",
-                    sty.studyProgramCard__bqQx
+                    sty.researchProgramCard__bqQx
                   )}
                 />
 
-                <StudyProgramCard
+                <ResearchProgramCard
                   className={classNames(
                     "__wab_instance",
-                    sty.studyProgramCard__z0Azf
+                    sty.researchProgramCard__z0Azf
                   )}
                   description={
                     "A study program about how study methodology impacts students results A study program about how study methodology impacts students results"
                   }
                 />
 
-                <StudyProgramCard
+                <ResearchProgramCard
                   className={classNames(
                     "__wab_instance",
-                    sty.studyProgramCard__f0Ut
+                    sty.researchProgramCard__f0Ut
                   )}
                   description={
                     "A study program about how study methodology impacts students results A study program about how study methodology impacts students results"
@@ -151,25 +196,89 @@ function PlasmicDashboard__RenderFunc(props) {
         </ProgramsList>
 
         <ActionIcon
-          data-plasmic-name={"actionIcon"}
-          data-plasmic-override={overrides.actionIcon}
-          className={classNames("__wab_instance", sty.actionIcon)}
+          data-plasmic-name={"addProgram"}
+          data-plasmic-override={overrides.addProgram}
+          className={classNames("__wab_instance", sty.addProgram)}
         >
           <div
-            data-plasmic-name={"box"}
-            data-plasmic-override={overrides.box}
-            className={classNames(defaultcss.all, sty.box, {
-              [sty.box__empty]: hasVariant(variants, "empty", "empty")
+            className={classNames(defaultcss.all, sty.box__bkfwA, {
+              [sty.box__empty__bkfwAw9A7F]: hasVariant(
+                variants,
+                "empty",
+                "empty"
+              )
             })}
           >
             <PlusCircleOutlinesvgIcon
-              data-plasmic-name={"svg"}
-              data-plasmic-override={overrides.svg}
-              className={classNames(defaultcss.all, sty.svg)}
+              className={classNames(defaultcss.all, sty.svg__pcCn)}
               role={"img"}
             />
           </div>
         </ActionIcon>
+
+        {false ? (
+          <div
+            data-plasmic-name={"editStudyBackground"}
+            data-plasmic-override={overrides.editStudyBackground}
+            className={classNames(defaultcss.all, sty.editStudyBackground)}
+          >
+            {false ? (
+              <Modal
+                data-plasmic-name={"modal"}
+                data-plasmic-override={overrides.modal}
+                className={classNames("__wab_instance", sty.modal)}
+              >
+                <div
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.box__fwAm5
+                  )}
+                >
+                  {"Adicione seu programa de pesquisa"}
+                </div>
+
+                {false ? (
+                  <div
+                    className={classNames(
+                      defaultcss.all,
+                      defaultcss.__wab_text,
+                      sty.box___4QHx
+                    )}
+                  >
+                    {"Enter some text"}
+                  </div>
+                ) : null}
+
+                <input
+                  data-plasmic-name={"textbox"}
+                  data-plasmic-override={overrides.textbox}
+                  className={classNames(defaultcss.input, sty.textbox)}
+                  placeholder={"Título"}
+                  size={1}
+                  type={"text"}
+                  value={""}
+                />
+
+                <textarea
+                  data-plasmic-name={"textarea"}
+                  data-plasmic-override={overrides.textarea}
+                  className={classNames(defaultcss.textarea, sty.textarea)}
+                  placeholder={"Descrição"}
+                  value={""}
+                />
+
+                <Button
+                  data-plasmic-name={"button"}
+                  data-plasmic-override={overrides.button}
+                  className={classNames("__wab_instance", sty.button)}
+                >
+                  {"Adicionar"}
+                </Button>
+              </Modal>
+            ) : null}
+          </div>
+        ) : null}
       </div>
     </React.Fragment>
   );
@@ -179,19 +288,36 @@ const PlasmicDescendants = {
   root: [
     "root",
     "header",
+    "logoArea",
+    "actionIcon",
     "modalWrapper",
     "programsList",
-    "actionIcon",
-    "box",
-    "svg"
+    "addProgram",
+    "editStudyBackground",
+    "modal",
+    "textbox",
+    "textarea",
+    "button"
   ],
 
-  header: ["header"],
+  header: ["header", "logoArea", "actionIcon"],
+  logoArea: ["logoArea", "actionIcon"],
+  actionIcon: ["actionIcon"],
   modalWrapper: ["modalWrapper"],
   programsList: ["programsList"],
-  actionIcon: ["actionIcon", "box", "svg"],
-  box: ["box", "svg"],
-  svg: ["svg"]
+  addProgram: ["addProgram"],
+  editStudyBackground: [
+    "editStudyBackground",
+    "modal",
+    "textbox",
+    "textarea",
+    "button"
+  ],
+
+  modal: ["modal", "textbox", "textarea", "button"],
+  textbox: ["textbox"],
+  textarea: ["textarea"],
+  button: ["button"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -224,11 +350,16 @@ export const PlasmicDashboard = Object.assign(
   {
     // Helper components rendering sub-elements
     header: makeNodeComponent("header"),
+    logoArea: makeNodeComponent("logoArea"),
+    actionIcon: makeNodeComponent("actionIcon"),
     modalWrapper: makeNodeComponent("modalWrapper"),
     programsList: makeNodeComponent("programsList"),
-    actionIcon: makeNodeComponent("actionIcon"),
-    box: makeNodeComponent("box"),
-    svg: makeNodeComponent("svg"),
+    addProgram: makeNodeComponent("addProgram"),
+    editStudyBackground: makeNodeComponent("editStudyBackground"),
+    modal: makeNodeComponent("modal"),
+    textbox: makeNodeComponent("textbox"),
+    textarea: makeNodeComponent("textarea"),
+    button: makeNodeComponent("button"),
     // Metadata about props expected for PlasmicDashboard
     internalVariantProps: PlasmicDashboard__VariantProps,
     internalArgProps: PlasmicDashboard__ArgProps

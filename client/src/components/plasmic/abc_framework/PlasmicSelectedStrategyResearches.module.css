@@ -1,0 +1,107 @@
+.root {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  overflow: auto;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  padding: 10px;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: column;
+  margin-top: calc(0px - 10px);
+  height: calc(100% + 10px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
+  margin-top: 10px;
+}
+.root__empty > :global(.__wab_flex-container) {
+  justify-content: center;
+}
+.researchCard___2V5GQ:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.researchCard__l9Ur8:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.researchCard__hCQgL:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.researchCard__kfgCi:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.box__taDLu {
+  display: block;
+  position: relative;
+}
+.box__empty__taDLuMJyfQ {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  background: #393e46;
+}
+.box__empty__taDLuMJyfQ > :global(.__wab_flex-container) {
+  flex-direction: row;
+  margin-left: calc(0px - 10px);
+  width: calc(100% + 10px);
+  margin-top: calc(0px - 0px);
+  height: calc(100% + 0px);
+}
+.box__empty__taDLuMJyfQ > :global(.__wab_flex-container) > *,
+.box__empty__taDLuMJyfQ
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > * {
+  margin-left: 10px;
+  margin-top: 0px;
+}
+.svg {
+  position: absolute;
+  object-fit: cover;
+  left: 0px;
+  top: 0px;
+  width: 1em;
+  height: 1em;
+}
+.svg__empty {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 64px;
+  height: 64px;
+  color: #eeeeeee6 /* plasmic-token: frGkWCQWa */;
+  flex-shrink: 0;
+}
+.box___73Ycr {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  left: 0px;
+  top: 0px;
+}
+.box__empty___73YcrMJyfQ {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  min-width: 0;
+}
+.box__ajuVc {
+  position: relative;
+}
+.box__empty__ajuVcMJyfQ {
+  color: #ffffff;
+}
