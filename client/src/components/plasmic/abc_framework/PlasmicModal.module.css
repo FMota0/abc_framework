@@ -1,0 +1,59 @@
+.root {
+  display: flex;
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+  padding: 50px;
+  background: #393e46;
+}
+.root > :global(.__wab_flex-container) {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: calc(0px - 20px);
+  height: calc(100% + 20px);
+}
+.root > :global(.__wab_flex-container) > *,
+.root > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
+  margin-top: 20px;
+}
+.slotMessage {
+  color: #ffffff;
+  text-align: center;
+}
+.box {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  top: auto;
+  left: auto;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+}
+.box > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: calc(0px - 20px);
+  height: calc(100% + 20px);
+}
+.box > :global(.__wab_flex-container) > *,
+.box > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
+  margin-top: 20px;
+}
+.textbox {
+  width: 100%;
+  min-width: 0;
+}
+.textarea {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.button:global(.__wab_instance) {
+  position: relative;
+}

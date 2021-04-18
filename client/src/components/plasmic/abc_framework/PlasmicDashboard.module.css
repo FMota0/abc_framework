@@ -1,0 +1,88 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  overflow: auto;
+  min-width: 0;
+  background: #222831;
+}
+.header:global(.__wab_instance) {
+  position: relative;
+  flex-shrink: 0;
+}
+.header__withAddStudy:global(.__wab_instance) {
+  flex-shrink: 0;
+}
+.modalWrapper:global(.__wab_instance) {
+  position: relative;
+}
+.modalWrapper__withAddStudy:global(.__wab_instance) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+.programsList:global(.__wab_instance) {
+  position: relative;
+}
+.studyProgramCard__ds9Hs:global(.__wab_instance) {
+  position: relative;
+}
+.studyProgramCard__bvWc2:global(.__wab_instance) {
+  position: relative;
+}
+.studyProgramCard__bqQx:global(.__wab_instance) {
+  position: relative;
+}
+.studyProgramCard__z0Azf:global(.__wab_instance) {
+  position: relative;
+}
+.studyProgramCard__f0Ut:global(.__wab_instance) {
+  position: relative;
+}
+.actionIcon:global(.__wab_instance) {
+  position: absolute;
+  left: auto;
+  top: auto;
+  bottom: 40px;
+  right: 40px;
+  width: 70px;
+  height: 70px;
+  flex-shrink: 0;
+}
+.box {
+  display: flex;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  left: auto;
+  top: auto;
+  bottom: auto;
+  right: auto;
+  box-shadow: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  background: #373b43fc;
+  border: 1px solid #eeeeee6b;
+}
+.box__empty {
+  left: auto;
+  top: auto;
+  bottom: auto;
+  right: auto;
+}
+.svg {
+  position: relative;
+  object-fit: cover;
+  left: auto;
+  top: auto;
+  width: 40px;
+  height: 40px;
+  color: #ffffffcc;
+  flex-shrink: 0;
+}

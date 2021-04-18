@@ -1,0 +1,24 @@
+.root {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: auto;
+  height: auto;
+}
+.button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #eeeeeee6;
+}
+.button__disabled {
+  cursor: not-allowed;
+  background: #eeeeee80;
+}
+.root:hover .button {
+  cursor: pointer;
+  background: #939191e6;
+}
+.root:hover .slotChildren {
+  color: #ffffff;
+}

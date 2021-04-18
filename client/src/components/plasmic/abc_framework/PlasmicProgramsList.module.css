@@ -1,0 +1,114 @@
+.root {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 1000px;
+  overflow: auto;
+  position: relative;
+  padding-bottom: 20px;
+  min-width: 0;
+  min-height: 0;
+}
+.box__aUBa9 {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: auto;
+  left: auto;
+  top: auto;
+  flex-direction: row;
+  min-width: 0;
+}
+.box__aUBa9 > :global(.__wab_flex-container) {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: space-between;
+  margin-left: calc(0px - 10px);
+  width: calc(100% + 10px);
+  margin-top: calc(0px - 20px);
+  height: calc(100% + 20px);
+}
+.box__aUBa9 > :global(.__wab_flex-container) > *,
+.box__aUBa9 > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
+  margin-left: 10px;
+  margin-top: 20px;
+}
+.box__empty__aUBa9B2Nfe {
+  height: auto;
+  display: inline-flex;
+  flex-direction: column;
+  width: auto;
+  padding: 50px;
+  background: #393e46;
+}
+.box__empty__aUBa9B2Nfe > :global(.__wab_flex-container) {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-left: calc(0px - 0px);
+  width: calc(100% + 0px);
+  margin-top: calc(0px - 0px);
+  height: calc(100% + 0px);
+}
+.box__empty__aUBa9B2Nfe > :global(.__wab_flex-container) > *,
+.box__empty__aUBa9B2Nfe
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > * {
+  margin-left: 0px;
+  margin-top: 0px;
+}
+.studyProgramCard__yuI5E:global(.__wab_instance) {
+  position: relative;
+}
+.studyProgramCard___1Mt1Q:global(.__wab_instance) {
+  position: relative;
+}
+.studyProgramCard__hqBif:global(.__wab_instance) {
+  position: relative;
+}
+.studyProgramCard__awigo:global(.__wab_instance) {
+  position: relative;
+}
+.studyProgramCard__bSm43:global(.__wab_instance) {
+  position: relative;
+}
+.svg {
+  position: relative;
+  object-fit: cover;
+  width: 1em;
+  height: 1em;
+}
+.svg__empty {
+  width: 124px;
+  height: 124px;
+  color: #222831 /* plasmic-token: 1Ug0537Sm */;
+  flex-shrink: 0;
+}
+.box__t83Nd {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+.box__empty__t83NDb2Nfe {
+  height: auto;
+  width: 271px;
+  flex-shrink: 1;
+}
+.slotMessage__empty {
+  font-size: 24px;
+  color: #ffffffcc;
+  text-align: justify;
+}
+.box__segvA {
+  display: block;
+  position: relative;
+}

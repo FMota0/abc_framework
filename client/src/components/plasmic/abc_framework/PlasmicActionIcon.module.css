@@ -1,0 +1,26 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+}
+.root__large {
+  width: 64px;
+  height: 64px;
+}
+.root__extraLarge {
+  width: 128px;
+  height: 128px;
+}
+.root:hover {
+  cursor: pointer;
+}
+.slotChildren__large {
+  font-size: 32px;
+}
+.slotChildren__extraLarge {
+  font-size: 64px;
+}

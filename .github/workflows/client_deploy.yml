@@ -1,0 +1,34 @@
+name: Client Deploy
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-and-deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Use Node.js 12
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: Yarn Install
+        working-directory: ./client
+        run: yarn install
+      - name: Build react
+        working-directory: ./client
+        run: yarn build
+      - name: Add 200.html
+        working-directory: ./client
+        run: |
+          mv build/index.html build/200.html
+      - name: Deploy to kimpl.surge.sh
+        uses: dswistowski/surge-sh-action@v1
+        with:
+          domain: ${{secrets.SURGE_DOMAIN}}
+          project: './client/build'
+          login: ${{secrets.SURGE_LOGIN}}
+          token: ${{secrets.SURGE_TOKEN}}
