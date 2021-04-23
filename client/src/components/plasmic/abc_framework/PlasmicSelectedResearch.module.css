@@ -45,6 +45,7 @@
   color: #ffffff;
   height: 24px;
   width: 24px;
+  cursor: pointer;
   flex-shrink: 0;
 }
 ._delete {
@@ -55,5 +56,6 @@
   color: #ffffff;
   width: 24px;
   height: 24px;
+  cursor: pointer;
   flex-shrink: 0;
 }

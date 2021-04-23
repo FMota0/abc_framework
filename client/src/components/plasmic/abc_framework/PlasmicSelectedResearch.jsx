@@ -32,7 +32,6 @@ export const PlasmicSelectedResearch__ArgProps = new Array(
 
 function PlasmicSelectedResearch__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
-  null;
   return (
     <div
       data-plasmic-name={"root"}

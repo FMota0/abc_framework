@@ -29,7 +29,6 @@ export const PlasmicProgramsList__ArgProps = new Array("children", "message");
 
 function PlasmicProgramsList__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
-  null;
   return (
     <div
       data-plasmic-name={"root"}

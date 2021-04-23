@@ -66,21 +66,6 @@
   margin-left: 0px;
   margin-top: 0px;
 }
-.researchProgramCard__yuI5E:global(.__wab_instance) {
-  position: relative;
-}
-.researchProgramCard___1Mt1Q:global(.__wab_instance) {
-  position: relative;
-}
-.researchProgramCard__hqBif:global(.__wab_instance) {
-  position: relative;
-}
-.researchProgramCard__awigo:global(.__wab_instance) {
-  position: relative;
-}
-.researchProgramCard__bSm43:global(.__wab_instance) {
-  position: relative;
-}
 .svg {
   position: relative;
   object-fit: cover;
@@ -90,7 +75,7 @@
 .svg__empty {
   width: 124px;
   height: 124px;
-  color: #222831 /* plasmic-token: 1Ug0537Sm */;
+  color: #eeeeeee6 /* plasmic-token: frGkWCQWa */;
   flex-shrink: 0;
 }
 .box__t83Nd {
