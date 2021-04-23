@@ -9,6 +9,7 @@ import ServerSleeping from "./components/ServerSleeping";
 import { getHealth } from './store/health/actions';
 import { getHealthState, hasRecentHealth } from './store/health/selectors';
 import { history } from './history';
+import { getIsLogged } from './store/auth/selectors';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ function App() {
       dispatch(getHealth());
   }, [dispatch, hasHealth]);
   const health = useSelector(getHealthState);
+  const isLogged = useSelector(getIsLogged);
 
   if (!hasHealth) {
     return (
@@ -29,17 +31,15 @@ function App() {
     // TODO
   }
 
-  const token = localStorage.getItem("authToken");
-
-  if (!token) {
-    return <HomePage />
-  }
-
   return (
     <Switch>
       <Route path="/" exact component={HomePage} />
-      <Route path="/dashboard" exact component={Dashboard} />
-      <Route path="/research/:id" exact component={ResearchProgram} />
+      { isLogged && (
+        <>
+          <Route path="/dashboard" exact component={Dashboard} />  
+          <Route path="/research/:id" exact component={ResearchProgram} />
+        </>
+      )}
       <Route path="*" 
         render={
           () => {
