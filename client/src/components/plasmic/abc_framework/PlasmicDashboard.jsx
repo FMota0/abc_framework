@@ -19,7 +19,6 @@ import {
 } from "@plasmicapp/react-web";
 import Header from "../../Header"; // plasmic-import: b995Ls5eZP/component
 import ActionIcon from "../../ActionIcon"; // plasmic-import: 7MQ1w3J5JA/component
-import ModalWrapper from "../../ModalWrapper"; // plasmic-import: MWE-QmNJhs/component
 import ProgramsList from "../../ProgramsList"; // plasmic-import: MYCwyjoLXCa/component
 import ResearchProgramCard from "../../ResearchProgramCard"; // plasmic-import: VmjFCzlhl8/component
 import Modal from "../../Modal"; // plasmic-import: DJ5ohi16iS/component
@@ -109,27 +108,6 @@ function PlasmicDashboard__RenderFunc(props) {
           }
         />
 
-        {(
-          hasVariant(variants, "withAddStudy", "withAddStudy") ? true : false
-        ) ? (
-          <ModalWrapper
-            data-plasmic-name={"modalWrapper"}
-            data-plasmic-override={overrides.modalWrapper}
-            className={classNames("__wab_instance", sty.modalWrapper, {
-              [sty.modalWrapper__withAddStudy]: hasVariant(
-                variants,
-                "withAddStudy",
-                "withAddStudy"
-              )
-            })}
-            withAddStudy={
-              hasVariant(variants, "withAddStudy", "withAddStudy")
-                ? "withAddStudy"
-                : undefined
-            }
-          />
-        ) : null}
-
         <ProgramsList
           data-plasmic-name={"programsList"}
           data-plasmic-override={overrides.programsList}
@@ -195,6 +173,150 @@ function PlasmicDashboard__RenderFunc(props) {
           />
         </ProgramsList>
 
+        {(
+          hasVariant(variants, "withAddStudy", "withAddStudy") ? true : false
+        ) ? (
+          <div
+            data-plasmic-name={"withAddStudyModal"}
+            data-plasmic-override={overrides.withAddStudyModal}
+            className={classNames(defaultcss.all, sty.withAddStudyModal, {
+              [sty.withAddStudyModal__withAddStudy]: hasVariant(
+                variants,
+                "withAddStudy",
+                "withAddStudy"
+              )
+            })}
+          >
+            {(
+              hasVariant(variants, "withAddStudy", "withAddStudy")
+                ? true
+                : false
+            ) ? (
+              <Modal
+                data-plasmic-name={"modal"}
+                data-plasmic-override={overrides.modal}
+                className={classNames("__wab_instance", sty.modal, {
+                  [sty.modal__withAddStudy]: hasVariant(
+                    variants,
+                    "withAddStudy",
+                    "withAddStudy"
+                  )
+                })}
+              >
+                {(
+                  hasVariant(variants, "withAddStudy", "withAddStudy")
+                    ? true
+                    : false
+                ) ? (
+                  <div
+                    className={classNames(
+                      defaultcss.all,
+                      defaultcss.__wab_text,
+                      sty.box__puFfz,
+                      {
+                        [sty.box__withAddStudy__puFfzZJYj]: hasVariant(
+                          variants,
+                          "withAddStudy",
+                          "withAddStudy"
+                        )
+                      }
+                    )}
+                  >
+                    {hasVariant(variants, "withAddStudy", "withAddStudy")
+                      ? "Adicione seu projeto de pesquisa"
+                      : "Enter some text"}
+                  </div>
+                ) : null}
+                {(
+                  hasVariant(variants, "withAddStudy", "withAddStudy")
+                    ? true
+                    : false
+                ) ? (
+                  <input
+                    data-plasmic-name={"title"}
+                    data-plasmic-override={overrides.title}
+                    className={classNames(defaultcss.input, sty.title, {
+                      [sty.title__withAddStudy]: hasVariant(
+                        variants,
+                        "withAddStudy",
+                        "withAddStudy"
+                      )
+                    })}
+                    placeholder={
+                      hasVariant(variants, "withAddStudy", "withAddStudy")
+                        ? "Título"
+                        : "Some placeholder"
+                    }
+                    size={1}
+                    type={"text"}
+                    value={
+                      hasVariant(variants, "withAddStudy", "withAddStudy")
+                        ? ""
+                        : "Some value"
+                    }
+                  />
+                ) : null}
+                {(
+                  hasVariant(variants, "withAddStudy", "withAddStudy")
+                    ? true
+                    : false
+                ) ? (
+                  <textarea
+                    data-plasmic-name={"description"}
+                    data-plasmic-override={overrides.description}
+                    className={classNames(
+                      defaultcss.textarea,
+                      sty.description,
+                      {
+                        [sty.description__withAddStudy]: hasVariant(
+                          variants,
+                          "withAddStudy",
+                          "withAddStudy"
+                        )
+                      }
+                    )}
+                    placeholder={
+                      hasVariant(variants, "withAddStudy", "withAddStudy")
+                        ? "Descrição"
+                        : undefined
+                    }
+                    value={
+                      hasVariant(variants, "withAddStudy", "withAddStudy")
+                        ? ""
+                        : "This is a text area."
+                    }
+                  />
+                ) : null}
+                {(
+                  hasVariant(variants, "withAddStudy", "withAddStudy")
+                    ? true
+                    : false
+                ) ? (
+                  <Button
+                    data-plasmic-name={"modalAddButton"}
+                    data-plasmic-override={overrides.modalAddButton}
+                    className={classNames(
+                      "__wab_instance",
+                      sty.modalAddButton,
+                      {
+                        [sty.modalAddButton__withAddStudy]: hasVariant(
+                          variants,
+                          "withAddStudy",
+                          "withAddStudy"
+                        )
+                      }
+                    )}
+                  >
+                    {hasVariant(variants, "withAddStudy", "withAddStudy")
+                      ? "Adicionar"
+                      : "Click me"}
+                  </Button>
+                ) : null}
+              </Modal>
+            ) : null}
+          </div>
+        ) : null}
+
         <ActionIcon
           data-plasmic-name={"addProgram"}
           data-plasmic-override={overrides.addProgram}
@@ -215,70 +337,6 @@ function PlasmicDashboard__RenderFunc(props) {
             />
           </div>
         </ActionIcon>
-
-        {false ? (
-          <div
-            data-plasmic-name={"editStudyBackground"}
-            data-plasmic-override={overrides.editStudyBackground}
-            className={classNames(defaultcss.all, sty.editStudyBackground)}
-          >
-            {false ? (
-              <Modal
-                data-plasmic-name={"modal"}
-                data-plasmic-override={overrides.modal}
-                className={classNames("__wab_instance", sty.modal)}
-              >
-                <div
-                  className={classNames(
-                    defaultcss.all,
-                    defaultcss.__wab_text,
-                    sty.box__fwAm5
-                  )}
-                >
-                  {"Adicione seu programa de pesquisa"}
-                </div>
-
-                {false ? (
-                  <div
-                    className={classNames(
-                      defaultcss.all,
-                      defaultcss.__wab_text,
-                      sty.box___4QHx
-                    )}
-                  >
-                    {"Enter some text"}
-                  </div>
-                ) : null}
-
-                <input
-                  data-plasmic-name={"textbox"}
-                  data-plasmic-override={overrides.textbox}
-                  className={classNames(defaultcss.input, sty.textbox)}
-                  placeholder={"Título"}
-                  size={1}
-                  type={"text"}
-                  value={""}
-                />
-
-                <textarea
-                  data-plasmic-name={"textarea"}
-                  data-plasmic-override={overrides.textarea}
-                  className={classNames(defaultcss.textarea, sty.textarea)}
-                  placeholder={"Descrição"}
-                  value={""}
-                />
-
-                <Button
-                  data-plasmic-name={"button"}
-                  data-plasmic-override={overrides.button}
-                  className={classNames("__wab_instance", sty.button)}
-                >
-                  {"Adicionar"}
-                </Button>
-              </Modal>
-            ) : null}
-          </div>
-        ) : null}
       </div>
     </React.Fragment>
   );
@@ -290,34 +348,32 @@ const PlasmicDescendants = {
     "header",
     "logoArea",
     "actionIcon",
-    "modalWrapper",
     "programsList",
-    "addProgram",
-    "editStudyBackground",
+    "withAddStudyModal",
     "modal",
-    "textbox",
-    "textarea",
-    "button"
+    "title",
+    "description",
+    "modalAddButton",
+    "addProgram"
   ],
 
   header: ["header", "logoArea", "actionIcon"],
   logoArea: ["logoArea", "actionIcon"],
   actionIcon: ["actionIcon"],
-  modalWrapper: ["modalWrapper"],
   programsList: ["programsList"],
-  addProgram: ["addProgram"],
-  editStudyBackground: [
-    "editStudyBackground",
+  withAddStudyModal: [
+    "withAddStudyModal",
     "modal",
-    "textbox",
-    "textarea",
-    "button"
+    "title",
+    "description",
+    "modalAddButton"
   ],
 
-  modal: ["modal", "textbox", "textarea", "button"],
-  textbox: ["textbox"],
-  textarea: ["textarea"],
-  button: ["button"]
+  modal: ["modal", "title", "description", "modalAddButton"],
+  title: ["title"],
+  description: ["description"],
+  modalAddButton: ["modalAddButton"],
+  addProgram: ["addProgram"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -352,14 +408,13 @@ export const PlasmicDashboard = Object.assign(
     header: makeNodeComponent("header"),
     logoArea: makeNodeComponent("logoArea"),
     actionIcon: makeNodeComponent("actionIcon"),
-    modalWrapper: makeNodeComponent("modalWrapper"),
     programsList: makeNodeComponent("programsList"),
-    addProgram: makeNodeComponent("addProgram"),
-    editStudyBackground: makeNodeComponent("editStudyBackground"),
+    withAddStudyModal: makeNodeComponent("withAddStudyModal"),
     modal: makeNodeComponent("modal"),
-    textbox: makeNodeComponent("textbox"),
-    textarea: makeNodeComponent("textarea"),
-    button: makeNodeComponent("button"),
+    title: makeNodeComponent("title"),
+    description: makeNodeComponent("description"),
+    modalAddButton: makeNodeComponent("modalAddButton"),
+    addProgram: makeNodeComponent("addProgram"),
     // Metadata about props expected for PlasmicDashboard
     internalVariantProps: PlasmicDashboard__VariantProps,
     internalArgProps: PlasmicDashboard__ArgProps

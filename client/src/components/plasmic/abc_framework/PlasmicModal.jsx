@@ -20,6 +20,7 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "./plasmic_abc_framework.module.css"; // plasmic-import: vpcYHrXbsH6LUnbKFzgKAs/projectcss
 import * as sty from "./PlasmicModal.module.css"; // plasmic-import: DJ5ohi16iS/css
+import ClosesvgIcon from "./icons/PlasmicIcon__Closesvg"; // plasmic-import: 3CweqiMj9R/icon
 
 export const PlasmicModal__VariantProps = new Array();
 
@@ -27,7 +28,6 @@ export const PlasmicModal__ArgProps = new Array("children");
 
 function PlasmicModal__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
-  null;
   return (
     <p.Stack
       as={"div"}
@@ -38,10 +38,25 @@ function PlasmicModal__RenderFunc(props) {
       hasGap={true}
       className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
     >
+      <div
+        data-plasmic-name={"closeModal"}
+        data-plasmic-override={overrides.closeModal}
+        className={classNames(defaultcss.all, sty.closeModal)}
+      >
+        <ClosesvgIcon
+          data-plasmic-name={"closeModalIcon"}
+          data-plasmic-override={overrides.closeModalIcon}
+          className={classNames(defaultcss.all, sty.closeModalIcon)}
+          role={"img"}
+        />
+      </div>
+
       <p.Stack
         as={"div"}
+        data-plasmic-name={"box"}
+        data-plasmic-override={overrides.box}
         hasGap={true}
-        className={classNames(defaultcss.all, sty.box__tOsfp)}
+        className={classNames(defaultcss.all, sty.box)}
       >
         <p.PlasmicSlot
           defaultContents={
@@ -57,9 +72,7 @@ function PlasmicModal__RenderFunc(props) {
               </div>
 
               <input
-                data-plasmic-name={"textbox"}
-                data-plasmic-override={overrides.textbox}
-                className={classNames(defaultcss.input, sty.textbox)}
+                className={classNames(defaultcss.input, sty.textbox___1BUd5)}
                 placeholder={"Título"}
                 size={1}
                 type={"text"}
@@ -67,17 +80,13 @@ function PlasmicModal__RenderFunc(props) {
               />
 
               <textarea
-                data-plasmic-name={"textarea"}
-                data-plasmic-override={overrides.textarea}
-                className={classNames(defaultcss.textarea, sty.textarea)}
+                className={classNames(defaultcss.textarea, sty.textarea__rWfVl)}
                 placeholder={"Descrição"}
                 value={""}
               />
 
               <Button
-                data-plasmic-name={"button"}
-                data-plasmic-override={overrides.button}
-                className={classNames("__wab_instance", sty.button)}
+                className={classNames("__wab_instance", sty.button__bk8M)}
               >
                 {"Adicionar"}
               </Button>
@@ -91,10 +100,10 @@ function PlasmicModal__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "textbox", "textarea", "button"],
-  textbox: ["textbox"],
-  textarea: ["textarea"],
-  button: ["button"]
+  root: ["root", "closeModal", "closeModalIcon", "box"],
+  closeModal: ["closeModal", "closeModalIcon"],
+  closeModalIcon: ["closeModalIcon"],
+  box: ["box"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -126,9 +135,9 @@ export const PlasmicModal = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    textbox: makeNodeComponent("textbox"),
-    textarea: makeNodeComponent("textarea"),
-    button: makeNodeComponent("button"),
+    closeModal: makeNodeComponent("closeModal"),
+    closeModalIcon: makeNodeComponent("closeModalIcon"),
+    box: makeNodeComponent("box"),
     // Metadata about props expected for PlasmicModal
     internalVariantProps: PlasmicModal__VariantProps,
     internalArgProps: PlasmicModal__ArgProps

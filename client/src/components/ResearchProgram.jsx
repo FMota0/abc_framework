@@ -49,6 +49,9 @@ function ResearchProgram() {
       }}
       modal={{
         onClick: (e) => e.stopPropagation(),
+        closeModal: {
+          onClick: () => setWithAddResearch(false),
+        },
       }}
       {...fromPairs(keys(newResearch).map(k => [k, {
         value: newResearch[k],

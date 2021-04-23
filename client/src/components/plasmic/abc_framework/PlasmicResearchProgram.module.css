@@ -88,15 +88,6 @@
   min-height: 0;
   background: #393e46;
 }
-.box__q1I87 {
-  display: block;
-  position: relative;
-  left: auto;
-  top: auto;
-  width: 155px;
-  height: 144px;
-  flex-shrink: 0;
-}
 .studyInfo {
   display: flex;
   position: relative;
@@ -175,7 +166,7 @@
   flex-direction: row;
   min-width: 0;
   min-height: 0;
-  background: #ffffff66;
+  background: #64646480;
 }
 .withAddResearchModal__withAddResearch > :global(.__wab_flex-container) {
   flex-direction: row;
@@ -225,6 +216,7 @@
 }
 .box__withAddResearch__ycfPdGcXLs {
   color: #ffffff;
+  font-size: 16px;
 }
 .title {
   position: relative;

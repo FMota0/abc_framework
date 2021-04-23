@@ -144,19 +144,6 @@
           "componentType": "component"
         },
         {
-          "id": "MWE-QmNJhs",
-          "name": "ModalWrapper",
-          "type": "managed",
-          "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
-          "renderModuleFilePath": "plasmic/abc_framework/PlasmicModalWrapper.jsx",
-          "importSpec": {
-            "modulePath": "ModalWrapper.jsx"
-          },
-          "cssFilePath": "plasmic/abc_framework/PlasmicModalWrapper.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
-        },
-        {
           "id": "gK4A7lO4Rf",
           "name": "SelectedResearch",
           "type": "managed",
@@ -283,6 +270,11 @@
           "id": "JuwcPNA-Iu",
           "name": "RestsvgIcon",
           "moduleFilePath": "plasmic/abc_framework/icons/PlasmicIcon__Restsvg.jsx"
+        },
+        {
+          "id": "3CweqiMj9R",
+          "name": "ClosesvgIcon",
+          "moduleFilePath": "plasmic/abc_framework/icons/PlasmicIcon__Closesvg.jsx"
         }
       ],
       "images": [],

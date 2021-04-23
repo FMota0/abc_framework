@@ -53,16 +53,56 @@
   top: auto;
   flex-shrink: 0;
 }
-.modalWrapper:global(.__wab_instance) {
+.programsList:global(.__wab_instance) {
   position: relative;
 }
-.modalWrapper__withAddStudy:global(.__wab_instance) {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
+.withAddStudyModal {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
 }
-.programsList:global(.__wab_instance) {
+.withAddStudyModal__withAddStudy {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 200px;
+  padding-left: 30px;
+  padding-right: 30px;
+  min-width: 0;
+  min-height: 0;
+  background: #64646480;
+}
+.modal:global(.__wab_instance) {
+  position: relative;
+}
+.box__puFfz {
+  position: relative;
+}
+.box__withAddStudy__puFfzZJYj {
+  color: #ffffff;
+}
+.title {
+  position: relative;
+  width: 180px;
+}
+.title__withAddStudy {
+  width: 100%;
+  min-width: 0;
+}
+.description {
+  position: relative;
+}
+.description__withAddStudy {
+  width: 100%;
+  min-width: 0;
+}
+.modalAddButton:global(.__wab_instance) {
   position: relative;
 }
 .addProgram:global(.__wab_instance) {
@@ -107,35 +147,4 @@
   height: 40px;
   color: #ffffffcc;
   flex-shrink: 0;
-}
-.editStudyBackground {
-  display: block;
-  position: relative;
-}
-.modal:global(.__wab_instance) {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
-.box__fwAm5 {
-  position: relative;
-  color: #ffffff;
-  text-align: justify;
-  width: auto;
-  display: inline-block;
-}
-.box___4QHx {
-  position: relative;
-}
-.textbox {
-  width: 100%;
-  min-width: 0;
-}
-.textarea {
-  position: relative;
-  width: 100%;
-  min-width: 0;
-}
-.button:global(.__wab_instance) {
-  position: relative;
 }

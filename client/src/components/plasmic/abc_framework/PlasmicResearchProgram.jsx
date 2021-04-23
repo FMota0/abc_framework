@@ -42,7 +42,6 @@ export const PlasmicResearchProgram__ArgProps = new Array(
 
 function PlasmicResearchProgram__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
-  null;
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariants()
   });

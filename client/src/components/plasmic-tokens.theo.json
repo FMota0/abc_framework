@@ -1,6 +1,26 @@
 {
   "props": [
     {
+      "name": "Cinnabar",
+      "type": "color",
+      "value": "#E94F37",
+      "category": "color",
+      "meta": {
+        "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+        "id": "U1Nan7xho"
+      }
+    },
+    {
+      "name": "Green Blue Crayola",
+      "type": "color",
+      "value": "#3F88C5",
+      "category": "color",
+      "meta": {
+        "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+        "id": "44xrrLCrF"
+      }
+    },
+    {
       "name": "background",
       "type": "color",
       "value": "#222831",
@@ -18,6 +38,16 @@
       "meta": {
         "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
         "id": "lczn7Ke_Q"
+      }
+    },
+    {
+      "name": "blur",
+      "type": "color",
+      "value": "#64646480",
+      "category": "color",
+      "meta": {
+        "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+        "id": "eukTI1sUw"
       }
     },
     {

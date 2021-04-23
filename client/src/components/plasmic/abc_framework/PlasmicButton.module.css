@@ -9,7 +9,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  background: #eeeeeee6;
+  border-radius: 6px;
+  background: #3f88c5;
+  border-width: 0px;
 }
 .button__disabled {
   cursor: not-allowed;
@@ -17,8 +19,12 @@
 }
 .root:hover .button {
   cursor: pointer;
-  background: #939191e6;
+  background: #eeeeeee6;
+  border: 0px solid #3f88c5 /* plasmic-token: 44xrrLCrF */;
+}
+.slotChildren {
+  color: #ffffff;
 }
 .root:hover .slotChildren {
-  color: #ffffff;
+  color: #3f88c5 /* plasmic-token: 44xrrLCrF */;
 }

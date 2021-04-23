@@ -47,43 +47,40 @@ function Dashboard() {
       programs={Programs}
       empty={programs.length === 0}
       withAddStudy={withAddStudy}
-      modalWrapper={
-        {
-          props: {
-            onClick: () => {
-              setWithAddStudy(false);
-              setNewStudy({ title: "", description: "" })
-            },
-            modal: {
-              props: {
-                onClick: (e) => e.stopPropagation(),
-                textbox: {
-                  value: newStudy.title,
-                  onChange: (e) => setNewStudy({
-                    ...newStudy,
-                    title: e.target.value,
-                  }),
-                },
-                textarea: {
-                  value: newStudy.description,
-                  onChange: (e) => setNewStudy({
-                    ...newStudy,
-                    description: e.target.value,
-                  })
-                },
-                button: {
-                  onClick: async () => {
-                    await ABCApiService.addResearchProgram(newStudy);
-                    setWithAddStudy(false);
-                    setNewStudy({ title: "", description: "" });
-                    dispatch(fetchResearchPrograms())
-                  }
-                },
-              },
-            }
-          }
+      withAddStudyModal={{
+        onClick: () => {
+          setWithAddStudy(false);
+          setNewStudy({ title: "", description: "" })
+        },
+      }}
+      modal={{
+        onClick: (e) => e.stopPropagation(),
+        closeModal: {
+          onClick: () => setWithAddStudy(false),
+        },
+      }}
+      title={{
+        value: newStudy.title,
+        onChange: (e) => setNewStudy({
+          ...newStudy,
+          title: e.target.value,
+        }),
+      }}
+      description={{
+        value: newStudy.description,
+        onChange: (e) => setNewStudy({
+          ...newStudy,
+          description: e.target.value,
+        })
+      }}
+      modalAddButton={{
+        onClick: async () => {
+          await ABCApiService.addResearchProgram(newStudy);
+          setWithAddStudy(false);
+          setNewStudy({ title: "", description: "" });
+          dispatch(fetchResearchPrograms())
         }
-      }
+      }}
       addProgram={
         {
           props: {
