@@ -21,7 +21,7 @@ function App() {
   const health = useSelector(getHealthState);
   const isLogged = useSelector(getIsLogged);
 
-  if (!hasHealth) {
+  if (!hasHealth && !health.isLoading) {
     return (
       <ServerSleeping />
     )

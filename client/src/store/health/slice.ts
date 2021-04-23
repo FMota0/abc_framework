@@ -5,6 +5,7 @@ import { HealthState } from './types';
 const initialState: HealthState = {
   timestampLastHealth: 0,
   isBroken: false,
+  isLoading: false,
 };
 
 const healthSlice = createSlice({
@@ -16,10 +17,13 @@ const healthSlice = createSlice({
     },
     setIsBroken: (state, action) => {
       state.isBroken = action.payload;
+    },
+    setIsLoading: (state, action) => {
+      state.isLoading = action.payload;
     }
   },
 });
 
-export const { setTimestamp, setIsBroken } = healthSlice.actions;
+export const { setTimestamp, setIsBroken, setIsLoading } = healthSlice.actions;
 
 export default healthSlice.reducer;
