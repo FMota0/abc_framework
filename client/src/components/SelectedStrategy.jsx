@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { PlasmicSelectedStrategy } from "./plasmic/abc_framework/PlasmicSelectedStrategy";
 
 import { getSelectedStrategy } from "../store/selectedStrategy/selectors";
+import { selectedStrategyTitle } from "../constants";
 
 function SelectedStrategy() {
   const strategy = useSelector(getSelectedStrategy);
@@ -12,7 +13,7 @@ function SelectedStrategy() {
   return (
     <PlasmicSelectedStrategy 
       empty={!strategy}
-      title={strategy}
+      title={strategy ? selectedStrategyTitle[strategy] : "Nenhuma estratégia selecionada"}
     />
   );
 }

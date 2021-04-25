@@ -90,11 +90,21 @@ function PlasmicResearchProgram__RenderFunc(props) {
                     role={"img"}
                   />
                 ) : null}
-
-                <LogosvgIcon
-                  className={classNames(defaultcss.all, sty.svg__o3D)}
-                  role={"img"}
-                />
+                {(
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? false
+                    : true
+                ) ? (
+                  <p.PlasmicIcon
+                    PlasmicIconType={
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? ShortLeftsvgIcon
+                        : LogosvgIcon
+                    }
+                    className={classNames(defaultcss.all, sty.svg__o3D)}
+                    role={"img"}
+                  />
+                ) : null}
               </ActionIcon>
 
               {(

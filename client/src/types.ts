@@ -24,14 +24,3 @@ export interface ResearchProgram {
   description: string;
   researches: Research[];
 };
-
-export const STRATEGIES = [
-  StrategyTypes.FieldExperiments,
-  StrategyTypes.ExperimentalSimulations,
-  StrategyTypes.LaboratoryExperiments,
-  StrategyTypes.JudgmentStudies,
-  StrategyTypes.SampleStudies,
-  StrategyTypes.FormalTheory,
-  StrategyTypes.ComputerSimulations,
-  StrategyTypes.FieldStudy,
-];

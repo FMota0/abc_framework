@@ -4,9 +4,9 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: auto;
   justify-content: flex-start;
   align-items: center;
+  overflow: auto;
   min-width: 0;
   background: #222831;
 }
@@ -32,11 +32,9 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .svg__nq7E {
-    width: 100%;
-    height: 100%;
+    width: 64px;
+    height: 64px;
     color: #ffffff;
-    min-width: 0;
-    min-height: 0;
   }
 }
 .svg__o3D {
@@ -74,6 +72,31 @@
 .view > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
   margin-left: 10px;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .view {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow: auto;
+  }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .view > :global(.__wab_flex-container) {
+    flex-direction: column;
+    margin-left: calc(0px - 0px);
+    width: calc(100% + 0px);
+    margin-top: calc(0px - 10px);
+    height: calc(100% + 10px);
+  }
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .view > :global(.__wab_flex-container) > *,
+  .view > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+}
 .box__kgQf {
   display: flex;
   position: relative;
@@ -87,6 +110,12 @@
   min-width: 0;
   min-height: 0;
   background: #393e46;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .box__kgQf {
+    left: auto;
+    top: auto;
+  }
 }
 .studyInfo {
   display: flex;
@@ -108,6 +137,14 @@
 .studyInfo > :global(.__wab_flex-container) > *,
 .studyInfo > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
   margin-top: 10px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .studyInfo {
+    left: auto;
+    top: auto;
+    width: 100%;
+    min-width: 0;
+  }
 }
 .selectedResearch:global(.__wab_instance) {
   position: relative;
