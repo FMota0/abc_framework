@@ -2,13 +2,14 @@
 // This file is owned by you, feel free to edit as you see fit.
 import React, { useEffect, useState } from "react";
 import { fromPairs, keys } from "ramda";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import StrategySelector from "./StrategySelector/StrategySelector";
 import { PlasmicResearchProgram } from "./plasmic/abc_framework/PlasmicResearchProgram";
 import { deleteResearchProgram, fetchResearchProgram } from "../store/programs/actions";
 import { setStrategy } from "../store/selectedStrategy/slice";
 import ABCApiService from "../services/abcApi";
+import { getResearchProgram } from "../store/programs/selectors";
 
 function ResearchProgram() {
 
@@ -31,6 +32,8 @@ function ResearchProgram() {
   const [newResearch, setNewResearch] = useState(emptyResearch);
 
   const [withDeleteProgram, setWithDeleteProgram] = useState(false);
+
+  const program = useSelector(getResearchProgram(id));
 
   return (
     <PlasmicResearchProgram
@@ -86,6 +89,7 @@ function ResearchProgram() {
           onClick: () => setWithDeleteProgram(false),
         }
       }}
+      message={`Você tem certeza que deseja excluir o programa de pesquisa "${program.title}"?`}
       yes={{
         onClick: () => {
           dispatch(deleteResearchProgram(id))
