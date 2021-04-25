@@ -13,18 +13,35 @@
   background: #3f88c5;
   border-width: 0px;
 }
-.button__disabled {
-  cursor: not-allowed;
-  background: #eeeeee80;
+.button__type_cinnabar {
+  background: #e94f37;
+}
+.button__type_eee90 {
+  background: #eeeeeee6;
+}
+.button__size_large {
+  padding: 6px 10px;
 }
 .root:hover .button {
   cursor: pointer;
   background: #eeeeeee6;
   border: 0px solid #3f88c5 /* plasmic-token: 44xrrLCrF */;
 }
+.root__type_eee90:hover .button__type_eee90 {
+  background: #e94f37;
+}
 .slotChildren {
   color: #ffffff;
 }
+.slotChildren__type_eee90 {
+  color: #e94f37 /* plasmic-token: U1Nan7xho */;
+}
 .root:hover .slotChildren {
   color: #3f88c5 /* plasmic-token: 44xrrLCrF */;
+}
+.root__type_cinnabar:hover .slotChildren__type_cinnabar {
+  color: #e94f37 /* plasmic-token: U1Nan7xho */;
+}
+.root__type_eee90:hover .slotChildren__type_eee90 {
+  color: #eeeeeee6 /* plasmic-token: frGkWCQWa */;
 }

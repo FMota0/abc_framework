@@ -2,13 +2,11 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { PlasmicSelectedResearch } from "./plasmic/abc_framework/PlasmicSelectedResearch";
 import { getResearchProgram } from "../store/programs/selectors";
-import { deleteResearchProgram } from "../store/programs/actions";
 
-function SelectedResearch() {
-  const dispatch = useDispatch();
+function SelectedResearch(props) {
   const { id } = useParams();
   const program = useSelector(getResearchProgram(id));
   const isLoading = !program;
@@ -16,11 +14,7 @@ function SelectedResearch() {
     <PlasmicSelectedResearch
       title={isLoading ? "Carregando" : program.title}
       description={isLoading ? "Carregando" : program.description}
-      _delete={{
-        onClick: () => {
-          dispatch(deleteResearchProgram(id));
-        }
-      }}
+      {...props}
     />
   );
 }

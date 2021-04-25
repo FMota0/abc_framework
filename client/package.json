@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@plasmicapp/cli": "^0.1.136",
+    "@plasmicapp/cli": "^0.1.137",
     "@plasmicapp/react-web": "^0.2.27",
     "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^5.11.4",

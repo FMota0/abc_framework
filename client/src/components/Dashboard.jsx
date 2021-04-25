@@ -52,11 +52,14 @@ function Dashboard() {
           setWithAddStudy(false);
           setNewStudy({ title: "", description: "" })
         },
-      }}
-      modal={{
-        onClick: (e) => e.stopPropagation(),
+        modal: {
+          onClick: (e) => e.stopPropagation(),
+        },
         closeModal: {
-          onClick: () => setWithAddStudy(false),
+          onClick: () => {
+            setWithAddStudy(false);
+            setNewStudy({ title: "", description: "" });
+          }
         },
       }}
       title={{

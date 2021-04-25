@@ -29,78 +29,99 @@ export const PlasmicModal__ArgProps = new Array("children");
 function PlasmicModal__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
   return (
-    <p.Stack
-      as={"div"}
-      data-plasmic-name={"root"}
-      data-plasmic-override={overrides.root}
+    <div
+      data-plasmic-name={"modalWrapper"}
+      data-plasmic-override={overrides.modalWrapper}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      hasGap={true}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(
+        defaultcss.all,
+        projectcss.root_reset,
+        sty.modalWrapper
+      )}
     >
-      <div
-        data-plasmic-name={"closeModal"}
-        data-plasmic-override={overrides.closeModal}
-        className={classNames(defaultcss.all, sty.closeModal)}
-      >
-        <ClosesvgIcon
-          data-plasmic-name={"closeModalIcon"}
-          data-plasmic-override={overrides.closeModalIcon}
-          className={classNames(defaultcss.all, sty.closeModalIcon)}
-          role={"img"}
-        />
-      </div>
-
       <p.Stack
         as={"div"}
-        data-plasmic-name={"box"}
-        data-plasmic-override={overrides.box}
+        data-plasmic-name={"modal"}
+        data-plasmic-override={overrides.modal}
         hasGap={true}
-        className={classNames(defaultcss.all, sty.box)}
+        className={classNames(defaultcss.all, sty.modal)}
       >
-        <p.PlasmicSlot
-          defaultContents={
-            <React.Fragment>
-              <div
-                className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.box__yebzF
-                )}
-              >
-                {"Adicione seu programa de pesquisa"}
-              </div>
+        <div
+          data-plasmic-name={"closeModal"}
+          data-plasmic-override={overrides.closeModal}
+          className={classNames(defaultcss.all, sty.closeModal)}
+        >
+          <ClosesvgIcon
+            data-plasmic-name={"closeModalIcon"}
+            data-plasmic-override={overrides.closeModalIcon}
+            className={classNames(defaultcss.all, sty.closeModalIcon)}
+            role={"img"}
+          />
+        </div>
 
-              <input
-                className={classNames(defaultcss.input, sty.textbox___1BUd5)}
-                placeholder={"Título"}
-                size={1}
-                type={"text"}
-                value={""}
-              />
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"box"}
+          data-plasmic-override={overrides.box}
+          hasGap={true}
+          className={classNames(defaultcss.all, sty.box)}
+        >
+          <p.PlasmicSlot
+            defaultContents={
+              <React.Fragment>
+                <div
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.box__yebzF
+                  )}
+                >
+                  {"Adicione seu programa de pesquisa"}
+                </div>
 
-              <textarea
-                className={classNames(defaultcss.textarea, sty.textarea__rWfVl)}
-                placeholder={"Descrição"}
-                value={""}
-              />
+                <input
+                  className={classNames(defaultcss.input, sty.textbox___1BUd5)}
+                  placeholder={"Título"}
+                  size={1}
+                  type={"text"}
+                  value={""}
+                />
 
-              <Button
-                className={classNames("__wab_instance", sty.button__bk8M)}
-              >
-                {"Adicionar"}
-              </Button>
-            </React.Fragment>
-          }
-          value={args.children}
-        />
+                <textarea
+                  className={classNames(
+                    defaultcss.textarea,
+                    sty.textarea__rWfVl
+                  )}
+                  placeholder={"Descrição"}
+                  value={""}
+                />
+
+                <Button
+                  className={classNames("__wab_instance", sty.button__bk8M)}
+                >
+                  {"Adicionar"}
+                </Button>
+              </React.Fragment>
+            }
+            value={args.children}
+          />
+        </p.Stack>
       </p.Stack>
-    </p.Stack>
+    </div>
   );
 }
 
 const PlasmicDescendants = {
-  root: ["root", "closeModal", "closeModalIcon", "box"],
+  modalWrapper: [
+    "modalWrapper",
+    "modal",
+    "closeModal",
+    "closeModalIcon",
+    "box"
+  ],
+
+  modal: ["modal", "closeModal", "closeModalIcon", "box"],
   closeModal: ["closeModal", "closeModalIcon"],
   closeModalIcon: ["closeModalIcon"],
   box: ["box"]
@@ -122,7 +143,7 @@ function makeNodeComponent(nodeName) {
       forNode: nodeName
     });
   };
-  if (nodeName === "root") {
+  if (nodeName === "modalWrapper") {
     func.displayName = "PlasmicModal";
   } else {
     func.displayName = `PlasmicModal.${nodeName}`;
@@ -132,9 +153,10 @@ function makeNodeComponent(nodeName) {
 
 export const PlasmicModal = Object.assign(
   // Top-level PlasmicModal renders the root element
-  makeNodeComponent("root"),
+  makeNodeComponent("modalWrapper"),
   {
     // Helper components rendering sub-elements
+    modal: makeNodeComponent("modal"),
     closeModal: makeNodeComponent("closeModal"),
     closeModalIcon: makeNodeComponent("closeModalIcon"),
     box: makeNodeComponent("box"),

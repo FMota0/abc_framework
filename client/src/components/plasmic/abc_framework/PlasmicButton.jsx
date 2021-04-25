@@ -21,7 +21,7 @@ import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-i
 import * as projectcss from "./plasmic_abc_framework.module.css"; // plasmic-import: vpcYHrXbsH6LUnbKFzgKAs/projectcss
 import * as sty from "./PlasmicButton.module.css"; // plasmic-import: ryMEoCge3-/css
 
-export const PlasmicButton__VariantProps = new Array("disabled");
+export const PlasmicButton__VariantProps = new Array("type", "size");
 
 export const PlasmicButton__ArgProps = new Array("children");
 
@@ -33,19 +33,51 @@ function PlasmicButton__RenderFunc(props) {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(defaultcss.all, projectcss.root_reset, sty.root, {
+        [sty.root__type_cinnabar]: hasVariant(variants, "type", "cinnabar"),
+        [sty.root__type_crayola]: hasVariant(variants, "type", "crayola"),
+        [sty.root__type_eee90]: hasVariant(variants, "type", "eee90")
+      })}
     >
       <button
         data-plasmic-name={"button"}
         data-plasmic-override={overrides.button}
         className={classNames(defaultcss.button, sty.button, {
-          [sty.button__disabled]: hasVariant(variants, "disabled", "disabled")
+          [sty.button__size_large]: hasVariant(variants, "size", "large"),
+          [sty.button__size_small]: hasVariant(variants, "size", "small"),
+          [sty.button__type_cinnabar]: hasVariant(variants, "type", "cinnabar"),
+          [sty.button__type_crayola]: hasVariant(variants, "type", "crayola"),
+          [sty.button__type_eee90]: hasVariant(variants, "type", "eee90")
         })}
       >
         <p.PlasmicSlot
           defaultContents={"Click me"}
           value={args.children}
-          className={classNames(sty.slotChildren)}
+          className={classNames(sty.slotChildren, {
+            [sty.slotChildren__size_small]: hasVariant(
+              variants,
+              "size",
+              "small"
+            ),
+
+            [sty.slotChildren__type_cinnabar]: hasVariant(
+              variants,
+              "type",
+              "cinnabar"
+            ),
+
+            [sty.slotChildren__type_crayola]: hasVariant(
+              variants,
+              "type",
+              "crayola"
+            ),
+
+            [sty.slotChildren__type_eee90]: hasVariant(
+              variants,
+              "type",
+              "eee90"
+            )
+          })}
         />
       </button>
     </div>

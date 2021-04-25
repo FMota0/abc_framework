@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import StrategySelector from "./StrategySelector/StrategySelector";
 import { PlasmicResearchProgram } from "./plasmic/abc_framework/PlasmicResearchProgram";
-import { fetchResearchProgram } from "../store/programs/actions";
+import { deleteResearchProgram, fetchResearchProgram } from "../store/programs/actions";
 import { setStrategy } from "../store/selectedStrategy/slice";
 import ABCApiService from "../services/abcApi";
 
@@ -30,6 +30,8 @@ function ResearchProgram() {
   };
   const [newResearch, setNewResearch] = useState(emptyResearch);
 
+  const [withDeleteProgram, setWithDeleteProgram] = useState(false);
+
   return (
     <PlasmicResearchProgram
       programStudyVisualizer={<StrategySelector/>}
@@ -46,9 +48,9 @@ function ResearchProgram() {
           setWithAddResearch(false);
           setNewResearch(emptyResearch);
         },
-      }}
-      modal={{
-        onClick: (e) => e.stopPropagation(),
+        modal: {
+          onClick: (e) => e.stopPropagation(),
+        },
         closeModal: {
           onClick: () => setWithAddResearch(false),
         },
@@ -68,6 +70,29 @@ function ResearchProgram() {
           dispatch(fetchResearchProgram(id));
           dispatch(setStrategy(null));
         }
+      }}
+      withDeleteProgram={withDeleteProgram}
+      selectedResearch={{
+        _delete: {
+          onClick: () => setWithDeleteProgram(true),
+        }
+      }}
+      withDeleteProgramModal={{
+        onClick: () => setWithDeleteProgram(false),
+        modal: {
+          onClick: (e) => e.stopPropagation(),
+        },
+        closeModal: {
+          onClick: () => setWithDeleteProgram(false),
+        }
+      }}
+      yes={{
+        onClick: () => {
+          dispatch(deleteResearchProgram(id))
+        },
+      }}
+      no={{
+        onClick: () => setWithDeleteProgram(false),
       }}
     />
   );

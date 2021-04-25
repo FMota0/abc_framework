@@ -1613,10 +1613,10 @@
     mkdirp "^1.0.4"
     rimraf "^3.0.2"
 
-"@plasmicapp/cli@^0.1.136":
-  version "0.1.136"
-  resolved "https://registry.yarnpkg.com/@plasmicapp/cli/-/cli-0.1.136.tgz#b7c574f807547923192d6e689607265538f62ab7"
-  integrity sha512-89+kybYF6SQCh+unZb5o7XtRD4h/LFBaecsr4o0Q09ZjKZVoEaGWm1IlYiCQkOcm4pC/sd0ToWrQu9wWuptCuA==
+"@plasmicapp/cli@^0.1.137":
+  version "0.1.137"
+  resolved "https://registry.yarnpkg.com/@plasmicapp/cli/-/cli-0.1.137.tgz#91e09faf4389424182af51a95e6483e458e2fa9d"
+  integrity sha512-lgyQwaRwKnNHHnPIokZ3mPQccE7epgg+XrOZYg87zEhSJx8Q16Rjv4GCp3r59EZCO/mh4yGAy4pRuyewOB6BGQ==
   dependencies:
     "@babel/core" "^7.12.3"
     "@babel/generator" "^7.12.1"

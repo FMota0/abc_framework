@@ -1,24 +1,38 @@
-.root {
+.modalWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 200px;
+  padding-left: 50px;
+  padding-right: 50px;
+  min-width: 0;
+  min-height: 0;
+  background: #64646480;
+}
+.modal {
   display: flex;
   width: 100%;
   height: auto;
   max-width: 500px;
   flex-direction: column;
-  position: relative;
   min-width: 0;
   border-radius: 8px;
   padding: 25px 30px;
   background: #393e46;
 }
-.root > :global(.__wab_flex-container) {
+.modal > :global(.__wab_flex-container) {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
   margin-top: calc(0px - 10px);
   height: calc(100% + 10px);
 }
-.root > :global(.__wab_flex-container) > *,
-.root > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
+.modal > :global(.__wab_flex-container) > *,
+.modal > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
   margin-top: 10px;
 }
 .closeModal {
