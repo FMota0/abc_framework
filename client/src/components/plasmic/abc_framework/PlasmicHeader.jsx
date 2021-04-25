@@ -18,6 +18,7 @@ import {
 } from "@plasmicapp/react-web";
 import ActionIcon from "../../ActionIcon"; // plasmic-import: 7MQ1w3J5JA/component
 import Spacer from "../../Spacer"; // plasmic-import: wbJ6PfISy8/component
+import Button from "../../Button"; // plasmic-import: ryMEoCge3-/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "./plasmic_abc_framework.module.css"; // plasmic-import: vpcYHrXbsH6LUnbKFzgKAs/projectcss
@@ -31,11 +32,13 @@ export const PlasmicHeader__ArgProps = new Array("left", "options");
 function PlasmicHeader__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
   return (
-    <div
+    <p.Stack
+      as={"div"}
       data-plasmic-name={"root"}
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
+      hasGap={true}
       className={classNames(defaultcss.all, projectcss.root_reset, sty.root, {
         [sty.root__withUserOptions]: hasVariant(
           variants,
@@ -85,6 +88,16 @@ function PlasmicHeader__RenderFunc(props) {
         data-plasmic-override={overrides.spacer}
         className={classNames("__wab_instance", sty.spacer)}
       />
+
+      <Button
+        data-plasmic-name={"tutorial"}
+        data-plasmic-override={overrides.tutorial}
+        className={classNames("__wab_instance", sty.tutorial)}
+        size={"large"}
+        type={["cinnabar"]}
+      >
+        {"Tutorial"}
+      </Button>
 
       <ActionIcon
         data-plasmic-name={"userPic"}
@@ -145,7 +158,7 @@ function PlasmicHeader__RenderFunc(props) {
           />
         </p.Stack>
       ) : null}
-    </div>
+    </p.Stack>
   );
 }
 
@@ -154,6 +167,7 @@ const PlasmicDescendants = {
     "root",
     "logoAreaContainer",
     "spacer",
+    "tutorial",
     "userPic",
     "placeholdPic",
     "options"
@@ -161,6 +175,7 @@ const PlasmicDescendants = {
 
   logoAreaContainer: ["logoAreaContainer"],
   spacer: ["spacer"],
+  tutorial: ["tutorial"],
   userPic: ["userPic", "placeholdPic"],
   placeholdPic: ["placeholdPic"],
   options: ["options"]
@@ -197,6 +212,7 @@ export const PlasmicHeader = Object.assign(
     // Helper components rendering sub-elements
     logoAreaContainer: makeNodeComponent("logoAreaContainer"),
     spacer: makeNodeComponent("spacer"),
+    tutorial: makeNodeComponent("tutorial"),
     userPic: makeNodeComponent("userPic"),
     placeholdPic: makeNodeComponent("placeholdPic"),
     options: makeNodeComponent("options"),
