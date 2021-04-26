@@ -1,6 +1,7 @@
 import { history } from "../../history";
 
 import ABCApiService from "../../services/abcApi"
+import { setPrograms } from "../programs/slice";
 import { setIsLogged, setUser } from "./slice";
 
 
@@ -22,6 +23,7 @@ export const logout = () => async (dispatch: any) => {
     localStorage.setItem("authToken", "");
     dispatch(setIsLogged(false));
     dispatch(setUser(null));
+    dispatch(setPrograms([]));
   } catch (e) {
 
   }
