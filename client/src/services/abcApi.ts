@@ -69,11 +69,17 @@ const ABCApiService = {
     });
   },
 
-  async deleteResearch(id: string): Promise<void> {
+  async deleteResearchProgram(id: string): Promise<void> {
     return await httpWithFallback(async () => {
       await http.delete(`/research/${id}`);
     });
   },
+
+  async deleteResearch(researchId: string, id: string): Promise<void> {
+    return await httpWithFallback(async () => {
+      await http.delete(`/research/${researchId}/${id}`);
+    });
+  }
 };
 
 export default ABCApiService;

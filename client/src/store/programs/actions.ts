@@ -35,7 +35,7 @@ export const addResearch = (id: string, newResearch: any) => async (dispatch: an
   try {
     await ABCApiService.addResearch(id, newResearch);
     await dispatch(fetchResearchProgram(id));
-    dispatch(setStrategy(null));
+    dispatch(setStrategy(newResearch.strategy));
   } catch (e) {
 
   }
@@ -43,17 +43,17 @@ export const addResearch = (id: string, newResearch: any) => async (dispatch: an
 
 export const deleteResearchProgram = (id: string) => async (dispatch: any) => {
   try {
-    await ABCApiService.deleteResearch(id);
+    await ABCApiService.deleteResearchProgram(id);
     history.push('/dashboard');
   } catch (e) {
 
   }
 }
 
-export const deleteResearch = (researchProgram: string, id: string) => async (dispatch: any) => {
+export const deleteResearch = (researchId: string, id: string) => async (dispatch: any) => {
   try {
-    console.log(`invoking ${researchProgram} ${id}`);
-    await dispatch(fetchResearchProgram(researchProgram));
+    await ABCApiService.deleteResearch(researchId, id);
+    await dispatch(fetchResearchProgram(researchId));
   } catch (e) {
 
   }
