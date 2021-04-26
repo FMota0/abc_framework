@@ -32,3 +32,14 @@
   font-size: 11px;
   color: #ffffff;
 }
+._delete {
+  position: absolute;
+  object-fit: cover;
+  left: auto;
+  top: 5px;
+  right: 5px;
+  color: #eeeeeee6 /* plasmic-token: frGkWCQWa */;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+}

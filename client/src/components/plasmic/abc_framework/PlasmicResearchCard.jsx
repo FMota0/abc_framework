@@ -19,6 +19,7 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "./plasmic_abc_framework.module.css"; // plasmic-import: vpcYHrXbsH6LUnbKFzgKAs/projectcss
 import * as sty from "./PlasmicResearchCard.module.css"; // plasmic-import: wpvaXd42G3/css
+import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: da00zvXJE5/icon
 
 export const PlasmicResearchCard__VariantProps = new Array();
 
@@ -31,7 +32,6 @@ export const PlasmicResearchCard__ArgProps = new Array(
 
 function PlasmicResearchCard__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
-  null;
   return (
     <p.Stack
       as={"div"}
@@ -65,12 +65,20 @@ function PlasmicResearchCard__RenderFunc(props) {
         value={args.method}
         className={classNames(sty.slotMethod)}
       />
+
+      <IconIcon
+        data-plasmic-name={"_delete"}
+        data-plasmic-override={overrides._delete}
+        className={classNames(defaultcss.all, sty._delete)}
+        role={"img"}
+      />
     </p.Stack>
   );
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "_delete"],
+  _delete: ["_delete"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -102,6 +110,7 @@ export const PlasmicResearchCard = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    _delete: makeNodeComponent("_delete"),
     // Metadata about props expected for PlasmicResearchCard
     internalVariantProps: PlasmicResearchCard__VariantProps,
     internalArgProps: PlasmicResearchCard__ArgProps

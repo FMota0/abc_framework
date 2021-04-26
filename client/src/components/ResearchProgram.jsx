@@ -5,9 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import StrategySelector from "./StrategySelector/StrategySelector";
 import { PlasmicResearchProgram } from "./plasmic/abc_framework/PlasmicResearchProgram";
-import { deleteResearchProgram, fetchResearchProgram } from "../store/programs/actions";
+import { addResearch, deleteResearchProgram, fetchResearchProgram } from "../store/programs/actions";
 import { setStrategy } from "../store/selectedStrategy/slice";
-import ABCApiService from "../services/abcApi";
 import { getResearchProgram } from "../store/programs/selectors";
 import Input from "./Input";
 import Select from "./Select/Select";
@@ -128,12 +127,10 @@ function ResearchProgram() {
           <Button
             key="research-program-add-btn"
             button={{
-              onClick: async () => {
-                await ABCApiService.addResearch(id, newResearch);
+              onClick: () => {
+                dispatch(addResearch(id, newResearch));
                 setWithAddResearch(false);
                 setNewResearch(emptyResearch);
-                dispatch(fetchResearchProgram(id));
-                dispatch(setStrategy(null));
               }
             }}
           >
@@ -158,7 +155,7 @@ function ResearchProgram() {
       }}
       message={`Você tem certeza que deseja excluir o programa de pesquisa "${program.title}"?`}
       yes={{
-        onClick: () => {
+        onClick: async () => {
           dispatch(deleteResearchProgram(id))
         },
       }}

@@ -7,7 +7,7 @@
   position: relative;
   min-width: 0;
   min-height: 0;
-  padding: 10px;
+  padding: 10px 0px;
 }
 .root > :global(.__wab_flex-container) {
   flex-direction: column;
@@ -20,26 +20,6 @@
 }
 .root__empty > :global(.__wab_flex-container) {
   justify-content: center;
-}
-.researchCard___2V5GQ:global(.__wab_instance) {
-  position: relative;
-  top: auto;
-  left: auto;
-}
-.researchCard__l9Ur8:global(.__wab_instance) {
-  position: relative;
-  top: auto;
-  left: auto;
-}
-.researchCard__hCQgL:global(.__wab_instance) {
-  position: relative;
-  top: auto;
-  left: auto;
-}
-.researchCard__kfgCi:global(.__wab_instance) {
-  position: relative;
-  top: auto;
-  left: auto;
 }
 .box__taDLu {
   display: block;

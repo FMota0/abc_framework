@@ -7,8 +7,7 @@ import { PlasmicDashboard } from "./plasmic/abc_framework/PlasmicDashboard";
 import { useSelector, useDispatch } from "react-redux";
 import { getResearchPrograms } from "../store/programs/selectors";
 import ResearchProgramCard from "./ResearchProgramCard";
-import { fetchResearchPrograms } from "../store/programs/actions";
-import ABCApiService from "../services/abcApi";
+import { addResearchProgram, fetchResearchPrograms } from "../store/programs/actions";
 import useHistory from "../useHistory";
 import Input from "./Input";
 import Button from "./Button";
@@ -90,11 +89,10 @@ function Dashboard() {
           <Button
             key="dashboard-add-btn"
             button={{
-              onClick: async () => {
-                await ABCApiService.addResearchProgram(newStudy);
+              onClick: () => {
+                dispatch(addResearchProgram(newStudy));
                 setWithAddStudy(false);
                 setNewStudy({ title: "", description: "" });
-                dispatch(fetchResearchPrograms())
               }
             }}
           >

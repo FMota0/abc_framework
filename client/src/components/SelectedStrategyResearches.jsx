@@ -2,14 +2,16 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { PlasmicSelectedStrategyResearches } from "./plasmic/abc_framework/PlasmicSelectedStrategyResearches";
 
 import { getSelectedStrategy } from "../store/selectedStrategy/selectors";
 import { getResearches } from "../store/programs/selectors";
 import ResearchCard from "./ResearchCard";
+import { deleteResearch } from "../store/programs/actions";
 
 function SelectedStrategyResearches() {
+  const dispatch = useDispatch();
   const { id } = useParams();
   const strategy = useSelector(getSelectedStrategy);
   const researches = useSelector(getResearches(id, strategy));
@@ -25,6 +27,11 @@ function SelectedStrategyResearches() {
             description={research.description}
             method={`Método: ${research.method}`}
             link={`Link: ${research.link}`}
+            _delete={{
+              onClick: () => {
+                dispatch(deleteResearch(id, research._id));
+              }
+            }}
           />
         ))
       }

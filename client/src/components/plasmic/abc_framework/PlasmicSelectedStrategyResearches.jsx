@@ -33,7 +33,6 @@ export const PlasmicSelectedStrategyResearches__ArgProps = new Array(
 
 function PlasmicSelectedStrategyResearches__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
-  null;
   return (
     <p.Stack
       as={"div"}
