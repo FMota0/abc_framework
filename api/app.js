@@ -95,7 +95,7 @@ authedApp.put('/research/:researchId/:id', async (req, res) => {
   }
   const research = researchProgram
     .researches
-    .filter(({ _id }) => _id.toString() === id);
+    .find(({ _id }) => _id.toString() === id);
   
   research.title = title;
   research.description = description;
