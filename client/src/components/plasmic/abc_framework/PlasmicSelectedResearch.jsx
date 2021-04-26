@@ -11,11 +11,14 @@
 import * as React from "react";
 import * as p from "@plasmicapp/react-web";
 import {
+  hasVariant,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts
 } from "@plasmicapp/react-web";
+import Input from "../../Input"; // plasmic-import: mqLBwPJ93g/component
 import ColumnSpacer from "../../ColumnSpacer"; // plasmic-import: 08Del2QF4A/component
+import Button from "../../Button"; // plasmic-import: ryMEoCge3-/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "./plasmic_abc_framework.module.css"; // plasmic-import: vpcYHrXbsH6LUnbKFzgKAs/projectcss
@@ -23,7 +26,7 @@ import * as sty from "./PlasmicSelectedResearch.module.css"; // plasmic-import: 
 import Icon2Icon from "./icons/PlasmicIcon__Icon2"; // plasmic-import: mEOQMd16YT/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: da00zvXJE5/icon
 
-export const PlasmicSelectedResearch__VariantProps = new Array();
+export const PlasmicSelectedResearch__VariantProps = new Array("withEdit");
 
 export const PlasmicSelectedResearch__ArgProps = new Array(
   "title",
@@ -38,19 +41,84 @@ function PlasmicSelectedResearch__RenderFunc(props) {
       data-plasmic-override={overrides.root}
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(defaultcss.all, projectcss.root_reset, sty.root, {
+        [sty.root__withEdit]: hasVariant(variants, "withEdit", "withEdit")
+      })}
     >
-      <p.PlasmicSlot
-        defaultContents={"Programa de pesquisa"}
-        value={args.title}
-        className={classNames(sty.slotTitle)}
-      />
-
-      <p.PlasmicSlot
-        defaultContents={"Exemplo de programa de estudo ...."}
-        value={args.description}
-        className={classNames(sty.slotDescription)}
-      />
+      {(hasVariant(variants, "withEdit", "withEdit") ? false : true) ? (
+        <p.PlasmicSlot
+          defaultContents={"Programa de pesquisa"}
+          value={args.title}
+          className={classNames(sty.slotTitle, {
+            [sty.slotTitle__withEdit]: hasVariant(
+              variants,
+              "withEdit",
+              "withEdit"
+            )
+          })}
+        />
+      ) : null}
+      {(hasVariant(variants, "withEdit", "withEdit") ? false : true) ? (
+        <p.PlasmicSlot
+          defaultContents={"Exemplo de programa de estudo ...."}
+          value={args.description}
+          className={classNames(sty.slotDescription, {
+            [sty.slotDescription__withEdit]: hasVariant(
+              variants,
+              "withEdit",
+              "withEdit"
+            )
+          })}
+        />
+      ) : null}
+      {(hasVariant(variants, "withEdit", "withEdit") ? true : false) ? (
+        <p.Stack
+          as={"div"}
+          hasGap={hasVariant(variants, "withEdit", "withEdit") ? true : false}
+          className={classNames(defaultcss.all, sty.box__ctEr, {
+            [sty.box__withEdit__ctEr2LCzI]: hasVariant(
+              variants,
+              "withEdit",
+              "withEdit"
+            )
+          })}
+        >
+          {(hasVariant(variants, "withEdit", "withEdit") ? true : false) ? (
+            <Input
+              data-plasmic-name={"titleInput"}
+              data-plasmic-override={overrides.titleInput}
+              label={
+                hasVariant(variants, "withEdit", "withEdit")
+                  ? "Título"
+                  : "Label"
+              }
+            />
+          ) : null}
+          {(hasVariant(variants, "withEdit", "withEdit") ? true : false) ? (
+            <Input
+              data-plasmic-name={"descriptionInput"}
+              data-plasmic-override={overrides.descriptionInput}
+              className={classNames("__wab_instance", sty.descriptionInput, {
+                [sty.descriptionInput__withEdit]: hasVariant(
+                  variants,
+                  "withEdit",
+                  "withEdit"
+                )
+              })}
+              label={
+                hasVariant(variants, "withEdit", "withEdit")
+                  ? "Descrição"
+                  : "Label"
+              }
+              multiline={
+                hasVariant(variants, "withEdit", "withEdit")
+                  ? "multiline"
+                  : undefined
+              }
+            />
+          ) : null}
+        </p.Stack>
+      ) : null}
 
       <ColumnSpacer
         data-plasmic-name={"columnSpacer"}
@@ -58,37 +126,106 @@ function PlasmicSelectedResearch__RenderFunc(props) {
         className={classNames("__wab_instance", sty.columnSpacer)}
       />
 
-      <p.Stack
-        as={"div"}
-        data-plasmic-name={"options"}
-        data-plasmic-override={overrides.options}
-        hasGap={true}
-        className={classNames(defaultcss.all, sty.options)}
-      >
-        <Icon2Icon
-          data-plasmic-name={"edit"}
-          data-plasmic-override={overrides.edit}
-          className={classNames(defaultcss.all, sty.edit)}
-          role={"img"}
-        />
+      {(hasVariant(variants, "withEdit", "withEdit") ? false : true) ? (
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"options"}
+          data-plasmic-override={overrides.options}
+          hasGap={true}
+          className={classNames(defaultcss.all, sty.options, {
+            [sty.options__withEdit]: hasVariant(
+              variants,
+              "withEdit",
+              "withEdit"
+            )
+          })}
+        >
+          <Icon2Icon
+            data-plasmic-name={"edit"}
+            data-plasmic-override={overrides.edit}
+            className={classNames(defaultcss.all, sty.edit)}
+            role={"img"}
+          />
 
-        <IconIcon
-          data-plasmic-name={"_delete"}
-          data-plasmic-override={overrides._delete}
-          className={classNames(defaultcss.all, sty._delete)}
-          role={"img"}
-        />
-      </p.Stack>
+          <IconIcon
+            data-plasmic-name={"_delete"}
+            data-plasmic-override={overrides._delete}
+            className={classNames(defaultcss.all, sty._delete)}
+            role={"img"}
+          />
+        </p.Stack>
+      ) : null}
+      {(hasVariant(variants, "withEdit", "withEdit") ? true : false) ? (
+        <p.Stack
+          as={"div"}
+          hasGap={hasVariant(variants, "withEdit", "withEdit") ? true : false}
+          className={classNames(defaultcss.all, sty.box__yq0Jp, {
+            [sty.box__withEdit__yq0Jp2LCzI]: hasVariant(
+              variants,
+              "withEdit",
+              "withEdit"
+            )
+          })}
+        >
+          {(hasVariant(variants, "withEdit", "withEdit") ? true : false) ? (
+            <Button
+              data-plasmic-name={"saveBtn"}
+              data-plasmic-override={overrides.saveBtn}
+            >
+              {hasVariant(variants, "withEdit", "withEdit")
+                ? "Salvar"
+                : "Click me"}
+            </Button>
+          ) : null}
+          {(hasVariant(variants, "withEdit", "withEdit") ? true : false) ? (
+            <Button
+              data-plasmic-name={"cancelBtn"}
+              data-plasmic-override={overrides.cancelBtn}
+              className={classNames("__wab_instance", sty.cancelBtn, {
+                [sty.cancelBtn__withEdit]: hasVariant(
+                  variants,
+                  "withEdit",
+                  "withEdit"
+                )
+              })}
+              type={
+                hasVariant(variants, "withEdit", "withEdit")
+                  ? ["cinnabar"]
+                  : undefined
+              }
+            >
+              {hasVariant(variants, "withEdit", "withEdit")
+                ? "Cancelar"
+                : "Click me"}
+            </Button>
+          ) : null}
+        </p.Stack>
+      ) : null}
     </div>
   );
 }
 
 const PlasmicDescendants = {
-  root: ["root", "columnSpacer", "options", "edit", "_delete"],
+  root: [
+    "root",
+    "titleInput",
+    "descriptionInput",
+    "columnSpacer",
+    "options",
+    "edit",
+    "_delete",
+    "saveBtn",
+    "cancelBtn"
+  ],
+
+  titleInput: ["titleInput"],
+  descriptionInput: ["descriptionInput"],
   columnSpacer: ["columnSpacer"],
   options: ["options", "edit", "_delete"],
   edit: ["edit"],
-  _delete: ["_delete"]
+  _delete: ["_delete"],
+  saveBtn: ["saveBtn"],
+  cancelBtn: ["cancelBtn"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -120,10 +257,14 @@ export const PlasmicSelectedResearch = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    titleInput: makeNodeComponent("titleInput"),
+    descriptionInput: makeNodeComponent("descriptionInput"),
     columnSpacer: makeNodeComponent("columnSpacer"),
     options: makeNodeComponent("options"),
     edit: makeNodeComponent("edit"),
     _delete: makeNodeComponent("_delete"),
+    saveBtn: makeNodeComponent("saveBtn"),
+    cancelBtn: makeNodeComponent("cancelBtn"),
     // Metadata about props expected for PlasmicSelectedResearch
     internalVariantProps: PlasmicSelectedResearch__VariantProps,
     internalArgProps: PlasmicSelectedResearch__ArgProps

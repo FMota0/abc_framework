@@ -64,7 +64,7 @@ const ABCApiService = {
 
   async addResearch(id: string, research: Research): Promise<Research> {
     return await httpWithFallback(async () => {
-      const response = await http.put(`/research/${id}`, research);
+      const response = await http.post(`/research/${id}`, research);
       return response.data;
     });
   },
@@ -79,7 +79,13 @@ const ABCApiService = {
     return await httpWithFallback(async () => {
       await http.delete(`/research/${researchId}/${id}`);
     });
-  }
+  },
+
+  async editResearchProgram(id: string, researchProgram: { title: string, description: string }): Promise<void> {
+    return await httpWithFallback(async () => {
+      await http.put(`/research/${id}`, researchProgram);
+    });
+  },
 };
 
 export default ABCApiService;

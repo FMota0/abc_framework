@@ -70,6 +70,22 @@ authedApp.put('/research/:id', async (req, res) => {
   const {
     title,
     description,
+  } = req.body;
+  const researchProgram = await ResearchProgram.findById(id);
+  if (researchProgram.ownerId !== req.user._id.toString()) {
+    return res.status(401).send("Não autorizado");
+  }
+  researchProgram.title = title;
+  researchProgram.description = description;
+  await researchProgram.save();
+  res.send(researchProgram);
+});
+
+authedApp.post('/research/:id', async (req, res) => {
+  const { id } = req.params;
+  const {
+    title,
+    description,
     strategy,
     link,
     method,

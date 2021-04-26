@@ -58,3 +58,12 @@ export const deleteResearch = (researchId: string, id: string) => async (dispatc
 
   }
 }
+
+export const editResearchProgram = (id: string, researchProgram: any) => async (dispatch: any) => {
+  try {
+    await ABCApiService.editResearchProgram(id, researchProgram);
+    await dispatch(fetchResearchProgram(id));
+  } catch (e) {
+
+  }
+}
