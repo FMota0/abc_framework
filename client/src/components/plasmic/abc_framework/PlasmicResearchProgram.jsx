@@ -22,6 +22,7 @@ import ActionIcon from "../../ActionIcon"; // plasmic-import: 7MQ1w3J5JA/compone
 import SelectedResearch from "../../SelectedResearch"; // plasmic-import: gK4A7lO4Rf/component
 import SelectedStrategy from "../../SelectedStrategy"; // plasmic-import: p3zItY3nmn/component
 import Modal from "../../Modal"; // plasmic-import: DJ5ohi16iS/component
+import Input from "../../Input"; // plasmic-import: mqLBwPJ93g/component
 import Button from "../../Button"; // plasmic-import: ryMEoCge3-/component
 import { useScreenVariants } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Ua1ivJLBAEJb/globalVariant
 import "@plasmicapp/react-web/lib/plasmic.css";
@@ -30,7 +31,7 @@ import * as projectcss from "./plasmic_abc_framework.module.css"; // plasmic-imp
 import * as sty from "./PlasmicResearchProgram.module.css"; // plasmic-import: GYWi95vLfh/css
 import ShortLeftsvgIcon from "./icons/PlasmicIcon__ShortLeftsvg"; // plasmic-import: -0ehSsBe3P/icon
 import LogosvgIcon from "./icons/PlasmicIcon__Logosvg"; // plasmic-import: 67BwsWVLcL/icon
-import PlusCircleOutlinesvgIcon from "./icons/PlasmicIcon__PlusCircleOutlinesvg"; // plasmic-import: 7Ds520VAXj/icon
+import AddsvgIcon from "./icons/PlasmicIcon__Addsvg"; // plasmic-import: 3E6AOpLOlA/icon
 
 export const PlasmicResearchProgram__VariantProps = new Array(
   "withAddResearch",
@@ -169,7 +170,7 @@ function PlasmicResearchProgram__RenderFunc(props) {
           className={classNames("__wab_instance", sty.openModalButton)}
         >
           <div className={classNames(defaultcss.all, sty.box__pLomL)}>
-            <PlusCircleOutlinesvgIcon
+            <AddsvgIcon
               className={classNames(defaultcss.all, sty.svg__seNzx)}
               role={"img"}
             />
@@ -191,277 +192,102 @@ function PlasmicResearchProgram__RenderFunc(props) {
                 "withAddResearch"
               )
             })}
-          >
-            {(
-              hasVariant(variants, "withAddResearch", "withAddResearch")
-                ? false
-                : true
-            ) ? (
-              <div
-                className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.box__qzTd4,
-                  {
-                    [sty.box__withAddResearch__qzTd4GcXLs]: hasVariant(
-                      variants,
-                      "withAddResearch",
-                      "withAddResearch"
-                    )
+            content={
+              <React.Fragment>
+                {(
+                  hasVariant(variants, "withAddResearch", "withAddResearch")
+                    ? true
+                    : false
+                ) ? (
+                  <div
+                    className={classNames(
+                      defaultcss.all,
+                      defaultcss.__wab_text,
+                      sty.box__ycfPd,
+                      {
+                        [sty.box__withAddResearch__ycfPdGcXLs]: hasVariant(
+                          variants,
+                          "withAddResearch",
+                          "withAddResearch"
+                        )
+                      }
+                    )}
+                  >
+                    {hasVariant(variants, "withAddResearch", "withAddResearch")
+                      ? "Adicione uma nova pesquisa"
+                      : "Enter some text"}
+                  </div>
+                ) : null}
+
+                <Input
+                  data-plasmic-name={"title"}
+                  data-plasmic-override={overrides.title}
+                  className={classNames("__wab_instance", sty.title)}
+                  label={
+                    <div
+                      className={classNames(
+                        defaultcss.all,
+                        defaultcss.__wab_text,
+                        sty.box__kIPb
+                      )}
+                    >
+                      {"Título"}
+                    </div>
                   }
-                )}
-              >
-                {"Adicione seu programa de pesquisa"}
-              </div>
-            ) : null}
-            {(
-              hasVariant(variants, "withAddResearch", "withAddResearch")
-                ? false
-                : true
-            ) ? (
-              <input
-                data-plasmic-name={"textbox"}
-                data-plasmic-override={overrides.textbox}
-                className={classNames(defaultcss.input, sty.textbox, {
-                  [sty.textbox__withAddResearch]: hasVariant(
-                    variants,
-                    "withAddResearch",
-                    "withAddResearch"
-                  )
-                })}
-                placeholder={"Título"}
-                size={1}
-                type={"text"}
-                value={""}
-              />
-            ) : null}
-            {(
-              hasVariant(variants, "withAddResearch", "withAddResearch")
-                ? false
-                : true
-            ) ? (
-              <textarea
-                data-plasmic-name={"textarea"}
-                data-plasmic-override={overrides.textarea}
-                className={classNames(defaultcss.textarea, sty.textarea, {
-                  [sty.textarea__withAddResearch]: hasVariant(
-                    variants,
-                    "withAddResearch",
-                    "withAddResearch"
-                  )
-                })}
-                placeholder={"Descrição"}
-                value={""}
-              />
-            ) : null}
-            {(
-              hasVariant(variants, "withAddResearch", "withAddResearch")
-                ? false
-                : true
-            ) ? (
-              <Button
-                data-plasmic-name={"button"}
-                data-plasmic-override={overrides.button}
-                className={classNames("__wab_instance", sty.button, {
-                  [sty.button__withAddResearch]: hasVariant(
-                    variants,
-                    "withAddResearch",
-                    "withAddResearch"
-                  )
-                })}
-              >
-                {"Adicionar"}
-              </Button>
-            ) : null}
-            {(
-              hasVariant(variants, "withAddResearch", "withAddResearch")
-                ? true
-                : false
-            ) ? (
-              <div
-                className={classNames(
-                  defaultcss.all,
-                  defaultcss.__wab_text,
-                  sty.box__ycfPd,
-                  {
-                    [sty.box__withAddResearch__ycfPdGcXLs]: hasVariant(
-                      variants,
-                      "withAddResearch",
-                      "withAddResearch"
-                    )
-                  }
-                )}
-              >
-                {hasVariant(variants, "withAddResearch", "withAddResearch")
-                  ? "Adicione uma nova pesquisa"
-                  : "Enter some text"}
-              </div>
-            ) : null}
-            {(
-              hasVariant(variants, "withAddResearch", "withAddResearch")
-                ? true
-                : false
-            ) ? (
-              <input
-                data-plasmic-name={"title"}
-                data-plasmic-override={overrides.title}
-                className={classNames(defaultcss.input, sty.title, {
-                  [sty.title__withAddResearch]: hasVariant(
-                    variants,
-                    "withAddResearch",
-                    "withAddResearch"
-                  )
-                })}
-                placeholder={
-                  hasVariant(variants, "withAddResearch", "withAddResearch")
-                    ? "Titúlo"
-                    : "Some placeholder"
-                }
-                size={1}
-                type={"text"}
-                value={
-                  hasVariant(variants, "withAddResearch", "withAddResearch")
-                    ? ""
-                    : "Some value"
-                }
-              />
-            ) : null}
-            {(
-              hasVariant(variants, "withAddResearch", "withAddResearch")
-                ? true
-                : false
-            ) ? (
-              <textarea
-                data-plasmic-name={"description"}
-                data-plasmic-override={overrides.description}
-                className={classNames(defaultcss.textarea, sty.description, {
-                  [sty.description__withAddResearch]: hasVariant(
-                    variants,
-                    "withAddResearch",
-                    "withAddResearch"
-                  )
-                })}
-                placeholder={
-                  hasVariant(variants, "withAddResearch", "withAddResearch")
-                    ? "Descrição"
-                    : undefined
-                }
-                value={
-                  hasVariant(variants, "withAddResearch", "withAddResearch")
-                    ? ""
-                    : "This is a text area."
-                }
-              />
-            ) : null}
-            {(
-              hasVariant(variants, "withAddResearch", "withAddResearch")
-                ? true
-                : false
-            ) ? (
-              <input
-                data-plasmic-name={"link"}
-                data-plasmic-override={overrides.link}
-                className={classNames(defaultcss.input, sty.link, {
-                  [sty.link__withAddResearch]: hasVariant(
-                    variants,
-                    "withAddResearch",
-                    "withAddResearch"
-                  )
-                })}
-                placeholder={
-                  hasVariant(variants, "withAddResearch", "withAddResearch")
-                    ? "Link"
-                    : "Some placeholder"
-                }
-                size={1}
-                type={"text"}
-                value={
-                  hasVariant(variants, "withAddResearch", "withAddResearch")
-                    ? ""
-                    : "Some value"
-                }
-              />
-            ) : null}
-            {(
-              hasVariant(variants, "withAddResearch", "withAddResearch")
-                ? true
-                : false
-            ) ? (
-              <input
-                data-plasmic-name={"strategy"}
-                data-plasmic-override={overrides.strategy}
-                className={classNames(defaultcss.input, sty.strategy, {
-                  [sty.strategy__withAddResearch]: hasVariant(
-                    variants,
-                    "withAddResearch",
-                    "withAddResearch"
-                  )
-                })}
-                placeholder={
-                  hasVariant(variants, "withAddResearch", "withAddResearch")
-                    ? "Estratégia"
-                    : "Some placeholder"
-                }
-                size={1}
-                type={"text"}
-                value={
-                  hasVariant(variants, "withAddResearch", "withAddResearch")
-                    ? ""
-                    : "Some value"
-                }
-              />
-            ) : null}
-            {(
-              hasVariant(variants, "withAddResearch", "withAddResearch")
-                ? true
-                : false
-            ) ? (
-              <input
-                data-plasmic-name={"method"}
-                data-plasmic-override={overrides.method}
-                className={classNames(defaultcss.input, sty.method, {
-                  [sty.method__withAddResearch]: hasVariant(
-                    variants,
-                    "withAddResearch",
-                    "withAddResearch"
-                  )
-                })}
-                placeholder={
-                  hasVariant(variants, "withAddResearch", "withAddResearch")
-                    ? "Método"
-                    : "Some placeholder"
-                }
-                size={1}
-                type={"text"}
-                value={
-                  hasVariant(variants, "withAddResearch", "withAddResearch")
-                    ? ""
-                    : "Some value"
-                }
-              />
-            ) : null}
-            {(
-              hasVariant(variants, "withAddResearch", "withAddResearch")
-                ? true
-                : false
-            ) ? (
-              <Button
-                data-plasmic-name={"addResearch"}
-                data-plasmic-override={overrides.addResearch}
-                className={classNames("__wab_instance", sty.addResearch, {
-                  [sty.addResearch__withAddResearch]: hasVariant(
-                    variants,
-                    "withAddResearch",
-                    "withAddResearch"
-                  )
-                })}
-              >
-                {hasVariant(variants, "withAddResearch", "withAddResearch")
-                  ? "Adicionar"
-                  : "Click me"}
-              </Button>
-            ) : null}
-          </Modal>
+                />
+
+                <Input
+                  data-plasmic-name={"description"}
+                  data-plasmic-override={overrides.description}
+                  className={classNames("__wab_instance", sty.description)}
+                  label={"Descrição"}
+                  multiline={"multiline"}
+                />
+
+                <Input
+                  data-plasmic-name={"link"}
+                  data-plasmic-override={overrides.link}
+                  className={classNames("__wab_instance", sty.link)}
+                  label={"Link"}
+                />
+
+                <Input
+                  data-plasmic-name={"strategy"}
+                  data-plasmic-override={overrides.strategy}
+                  className={classNames("__wab_instance", sty.strategy)}
+                  label={"Estratégia"}
+                />
+
+                <Input
+                  data-plasmic-name={"method"}
+                  data-plasmic-override={overrides.method}
+                  className={classNames("__wab_instance", sty.method)}
+                  label={"Método"}
+                />
+
+                <div className={classNames(defaultcss.all, sty.box__lSk92)}>
+                  {(
+                    hasVariant(variants, "withAddResearch", "withAddResearch")
+                      ? true
+                      : false
+                  ) ? (
+                    <Button
+                      data-plasmic-name={"addResearch"}
+                      data-plasmic-override={overrides.addResearch}
+                    >
+                      {hasVariant(
+                        variants,
+                        "withAddResearch",
+                        "withAddResearch"
+                      )
+                        ? "Adicionar"
+                        : "Click me"}
+                    </Button>
+                  ) : null}
+                </div>
+              </React.Fragment>
+            }
+          />
         ) : null}
         {(
           hasVariant(variants, "withDeleteProgram", "withDeleteProgram")
@@ -482,123 +308,138 @@ function PlasmicResearchProgram__RenderFunc(props) {
                 )
               }
             )}
-          >
-            <div
-              data-plasmic-name={"message"}
-              data-plasmic-override={overrides.message}
-              className={classNames(
-                defaultcss.all,
-                defaultcss.__wab_text,
-                sty.message,
-                {
-                  [sty.message__withDeleteProgram]: hasVariant(
-                    variants,
-                    "withDeleteProgram",
-                    "withDeleteProgram"
-                  )
-                }
-              )}
-            >
-              {hasVariant(variants, "withDeleteProgram", "withDeleteProgram")
-                ? "Você tem certeza que deseja deletar o programa de pesquisa X?"
-                : "Adicione seu programa de pesquisa"}
-            </div>
-
-            {(
-              hasVariant(variants, "withDeleteProgram", "withDeleteProgram")
-                ? true
-                : false
-            ) ? (
-              <p.Stack
-                as={"div"}
-                hasGap={
-                  hasVariant(variants, "withDeleteProgram", "withDeleteProgram")
-                    ? true
-                    : false
-                }
-                className={classNames(defaultcss.all, sty.box__n8Hr7, {
-                  [sty.box__withDeleteProgram__n8Hr7EeJt]: hasVariant(
-                    variants,
-                    "withDeleteProgram",
-                    "withDeleteProgram"
-                  )
-                })}
-              >
-                <Button
-                  data-plasmic-name={"yes"}
-                  data-plasmic-override={overrides.yes}
-                  className={classNames("__wab_instance", sty.yes, {
-                    [sty.yes__withDeleteProgram]: hasVariant(
-                      variants,
-                      "withDeleteProgram",
-                      "withDeleteProgram"
-                    )
-                  })}
-                  size={
-                    hasVariant(
-                      variants,
-                      "withDeleteProgram",
-                      "withDeleteProgram"
-                    )
-                      ? "large"
-                      : undefined
-                  }
-                  type={
-                    hasVariant(
-                      variants,
-                      "withDeleteProgram",
-                      "withDeleteProgram"
-                    )
-                      ? ["eee90"]
-                      : undefined
-                  }
+            content={
+              <React.Fragment>
+                <div
+                  data-plasmic-name={"message"}
+                  data-plasmic-override={overrides.message}
+                  className={classNames(
+                    defaultcss.all,
+                    defaultcss.__wab_text,
+                    sty.message,
+                    {
+                      [sty.message__withDeleteProgram]: hasVariant(
+                        variants,
+                        "withDeleteProgram",
+                        "withDeleteProgram"
+                      )
+                    }
+                  )}
                 >
                   {hasVariant(
                     variants,
                     "withDeleteProgram",
                     "withDeleteProgram"
                   )
-                    ? "Sim"
-                    : "Adicionar"}
-                </Button>
+                    ? "Você tem certeza que deseja deletar o programa de pesquisa X?"
+                    : "Adicione seu programa de pesquisa"}
+                </div>
 
                 {(
                   hasVariant(variants, "withDeleteProgram", "withDeleteProgram")
                     ? true
                     : false
                 ) ? (
-                  <Button
-                    data-plasmic-name={"no"}
-                    data-plasmic-override={overrides.no}
-                    className={classNames("__wab_instance", sty.no, {
-                      [sty.no__withDeleteProgram]: hasVariant(
-                        variants,
-                        "withDeleteProgram",
-                        "withDeleteProgram"
-                      )
-                    })}
-                    size={
+                  <p.Stack
+                    as={"div"}
+                    hasGap={
                       hasVariant(
                         variants,
                         "withDeleteProgram",
                         "withDeleteProgram"
                       )
-                        ? "large"
-                        : undefined
+                        ? true
+                        : false
                     }
+                    className={classNames(defaultcss.all, sty.box__n8Hr7, {
+                      [sty.box__withDeleteProgram__n8Hr7EeJt]: hasVariant(
+                        variants,
+                        "withDeleteProgram",
+                        "withDeleteProgram"
+                      )
+                    })}
                   >
-                    {hasVariant(
-                      variants,
-                      "withDeleteProgram",
-                      "withDeleteProgram"
-                    )
-                      ? "Não"
-                      : "Click me"}
-                  </Button>
+                    <Button
+                      data-plasmic-name={"yes"}
+                      data-plasmic-override={overrides.yes}
+                      className={classNames("__wab_instance", sty.yes, {
+                        [sty.yes__withDeleteProgram]: hasVariant(
+                          variants,
+                          "withDeleteProgram",
+                          "withDeleteProgram"
+                        )
+                      })}
+                      size={
+                        hasVariant(
+                          variants,
+                          "withDeleteProgram",
+                          "withDeleteProgram"
+                        )
+                          ? "large"
+                          : undefined
+                      }
+                      type={
+                        hasVariant(
+                          variants,
+                          "withDeleteProgram",
+                          "withDeleteProgram"
+                        )
+                          ? ["eee90"]
+                          : undefined
+                      }
+                    >
+                      {hasVariant(
+                        variants,
+                        "withDeleteProgram",
+                        "withDeleteProgram"
+                      )
+                        ? "Sim"
+                        : "Adicionar"}
+                    </Button>
+
+                    {(
+                      hasVariant(
+                        variants,
+                        "withDeleteProgram",
+                        "withDeleteProgram"
+                      )
+                        ? true
+                        : false
+                    ) ? (
+                      <Button
+                        data-plasmic-name={"no"}
+                        data-plasmic-override={overrides.no}
+                        className={classNames("__wab_instance", sty.no, {
+                          [sty.no__withDeleteProgram]: hasVariant(
+                            variants,
+                            "withDeleteProgram",
+                            "withDeleteProgram"
+                          )
+                        })}
+                        size={
+                          hasVariant(
+                            variants,
+                            "withDeleteProgram",
+                            "withDeleteProgram"
+                          )
+                            ? "large"
+                            : undefined
+                        }
+                      >
+                        {hasVariant(
+                          variants,
+                          "withDeleteProgram",
+                          "withDeleteProgram"
+                        )
+                          ? "Não"
+                          : "Click me"}
+                      </Button>
+                    ) : null}
+                  </p.Stack>
                 ) : null}
-              </p.Stack>
-            ) : null}
-          </Modal>
+              </React.Fragment>
+            }
+          />
         ) : null}
       </div>
     </React.Fragment>
@@ -616,9 +457,6 @@ const PlasmicDescendants = {
     "selectedStrategy",
     "openModalButton",
     "withAddResearchModal",
-    "textbox",
-    "textarea",
-    "button",
     "title",
     "description",
     "link",
@@ -640,9 +478,6 @@ const PlasmicDescendants = {
   openModalButton: ["openModalButton"],
   withAddResearchModal: [
     "withAddResearchModal",
-    "textbox",
-    "textarea",
-    "button",
     "title",
     "description",
     "link",
@@ -651,9 +486,6 @@ const PlasmicDescendants = {
     "addResearch"
   ],
 
-  textbox: ["textbox"],
-  textarea: ["textarea"],
-  button: ["button"],
   title: ["title"],
   description: ["description"],
   link: ["link"],
@@ -703,9 +535,6 @@ export const PlasmicResearchProgram = Object.assign(
     selectedStrategy: makeNodeComponent("selectedStrategy"),
     openModalButton: makeNodeComponent("openModalButton"),
     withAddResearchModal: makeNodeComponent("withAddResearchModal"),
-    textbox: makeNodeComponent("textbox"),
-    textarea: makeNodeComponent("textarea"),
-    button: makeNodeComponent("button"),
     title: makeNodeComponent("title"),
     description: makeNodeComponent("description"),
     link: makeNodeComponent("link"),

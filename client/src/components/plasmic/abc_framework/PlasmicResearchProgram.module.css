@@ -199,25 +199,6 @@
   left: 0;
   top: 0;
 }
-.box__qzTd4 {
-  position: relative;
-  color: #ffffff;
-  text-align: justify;
-  width: auto;
-  display: inline-block;
-}
-.textbox {
-  width: 100%;
-  min-width: 0;
-}
-.textarea {
-  position: relative;
-  width: 100%;
-  min-width: 0;
-}
-.button:global(.__wab_instance) {
-  position: relative;
-}
 .box__ycfPd {
   position: relative;
 }
@@ -225,48 +206,31 @@
   color: #ffffff;
   font-size: 16px;
 }
-.title {
-  position: relative;
-  width: 180px;
-}
-.title__withAddResearch {
-  width: 100%;
-  min-width: 0;
-}
-.description {
+.title:global(.__wab_instance) {
   position: relative;
 }
-.description__withAddResearch {
-  width: 100%;
-  min-width: 0;
+.box__kIPb {
+  height: auto;
 }
-.link {
+.description:global(.__wab_instance) {
   position: relative;
-  width: 180px;
 }
-.link__withAddResearch {
-  width: 100%;
-  height: 38px;
-  min-width: 0;
-}
-.strategy {
+.link:global(.__wab_instance) {
   position: relative;
-  width: 180px;
 }
-.strategy__withAddResearch {
-  width: 100%;
-  min-width: 0;
-}
-.method {
+.strategy:global(.__wab_instance) {
   position: relative;
-  width: 180px;
 }
-.method__withAddResearch {
-  width: 100%;
-  min-width: 0;
-}
-.addResearch:global(.__wab_instance) {
+.method:global(.__wab_instance) {
   position: relative;
+}
+.box__lSk92 {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding-top: 10px;
 }
 .withDeleteProgramModal:global(.__wab_instance) {
   position: relative;

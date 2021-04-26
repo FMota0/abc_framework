@@ -1,0 +1,49 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+.box {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: auto;
+  width: 100%;
+  min-width: 0;
+}
+.slotLabel {
+  font-size: 12px;
+  color: #ffffff;
+}
+.slotLabel__invalid {
+  color: #e94f37 /* plasmic-token: U1Nan7xho */;
+}
+.textbox {
+  position: relative;
+  width: 100%;
+  color: #393e46 /* plasmic-token: cpZtH5yfn */;
+  min-width: 0;
+  border-radius: 4px;
+}
+.textbox__invalid {
+  border: 1px solid #e94f37 /* plasmic-token: U1Nan7xho */;
+}
+.textarea {
+  position: relative;
+}
+.textarea__multiline {
+  width: 100%;
+  color: #222831 /* plasmic-token: 1Ug0537Sm */;
+  min-width: 0;
+  border-radius: 4px;
+}
+.textarea__invalid_multiline {
+  border: 1px solid #e94f37 /* plasmic-token: U1Nan7xho */;
+}

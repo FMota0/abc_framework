@@ -233,6 +233,32 @@
           "cssFilePath": "plasmic/abc_framework/PlasmicHeader.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "mqLBwPJ93g",
+          "name": "Input",
+          "type": "managed",
+          "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+          "renderModuleFilePath": "plasmic/abc_framework/PlasmicInput.jsx",
+          "importSpec": {
+            "modulePath": "Input.jsx"
+          },
+          "cssFilePath": "plasmic/abc_framework/PlasmicInput.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "MBa3bpDzoK",
+          "name": "LabeledBox",
+          "type": "managed",
+          "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+          "renderModuleFilePath": "plasmic/abc_framework/PlasmicLabeledBox.jsx",
+          "importSpec": {
+            "modulePath": "LabeledBox.jsx"
+          },
+          "cssFilePath": "plasmic/abc_framework/PlasmicLabeledBox.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -275,6 +301,11 @@
           "id": "3CweqiMj9R",
           "name": "ClosesvgIcon",
           "moduleFilePath": "plasmic/abc_framework/icons/PlasmicIcon__Closesvg.jsx"
+        },
+        {
+          "id": "3E6AOpLOlA",
+          "name": "AddsvgIcon",
+          "moduleFilePath": "plasmic/abc_framework/icons/PlasmicIcon__Addsvg.jsx"
         }
       ],
       "images": [],

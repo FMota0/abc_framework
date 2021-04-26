@@ -24,7 +24,7 @@ import ClosesvgIcon from "./icons/PlasmicIcon__Closesvg"; // plasmic-import: 3Cw
 
 export const PlasmicModal__VariantProps = new Array();
 
-export const PlasmicModal__ArgProps = new Array("children");
+export const PlasmicModal__ArgProps = new Array("content");
 
 function PlasmicModal__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
@@ -104,7 +104,7 @@ function PlasmicModal__RenderFunc(props) {
                 </Button>
               </React.Fragment>
             }
-            value={args.children}
+            value={args.content}
           />
         </p.Stack>
       </p.Stack>

@@ -10,6 +10,8 @@ import ResearchProgramCard from "./ResearchProgramCard";
 import { fetchResearchPrograms } from "../store/programs/actions";
 import ABCApiService from "../services/abcApi";
 import useHistory from "../useHistory";
+import Input from "./Input";
+import Button from "./Button";
 
 function Dashboard() {
 
@@ -55,34 +57,56 @@ function Dashboard() {
         modal: {
           onClick: (e) => e.stopPropagation(),
         },
+        content: [
+          <p
+            key="dashboard-add-h"
+            style={{ color: "white" }}
+          >
+            Adicione seu programa de pesquisa
+          </p>,
+          <Input
+            key="dashboard-add-title"
+            label={"Título"}
+            textbox={{
+              value: newStudy.title,
+              onChange: (e) => setNewStudy(r => ({
+                ...r,
+                title: e.target.value,
+              })),
+            }}
+          />,
+          <Input
+            key="dashboard-add-description"
+            label={"Descrição"}
+            multiline
+            textarea={{
+              value: newStudy.description,
+              onChange: (e) => setNewStudy(r => ({
+                ...r,
+                description: e.target.value,
+              })),
+            }}
+          />,
+          <Button
+            key="dashboard-add-btn"
+            button={{
+              onClick: async () => {
+                await ABCApiService.addResearchProgram(newStudy);
+                setWithAddStudy(false);
+                setNewStudy({ title: "", description: "" });
+                dispatch(fetchResearchPrograms())
+              }
+            }}
+          >
+            Adicionar
+          </Button>
+        ],
         closeModal: {
           onClick: () => {
             setWithAddStudy(false);
             setNewStudy({ title: "", description: "" });
           }
         },
-      }}
-      title={{
-        value: newStudy.title,
-        onChange: (e) => setNewStudy({
-          ...newStudy,
-          title: e.target.value,
-        }),
-      }}
-      description={{
-        value: newStudy.description,
-        onChange: (e) => setNewStudy({
-          ...newStudy,
-          description: e.target.value,
-        })
-      }}
-      modalAddButton={{
-        onClick: async () => {
-          await ABCApiService.addResearchProgram(newStudy);
-          setWithAddStudy(false);
-          setNewStudy({ title: "", description: "" });
-          dispatch(fetchResearchPrograms())
-        }
       }}
       addProgram={
         {
