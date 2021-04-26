@@ -81,6 +81,30 @@ authedApp.put('/research/:id', async (req, res) => {
   res.send(researchProgram);
 });
 
+authedApp.put('/research/:researchId/:id', async (req, res) => {
+  const { researchId, id } = req.params;
+  const {
+    title,
+    description,
+    link,
+  } = req.body;
+
+  const researchProgram = await ResearchProgram.findById(researchId);
+  if (researchProgram.ownerId !== req.user._id.toString()) {
+    return res.status(401).send("Não autorizado");
+  }
+  const research = researchProgram
+    .researches
+    .filter(({ _id }) => _id.toString() === id);
+  
+  research.title = title;
+  research.description = description;
+  research.link = link;
+
+  await researchProgram.save();
+  res.send(researchProgram);
+});
+
 authedApp.post('/research/:id', async (req, res) => {
   const { id } = req.params;
   const {

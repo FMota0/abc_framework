@@ -23,7 +23,7 @@ import * as sty from "./PlasmicInput.module.css"; // plasmic-import: mqLBwPJ93g/
 
 export const PlasmicInput__VariantProps = new Array("invalid", "multiline");
 
-export const PlasmicInput__ArgProps = new Array("label");
+export const PlasmicInput__ArgProps = new Array("label", "error");
 
 function PlasmicInput__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
@@ -36,10 +36,18 @@ function PlasmicInput__RenderFunc(props) {
       className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
     >
       <div
-        data-plasmic-name={"box"}
-        data-plasmic-override={overrides.box}
-        className={classNames(defaultcss.all, sty.box, {
-          [sty.box__multiline]: hasVariant(variants, "multiline", "multiline")
+        className={classNames(defaultcss.all, sty.box__oRuD, {
+          [sty.box__invalid__oRuDeItxl]: hasVariant(
+            variants,
+            "invalid",
+            "invalid"
+          ),
+
+          [sty.box__multiline__oRuDiibHm]: hasVariant(
+            variants,
+            "multiline",
+            "multiline"
+          )
         })}
       >
         <p.PlasmicSlot
@@ -109,14 +117,36 @@ function PlasmicInput__RenderFunc(props) {
             }
           />
         ) : null}
+        {(hasVariant(variants, "invalid", "invalid") ? true : false) ? (
+          <div
+            className={classNames(defaultcss.all, sty.box__g1ClC, {
+              [sty.box__invalid__g1ClCeItxl]: hasVariant(
+                variants,
+                "invalid",
+                "invalid"
+              )
+            })}
+          >
+            <p.PlasmicSlot
+              defaultContents={"error"}
+              value={args.error}
+              className={classNames(sty.slotError, {
+                [sty.slotError__invalid]: hasVariant(
+                  variants,
+                  "invalid",
+                  "invalid"
+                )
+              })}
+            />
+          </div>
+        ) : null}
       </div>
     </div>
   );
 }
 
 const PlasmicDescendants = {
-  root: ["root", "box", "textbox", "textarea"],
-  box: ["box", "textbox", "textarea"],
+  root: ["root", "textbox", "textarea"],
   textbox: ["textbox"],
   textarea: ["textarea"]
 };
@@ -150,7 +180,6 @@ export const PlasmicInput = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    box: makeNodeComponent("box"),
     textbox: makeNodeComponent("textbox"),
     textarea: makeNodeComponent("textarea"),
     // Metadata about props expected for PlasmicInput

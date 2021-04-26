@@ -86,6 +86,12 @@ const ABCApiService = {
       await http.put(`/research/${id}`, researchProgram);
     });
   },
+
+  async editResearch(researchProgramId: string, researchId: string, research: Research): Promise<void> {
+    return await httpWithFallback(async () => {
+      await http.put(`/research/${researchProgramId}/${researchId}`, research);
+    });
+  },
 };
 
 export default ABCApiService;

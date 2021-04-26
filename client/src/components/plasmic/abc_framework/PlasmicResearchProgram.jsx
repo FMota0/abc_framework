@@ -21,6 +21,7 @@ import Header from "../../Header"; // plasmic-import: b995Ls5eZP/component
 import ActionIcon from "../../ActionIcon"; // plasmic-import: 7MQ1w3J5JA/component
 import SelectedResearch from "../../SelectedResearch"; // plasmic-import: gK4A7lO4Rf/component
 import SelectedStrategy from "../../SelectedStrategy"; // plasmic-import: p3zItY3nmn/component
+import ResearchCard from "../../ResearchCard"; // plasmic-import: wpvaXd42G3/component
 import Modal from "../../Modal"; // plasmic-import: DJ5ohi16iS/component
 import Input from "../../Input"; // plasmic-import: mqLBwPJ93g/component
 import Button from "../../Button"; // plasmic-import: ryMEoCge3-/component
@@ -160,6 +161,37 @@ function PlasmicResearchProgram__RenderFunc(props) {
               data-plasmic-name={"selectedStrategy"}
               data-plasmic-override={overrides.selectedStrategy}
               className={classNames("__wab_instance", sty.selectedStrategy)}
+              researches={
+                <React.Fragment>
+                  <ResearchCard
+                    className={classNames(
+                      "__wab_instance",
+                      sty.researchCard__tqHDx
+                    )}
+                  />
+
+                  <ResearchCard
+                    className={classNames(
+                      "__wab_instance",
+                      sty.researchCard__ypUs5
+                    )}
+                  />
+
+                  <ResearchCard
+                    className={classNames(
+                      "__wab_instance",
+                      sty.researchCard__pbTqm
+                    )}
+                  />
+
+                  <ResearchCard
+                    className={classNames(
+                      "__wab_instance",
+                      sty.researchCard__zl262
+                    )}
+                  />
+                </React.Fragment>
+              }
             />
           </p.Stack>
         </p.Stack>

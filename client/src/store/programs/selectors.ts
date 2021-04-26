@@ -1,4 +1,4 @@
-import { forEach, values, filter } from "ramda";
+import { forEach, values, filter, find, propEq } from "ramda";
 import { ResearchProgram, StrategyTypes, Research } from "../../types";
 
 import { RootState } from "../types";
@@ -28,4 +28,11 @@ export const getNumberOfResearchesByStrategy = (id: string) => (state: RootState
     res[program.strategy] += 1;
   }, researchProgram.researches);
   return res;
-}
+};
+
+export const getResearch = (researchProgramId: string, id: string) => (state: RootState): Research | undefined => {
+  return find(
+    propEq('_id', id),
+    state.programsState.programs[researchProgramId].researches
+  );
+};

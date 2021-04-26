@@ -8,7 +8,7 @@
   align-items: center;
   min-width: 0;
 }
-.box {
+.box__oRuD {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -46,4 +46,16 @@
 }
 .textarea__invalid_multiline {
   border: 1px solid #e94f37 /* plasmic-token: U1Nan7xho */;
+}
+.box__g1ClC {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.box__invalid__g1ClCeItxl {
+  align-self: flex-end;
+}
+.slotError__invalid {
+  font-size: 10px;
+  color: #e94f37 /* plasmic-token: U1Nan7xho */;
 }

@@ -148,9 +148,35 @@
 }
 .selectedResearch:global(.__wab_instance) {
   position: relative;
+  flex-shrink: 0;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .selectedResearch:global(.__wab_instance) {
+    flex-shrink: 0;
+  }
 }
 .selectedStrategy:global(.__wab_instance) {
   position: relative;
+}
+.researchCard__tqHDx:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.researchCard__ypUs5:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.researchCard__pbTqm:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.researchCard__zl262:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
 }
 .openModalButton:global(.__wab_instance) {
   position: absolute;

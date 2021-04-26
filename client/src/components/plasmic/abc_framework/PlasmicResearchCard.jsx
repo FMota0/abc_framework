@@ -11,17 +11,21 @@
 import * as React from "react";
 import * as p from "@plasmicapp/react-web";
 import {
+  hasVariant,
   classNames,
   createPlasmicElementProxy,
   deriveRenderOpts
 } from "@plasmicapp/react-web";
+import Input from "../../Input"; // plasmic-import: mqLBwPJ93g/component
+import Button from "../../Button"; // plasmic-import: ryMEoCge3-/component
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "./plasmic_abc_framework.module.css"; // plasmic-import: vpcYHrXbsH6LUnbKFzgKAs/projectcss
 import * as sty from "./PlasmicResearchCard.module.css"; // plasmic-import: wpvaXd42G3/css
+import Icon2Icon from "./icons/PlasmicIcon__Icon2"; // plasmic-import: mEOQMd16YT/icon
 import IconIcon from "./icons/PlasmicIcon__Icon"; // plasmic-import: da00zvXJE5/icon
 
-export const PlasmicResearchCard__VariantProps = new Array();
+export const PlasmicResearchCard__VariantProps = new Array("withEdit");
 
 export const PlasmicResearchCard__ArgProps = new Array(
   "title",
@@ -40,45 +44,208 @@ function PlasmicResearchCard__RenderFunc(props) {
       data-plasmic-root={true}
       data-plasmic-for-node={forNode}
       hasGap={true}
-      className={classNames(defaultcss.all, projectcss.root_reset, sty.root)}
+      className={classNames(defaultcss.all, projectcss.root_reset, sty.root, {
+        [sty.root__withEdit]: hasVariant(variants, "withEdit", "withEdit")
+      })}
     >
-      <p.PlasmicSlot
-        defaultContents={"Pesquisa #1"}
-        value={args.title}
-        className={classNames(sty.slotTitle)}
-      />
-
-      <p.PlasmicSlot
-        defaultContents={"Pesquisa sobre bla bla bla bla bla"}
-        value={args.description}
-        className={classNames(sty.slotDescription)}
-      />
-
-      <p.PlasmicSlot
-        defaultContents={"Link: link.com"}
-        value={args.link}
-        className={classNames(sty.slotLink)}
-      />
-
-      <p.PlasmicSlot
-        defaultContents={"Método: b"}
-        value={args.method}
-        className={classNames(sty.slotMethod)}
-      />
-
-      <IconIcon
-        data-plasmic-name={"_delete"}
-        data-plasmic-override={overrides._delete}
-        className={classNames(defaultcss.all, sty._delete)}
-        role={"img"}
-      />
+      {(hasVariant(variants, "withEdit", "withEdit") ? false : true) ? (
+        <p.PlasmicSlot
+          defaultContents={"Pesquisa #1"}
+          value={args.title}
+          className={classNames(sty.slotTitle, {
+            [sty.slotTitle__withEdit]: hasVariant(
+              variants,
+              "withEdit",
+              "withEdit"
+            )
+          })}
+        />
+      ) : null}
+      {(hasVariant(variants, "withEdit", "withEdit") ? false : true) ? (
+        <p.PlasmicSlot
+          defaultContents={"Pesquisa sobre bla bla bla bla bla"}
+          value={args.description}
+          className={classNames(sty.slotDescription, {
+            [sty.slotDescription__withEdit]: hasVariant(
+              variants,
+              "withEdit",
+              "withEdit"
+            )
+          })}
+        />
+      ) : null}
+      {(hasVariant(variants, "withEdit", "withEdit") ? false : true) ? (
+        <p.PlasmicSlot
+          defaultContents={"Link: link.com"}
+          value={args.link}
+          className={classNames(sty.slotLink, {
+            [sty.slotLink__withEdit]: hasVariant(
+              variants,
+              "withEdit",
+              "withEdit"
+            )
+          })}
+        />
+      ) : null}
+      {(hasVariant(variants, "withEdit", "withEdit") ? false : true) ? (
+        <p.PlasmicSlot
+          defaultContents={"Método: b"}
+          value={args.method}
+          className={classNames(sty.slotMethod, {
+            [sty.slotMethod__withEdit]: hasVariant(
+              variants,
+              "withEdit",
+              "withEdit"
+            )
+          })}
+        />
+      ) : null}
+      {(hasVariant(variants, "withEdit", "withEdit") ? false : true) ? (
+        <Icon2Icon
+          data-plasmic-name={"edit"}
+          data-plasmic-override={overrides.edit}
+          className={classNames(defaultcss.all, sty.edit, {
+            [sty.edit__withEdit]: hasVariant(variants, "withEdit", "withEdit")
+          })}
+          role={"img"}
+        />
+      ) : null}
+      {(hasVariant(variants, "withEdit", "withEdit") ? false : true) ? (
+        <IconIcon
+          data-plasmic-name={"_delete"}
+          data-plasmic-override={overrides._delete}
+          className={classNames(defaultcss.all, sty._delete, {
+            [sty._delete__withEdit]: hasVariant(
+              variants,
+              "withEdit",
+              "withEdit"
+            )
+          })}
+          role={"img"}
+        />
+      ) : null}
+      {(hasVariant(variants, "withEdit", "withEdit") ? true : false) ? (
+        <Input
+          data-plasmic-name={"titleInput"}
+          data-plasmic-override={overrides.titleInput}
+          className={classNames("__wab_instance", sty.titleInput, {
+            [sty.titleInput__withEdit]: hasVariant(
+              variants,
+              "withEdit",
+              "withEdit"
+            )
+          })}
+          label={
+            hasVariant(variants, "withEdit", "withEdit") ? "Título" : "Label"
+          }
+        />
+      ) : null}
+      {(hasVariant(variants, "withEdit", "withEdit") ? true : false) ? (
+        <Input
+          data-plasmic-name={"descriptionInput"}
+          data-plasmic-override={overrides.descriptionInput}
+          className={classNames("__wab_instance", sty.descriptionInput, {
+            [sty.descriptionInput__withEdit]: hasVariant(
+              variants,
+              "withEdit",
+              "withEdit"
+            )
+          })}
+          label={
+            hasVariant(variants, "withEdit", "withEdit") ? "Descrição" : "Label"
+          }
+          multiline={
+            hasVariant(variants, "withEdit", "withEdit")
+              ? "multiline"
+              : undefined
+          }
+        />
+      ) : null}
+      {(hasVariant(variants, "withEdit", "withEdit") ? true : false) ? (
+        <Input
+          data-plasmic-name={"linkInput"}
+          data-plasmic-override={overrides.linkInput}
+          className={classNames("__wab_instance", sty.linkInput, {
+            [sty.linkInput__withEdit]: hasVariant(
+              variants,
+              "withEdit",
+              "withEdit"
+            )
+          })}
+          label={
+            hasVariant(variants, "withEdit", "withEdit") ? "Link" : "Label"
+          }
+        />
+      ) : null}
+      {(hasVariant(variants, "withEdit", "withEdit") ? true : false) ? (
+        <p.Stack
+          as={"div"}
+          data-plasmic-name={"box"}
+          data-plasmic-override={overrides.box}
+          hasGap={hasVariant(variants, "withEdit", "withEdit") ? true : false}
+          className={classNames(defaultcss.all, sty.box, {
+            [sty.box__withEdit]: hasVariant(variants, "withEdit", "withEdit")
+          })}
+        >
+          {(hasVariant(variants, "withEdit", "withEdit") ? true : false) ? (
+            <Button
+              data-plasmic-name={"saveBtn"}
+              data-plasmic-override={overrides.saveBtn}
+            >
+              {hasVariant(variants, "withEdit", "withEdit")
+                ? "Salvar"
+                : "Click me"}
+            </Button>
+          ) : null}
+          {(hasVariant(variants, "withEdit", "withEdit") ? true : false) ? (
+            <Button
+              data-plasmic-name={"cancelBtn"}
+              data-plasmic-override={overrides.cancelBtn}
+              className={classNames("__wab_instance", sty.cancelBtn, {
+                [sty.cancelBtn__withEdit]: hasVariant(
+                  variants,
+                  "withEdit",
+                  "withEdit"
+                )
+              })}
+              type={
+                hasVariant(variants, "withEdit", "withEdit")
+                  ? ["cinnabar"]
+                  : undefined
+              }
+            >
+              {hasVariant(variants, "withEdit", "withEdit")
+                ? "Cancelar"
+                : "Click me"}
+            </Button>
+          ) : null}
+        </p.Stack>
+      ) : null}
     </p.Stack>
   );
 }
 
 const PlasmicDescendants = {
-  root: ["root", "_delete"],
-  _delete: ["_delete"]
+  root: [
+    "root",
+    "edit",
+    "_delete",
+    "titleInput",
+    "descriptionInput",
+    "linkInput",
+    "box",
+    "saveBtn",
+    "cancelBtn"
+  ],
+
+  edit: ["edit"],
+  _delete: ["_delete"],
+  titleInput: ["titleInput"],
+  descriptionInput: ["descriptionInput"],
+  linkInput: ["linkInput"],
+  box: ["box", "saveBtn", "cancelBtn"],
+  saveBtn: ["saveBtn"],
+  cancelBtn: ["cancelBtn"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -110,7 +277,14 @@ export const PlasmicResearchCard = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    edit: makeNodeComponent("edit"),
     _delete: makeNodeComponent("_delete"),
+    titleInput: makeNodeComponent("titleInput"),
+    descriptionInput: makeNodeComponent("descriptionInput"),
+    linkInput: makeNodeComponent("linkInput"),
+    box: makeNodeComponent("box"),
+    saveBtn: makeNodeComponent("saveBtn"),
+    cancelBtn: makeNodeComponent("cancelBtn"),
     // Metadata about props expected for PlasmicResearchCard
     internalVariantProps: PlasmicResearchCard__VariantProps,
     internalArgProps: PlasmicResearchCard__ArgProps

@@ -1,5 +1,6 @@
 import { history } from '../../history';
 import ABCApiService from '../../services/abcApi';
+import { Research } from '../../types';
 import { setStrategy } from '../selectedStrategy/slice';
 
 import { setPrograms, setProgram } from './slice';
@@ -63,6 +64,15 @@ export const editResearchProgram = (id: string, researchProgram: any) => async (
   try {
     await ABCApiService.editResearchProgram(id, researchProgram);
     await dispatch(fetchResearchProgram(id));
+  } catch (e) {
+
+  }
+}
+
+export const editResearch = (researchProgramId: string, researchId: string, research: Research) => async (dispatch: any) => {
+  try {
+    await ABCApiService.editResearch(researchProgramId, researchId, research);
+    await dispatch(fetchResearchProgram(researchProgramId));
   } catch (e) {
 
   }
