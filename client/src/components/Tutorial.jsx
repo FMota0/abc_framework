@@ -2,6 +2,7 @@
 // This file is owned by you, feel free to edit as you see fit.
 import * as React from "react";
 import { PlasmicTutorial } from "./plasmic/abc_framework/PlasmicTutorial";
+import Question from "./Question";
 
 function Tutorial(props) {
   // Use PlasmicTutorial to render this component as it was
@@ -18,7 +19,28 @@ function Tutorial(props) {
   //
   // By default, we are just piping all TutorialProps here, but feel free
   // to do whatever works for you.
-  return <PlasmicTutorial {...props} />;
+  return (
+    <PlasmicTutorial
+      questions={[
+        <Question
+          key="tutorial-question-what"
+          title="O que é o framework ABC?"
+          answer="O framework ABC é um modelo que permite classificar e organizar pesquisas presentes em um programa de pesquisa, tornando possível visualizar como a escolha de diferentes estratégias de pesquisa se relaciona com o nível de intrusão, a possibilidade de generalização e o contexto do ambiente em torno do tópico do programa de pesquisa."
+        />,
+        <Question
+          key="tutorial-question-why"
+          title="Porque utilizar o framework ABC?"
+          answer="O framework ABC permite visualizar como o resultado obtido por uma pesquisa se comporta em torno do tópico, permitindo entender questões como se o resultado obtido pode ser generalizado, além disso o framework ABC pode ser utilizado para refinar um programa de pesquisa e gerar resultados que englobem maiores contextos."
+        />,
+        <Question
+          key="tutorial-question-how"
+          title="Como utilizar o framework ABC?"
+          answer="A partir da tela inicial você pode criar um programa de pesquisa, depois de criado o programa, aparecerá um card na tela inicial que representa o programa de pesquisa que você criou, ao clickar nele, você é redirecionado para a tela que representa este programa de pesquisa, nela você pode editar e deletar seu programa de pesquisa, além disso você pode cadastrar as pesquisas referentes a esse programa de pesquisa e visualizar as pesquisas que já foram cadastradas filtradas por estratégia."
+        />,
+      ]}
+      {...props}
+    />
+  );
 }
 
 export default Tutorial;

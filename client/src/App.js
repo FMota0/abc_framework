@@ -41,7 +41,7 @@ function App() {
       <Route path="/dashboard" exact render={(props) => (
         isLogged ? <Dashboard {...props} /> : <Redirect to="/" />
       )} />  
-      <Route path="/research/:id" exact ender={(props) => (
+      <Route path="/research/:id" exact render={(props) => (
         isLogged ? <ResearchProgram {...props} /> : <Redirect to="/" />
       )} />  
       <Route path="*" 
