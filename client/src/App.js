@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 
 import HomePage from "./components/Homepage";
@@ -35,13 +35,15 @@ function App() {
   return (
     <Switch>
       <Route path="/" exact component={HomePage} />
-      <Route path="/tutorial" exact component={Tutorial} />
-      { isLogged && (
-        <>
-          <Route path="/dashboard" exact component={Dashboard} />  
-          <Route path="/research/:id" exact component={ResearchProgram} />
-        </>
-      )}
+      <Route path="/tutorial" exact render={(props) => (
+        isLogged ? <Tutorial {...props} /> : <Redirect to="/" />
+      )} />
+      <Route path="/dashboard" exact render={(props) => (
+        isLogged ? <Dashboard {...props} /> : <Redirect to="/" />
+      )} />  
+      <Route path="/research/:id" exact ender={(props) => (
+        isLogged ? <ResearchProgram {...props} /> : <Redirect to="/" />
+      )} />  
       <Route path="*" 
         render={
           () => {
