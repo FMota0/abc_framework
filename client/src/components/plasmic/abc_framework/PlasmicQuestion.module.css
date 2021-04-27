@@ -1,0 +1,85 @@
+.root {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+}
+.root__isClosed {
+  background: none;
+}
+.box__mAjqu {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  top: auto;
+  left: auto;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.header {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 0;
+  padding: 10px;
+  background: #fff8f0;
+}
+.slotTitle {
+  font-size: 24px;
+  color: #222831 /* plasmic-token: 1Ug0537Sm */;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .slotTitle {
+    font-size: 16px;
+  }
+}
+.icon {
+  position: relative;
+  object-fit: cover;
+  width: 24px;
+  height: 24px;
+  color: #222831 /* plasmic-token: 1Ug0537Sm */;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .icon {
+    height: 16px;
+    width: 16px;
+    flex-shrink: 0;
+  }
+}
+.body {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  padding: 10px;
+  background: #37383b;
+}
+.box__jzDuG {
+  position: relative;
+  left: auto;
+  top: auto;
+  height: auto;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+.slotAnswer {
+  color: #ffffff;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .slotAnswer {
+    font-size: 12px;
+  }
+}

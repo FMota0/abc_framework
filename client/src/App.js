@@ -10,6 +10,7 @@ import { getHealth } from './store/health/actions';
 import { getHealthState, hasRecentHealth } from './store/health/selectors';
 import { history } from './history';
 import { getIsLogged } from './store/auth/selectors';
+import Tutorial from './components/Tutorial';
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function App() {
   return (
     <Switch>
       <Route path="/" exact component={HomePage} />
+      <Route path="/tutorial" exact component={Tutorial} />
       { isLogged && (
         <>
           <Route path="/dashboard" exact component={Dashboard} />  

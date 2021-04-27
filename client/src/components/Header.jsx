@@ -33,6 +33,13 @@ function Header(props) {
           },
         }
       }}
+      tutorial={{
+        button: {
+          onClick: () => {
+            history.push(`/tutorial`);
+          },
+        },
+      }}
       userPic={{
         props: {
           onClick: () => {

@@ -11,6 +11,16 @@
       }
     },
     {
+      "name": "Floral White",
+      "type": "color",
+      "value": "#FFF8F0",
+      "category": "color",
+      "meta": {
+        "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+        "id": "1HmupLUl8"
+      }
+    },
+    {
       "name": "Green Blue Crayola",
       "type": "color",
       "value": "#3F88C5",
@@ -68,6 +78,16 @@
       "meta": {
         "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
         "id": "cpZtH5yfn"
+      }
+    },
+    {
+      "name": "secondmain",
+      "type": "color",
+      "value": "#37383B",
+      "category": "color",
+      "meta": {
+        "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+        "id": "ERqZsSdjq"
       }
     }
   ],

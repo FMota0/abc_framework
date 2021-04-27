@@ -259,6 +259,32 @@
           "cssFilePath": "plasmic/abc_framework/PlasmicLabeledBox.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "7oi2b0yO2J",
+          "name": "Tutorial",
+          "type": "managed",
+          "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+          "renderModuleFilePath": "plasmic/abc_framework/PlasmicTutorial.jsx",
+          "importSpec": {
+            "modulePath": "Tutorial.jsx"
+          },
+          "cssFilePath": "plasmic/abc_framework/PlasmicTutorial.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
+        },
+        {
+          "id": "he8jNy--bW",
+          "name": "Question",
+          "type": "managed",
+          "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+          "renderModuleFilePath": "plasmic/abc_framework/PlasmicQuestion.jsx",
+          "importSpec": {
+            "modulePath": "Question.jsx"
+          },
+          "cssFilePath": "plasmic/abc_framework/PlasmicQuestion.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
         }
       ],
       "icons": [
@@ -306,6 +332,16 @@
           "id": "3E6AOpLOlA",
           "name": "AddsvgIcon",
           "moduleFilePath": "plasmic/abc_framework/icons/PlasmicIcon__Addsvg.jsx"
+        },
+        {
+          "id": "cvQbAFZHeA",
+          "name": "LeftArrowsvgIcon",
+          "moduleFilePath": "plasmic/abc_framework/icons/PlasmicIcon__LeftArrowsvg.jsx"
+        },
+        {
+          "id": "Mb-85SPB-o",
+          "name": "ArrowDownSignToNavigatesvgIcon",
+          "moduleFilePath": "plasmic/abc_framework/icons/PlasmicIcon__ArrowDownSignToNavigatesvg.jsx"
         }
       ],
       "images": [],
