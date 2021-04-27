@@ -30,6 +30,11 @@
   font-size: 24px;
   color: #ffffff;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .slotTitle {
+    font-size: 16px;
+  }
+}
 .box__ve44F {
   display: flex;
   position: relative;
@@ -43,10 +48,20 @@
   text-align: justify;
   font-size: 16px;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .slotDescription {
+    font-size: 12px;
+  }
+}
 .columnSpacer:global(.__wab_instance) {
   position: relative;
 }
 .slotRegistered {
   color: #ffffffe6;
   text-align: right;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .slotRegistered {
+    font-size: 12px;
+  }
 }

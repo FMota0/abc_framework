@@ -18,6 +18,11 @@
 .root > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
   margin-left: 10px;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .root {
+    height: 80px;
+  }
+}
 .logoAreaContainer {
   display: inline-flex;
   position: relative;
@@ -44,6 +49,11 @@
 .userPic:global(.__wab_instance) {
   position: relative;
   flex-shrink: 0;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .userPic:global(.__wab_instance) {
+    flex-shrink: 0;
+  }
 }
 .placeholdPic {
   display: block;

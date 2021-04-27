@@ -14,11 +14,13 @@ import {
   hasVariant,
   classNames,
   createPlasmicElementProxy,
-  deriveRenderOpts
+  deriveRenderOpts,
+  ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import ActionIcon from "../../ActionIcon"; // plasmic-import: 7MQ1w3J5JA/component
 import Spacer from "../../Spacer"; // plasmic-import: wbJ6PfISy8/component
 import Button from "../../Button"; // plasmic-import: ryMEoCge3-/component
+import { useScreenVariants } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: Ua1ivJLBAEJb/globalVariant
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "./plasmic_abc_framework.module.css"; // plasmic-import: vpcYHrXbsH6LUnbKFzgKAs/projectcss
@@ -31,6 +33,10 @@ export const PlasmicHeader__ArgProps = new Array("left", "options");
 
 function PlasmicHeader__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariants()
+  });
+
   return (
     <p.Stack
       as={"div"}
@@ -93,7 +99,9 @@ function PlasmicHeader__RenderFunc(props) {
         data-plasmic-name={"tutorial"}
         data-plasmic-override={overrides.tutorial}
         className={classNames("__wab_instance", sty.tutorial)}
-        size={"large"}
+        size={
+          hasVariant(globalVariants, "screen", "mobileOnly") ? "small" : "large"
+        }
         type={["cinnabar"]}
       >
         {"Tutorial"}
@@ -104,6 +112,11 @@ function PlasmicHeader__RenderFunc(props) {
         data-plasmic-override={overrides.userPic}
         className={classNames("__wab_instance", sty.userPic)}
         large={"large"}
+        medium={
+          hasVariant(globalVariants, "screen", "mobileOnly")
+            ? "medium"
+            : undefined
+        }
       >
         <div
           data-plasmic-name={"placeholdPic"}

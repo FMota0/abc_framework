@@ -21,13 +21,16 @@ import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-i
 import * as projectcss from "./plasmic_abc_framework.module.css"; // plasmic-import: vpcYHrXbsH6LUnbKFzgKAs/projectcss
 import * as sty from "./PlasmicActionIcon.module.css"; // plasmic-import: 7MQ1w3J5JA/css
 
-export const PlasmicActionIcon__VariantProps = new Array("large", "extraLarge");
+export const PlasmicActionIcon__VariantProps = new Array(
+  "large",
+  "extraLarge",
+  "medium"
+);
 
 export const PlasmicActionIcon__ArgProps = new Array("children");
 
 function PlasmicActionIcon__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
-  null;
   return (
     <div
       data-plasmic-name={"root"}
@@ -41,7 +44,8 @@ function PlasmicActionIcon__RenderFunc(props) {
           "extraLarge"
         ),
 
-        [sty.root__large]: hasVariant(variants, "large", "large")
+        [sty.root__large]: hasVariant(variants, "large", "large"),
+        [sty.root__medium]: hasVariant(variants, "medium", "medium")
       })}
     >
       <p.PlasmicSlot

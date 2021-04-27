@@ -31,7 +31,6 @@ export const PlasmicResearchProgramCard__ArgProps = new Array(
 
 function PlasmicResearchProgramCard__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
-  null;
   return (
     <p.Stack
       as={"div"}
