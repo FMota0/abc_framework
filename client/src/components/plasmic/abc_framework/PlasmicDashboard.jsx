@@ -120,6 +120,19 @@ function PlasmicDashboard__RenderFunc(props) {
             )
           })}
           empty={hasVariant(variants, "empty", "empty") ? "empty" : undefined}
+          message={
+            <div
+              className={classNames(
+                defaultcss.all,
+                defaultcss.__wab_text,
+                sty.box__qVb3Y
+              )}
+            >
+              {
+                "Você não possui nenhum programa de pesquisa registrado. Utilize o botão no canto inferior direito para cadastrar um novo programa de pesquisa."
+              }
+            </div>
+          }
         >
           <p.PlasmicSlot
             defaultContents={

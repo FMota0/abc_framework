@@ -122,6 +122,9 @@ function PlasmicTutorial__RenderFunc(props) {
                   />
 
                   <Question
+                    answer={
+                      "O framework ABC é uma maneira de se visualizar e organizar a composição de programas de pesquisas ... O framework ABC é uma maneira de se visualizar e organizar a composição de programas de pesquisas ... O framework ABC é uma maneira de se visualizar e organizar a composição de programas de pesquisas ... O framework ABC é uma maneira de se visualizar e organizar a composição de programas de pesquisas ...O framework ABC é uma maneira de se visualizar e organizar a composição de programas de pesquisas ..."
+                    }
                     className={classNames(
                       "__wab_instance",
                       sty.question__joCiB

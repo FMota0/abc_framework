@@ -28,7 +28,6 @@ export const PlasmicServerSleeping__ArgProps = new Array("countdown");
 
 function PlasmicServerSleeping__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
-  null;
   return (
     <React.Fragment>
       <div

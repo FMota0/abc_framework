@@ -56,6 +56,9 @@
 .programsList:global(.__wab_instance) {
   position: relative;
 }
+.box__qVb3Y {
+  text-align: center;
+}
 .addProgram:global(.__wab_instance) {
   position: absolute;
   left: auto;
