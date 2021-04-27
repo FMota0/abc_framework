@@ -8,7 +8,7 @@ function Question(props) {
   return (
     <PlasmicQuestion
       isClosed={isClosed}
-      icon={{
+      header={{
         onClick: () => setIsClosed(c => !c),
       }}
       {...props}
