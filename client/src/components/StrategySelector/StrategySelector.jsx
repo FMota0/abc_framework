@@ -17,8 +17,6 @@ import {
   axisStyle,
   legendsStyle,
   quadStyle,
-  abcPointsStyle,
-  abcPointFillStyle
 } from "./styles";
 import { getNumberOfResearchesByStrategy } from "../../store/programs/selectors";
 
@@ -303,24 +301,6 @@ function MethodSelector() {
               <text x="127.752px" y="87.463px" style={legendsStyle}>menos</text>
               <text x="100.309px" y="126.706px" style={legendsStyle}>intrusiva</text>
           </g>
-      </g>
-      <g transform="matrix(1.02564,0,0,0.9375,8.75641,69.0625)">
-        <ellipse cx="672.5" cy="1425" rx="58.5" ry="64" style={abcPointFillStyle}/>
-      </g>
-      <g transform="matrix(1.02564,0,0,0.9375,1084.76,-71.9375)">
-          <ellipse cx="672.5" cy="1425" rx="58.5" ry="64" style={abcPointFillStyle}/>
-      </g>
-      <g transform="matrix(1.02564,0,0,0.9375,207.256,-1017.94)">
-          <ellipse cx="672.5" cy="1425" rx="58.5" ry="64" style={abcPointFillStyle}/>
-      </g>
-      <g transform="matrix(1,0,0,1,13.75,3.5)">
-          <text x="664.74px" y="1423.98px" style={abcPointsStyle}>A</text>
-      </g>
-      <g transform="matrix(1,0,0,1,1093.75,-137.5)">
-          <text x="663.085px" y="1423.98px" style={abcPointsStyle}>C</text>
-      </g>
-      <g transform="matrix(1,0,0,1,212.25,-1083.5)">
-          <text x="664.74px" y="1423.98px" style={abcPointsStyle}>B</text>
       </g>
       <g transform="matrix(1,0,0,1,-67.125,-3)">
           <text x="1157.43px" y="133.652px" style={quadStyle}><tspan x="1157.43px " y="133.652px ">Q</tspan>uadrante 2</text>
