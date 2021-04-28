@@ -50,8 +50,8 @@ function Header(props) {
               <img
                 key={"profile-picture"}
                 src={user.picture}
-                width={64}
-                height={64}
+                width={"100%"}
+                height={"100%"}
                 alt="Imagem de perfil"
                 style={{ borderRadius: "100%", }}
               />
