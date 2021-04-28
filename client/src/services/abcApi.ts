@@ -43,53 +43,53 @@ const ABCApiService = {
 
   async fetchResearches(): Promise<ResearchProgram[]> {
     return await httpWithFallback(async () => {
-      const response = await http.get(`/research`);
+      const response = await http.get(`/programs`);
       return response.data;
     });
   },
 
   async addResearchProgram(researchProgram: ResearchProgram): Promise<ResearchProgram> {
     return await httpWithFallback(async () => {
-      const response = await http.post(`/research`, researchProgram);
+      const response = await http.post(`/programs`, researchProgram);
       return response.data;
     });
   },
 
   async fetchResearch(id: string): Promise<ResearchProgram> {
     return await httpWithFallback(async () => {
-      const response = await http.get(`/research/${id}`);
+      const response = await http.get(`/programs/${id}`);
       return response.data;
     });
   },
 
   async addResearch(id: string, research: Research): Promise<Research> {
     return await httpWithFallback(async () => {
-      const response = await http.post(`/research/${id}`, research);
+      const response = await http.post(`/programs/${id}`, research);
       return response.data;
     });
   },
 
   async deleteResearchProgram(id: string): Promise<void> {
     return await httpWithFallback(async () => {
-      await http.delete(`/research/${id}`);
+      await http.delete(`/programs/${id}`);
     });
   },
 
   async deleteResearch(researchId: string, id: string): Promise<void> {
     return await httpWithFallback(async () => {
-      await http.delete(`/research/${researchId}/${id}`);
+      await http.delete(`/programs/${researchId}/${id}`);
     });
   },
 
   async editResearchProgram(id: string, researchProgram: { title: string, description: string }): Promise<void> {
     return await httpWithFallback(async () => {
-      await http.put(`/research/${id}`, researchProgram);
+      await http.put(`/programs/${id}`, researchProgram);
     });
   },
 
   async editResearch(researchProgramId: string, researchId: string, research: Research): Promise<void> {
     return await httpWithFallback(async () => {
-      await http.put(`/research/${researchProgramId}/${researchId}`, research);
+      await http.put(`/programs/${researchProgramId}/${researchId}`, research);
     });
   },
 };
