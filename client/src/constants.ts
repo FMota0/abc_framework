@@ -33,4 +33,15 @@ export const selectedStrategyDescription = {
   [StrategyTypes.LaboratoryExperiments]: "Essa estratégia é caracterizada por ser utilizada quando se requer um alto nível de precisão sobre o que está sendo pesquisado e analisado.",
   [StrategyTypes.JudgmentStudies]: "Essa estratégia é caracterizada por ser utilizada quando se busca obter um grau de generalizabilidade sobre respostas de parcitipantes em uma determinada pesquisa.",
   [StrategyTypes.SampleStudies]: "Essa estratégia é caracterizada por ser utilizada quando se busca obter o maior grau de generalizabilidade sobre um população, pode ser essa população desenvolvedores, gerentes, artefatos de software, projetos, ...",
-}
+};
+
+export const strategyMethods = {
+  [StrategyTypes.ComputerSimulations]: ["Criação de modelo do mundo real"],
+  [StrategyTypes.ExperimentalSimulations]: ["Experimentos por simulação"],
+  [StrategyTypes.FieldExperiments]: ["Experimento controlado", "Pesquisa-ação"],
+  [StrategyTypes.FieldStudy]: ["Estudo de caso", "Etinografia", "Pesquisa de arquivo"],
+  [StrategyTypes.FormalTheory]: ["Revisão de literatura", "Teoria"],
+  [StrategyTypes.JudgmentStudies]: ["Estudo delphi", "Grupo focal"],
+  [StrategyTypes.LaboratoryExperiments]: ["Experimento em laboratório"],
+  [StrategyTypes.SampleStudies]: ["Questionário"],
+};

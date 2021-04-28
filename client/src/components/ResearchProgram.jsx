@@ -10,7 +10,7 @@ import { setStrategy } from "../store/selectedStrategy/slice";
 import { getResearchProgram } from "../store/programs/selectors";
 import Input from "./Input";
 import Select from "./Select/Select";
-import { selectedStrategyTitle, STRATEGIES } from "../constants";
+import { selectedStrategyTitle, STRATEGIES, strategyMethods } from "../constants";
 import Button from "./Button";
 
 function ResearchProgram() {
@@ -110,14 +110,15 @@ function ResearchProgram() {
             onChange={(selected) => setNewResearch(r => ({
               ...r,
               strategy: selected,
+              method: strategyMethods[selected][0],
             }))}
           />,
           <Select
             key="research-program-add-method"
             label="Método"
-            options={STRATEGIES.map((str) => ({
+            options={strategyMethods[newResearch.strategy].map((str) => ({
               value: str,
-              label: selectedStrategyTitle[str],
+              label: str,
             }))}
             onChange={(selected) => setNewResearch(r => ({
               ...r,
