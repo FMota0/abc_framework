@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.use([verifyToken, verifyOwner]);
 
-router.post('/program/:programId', async (req, res) => {
+router.post('/programs/:programId', async (req, res) => {
   const {
     title,
     description,
@@ -28,7 +28,7 @@ router.post('/program/:programId', async (req, res) => {
   res.send(researchProgram);
 });
 
-router.put('/program/:programId/:id', async (req, res) => {
+router.put('/programs/:programId/:id', async (req, res) => {
   const { id } = req.params;
   const { title, description, link } = req.body;
   const { researchProgram } = req;
@@ -44,7 +44,7 @@ router.put('/program/:programId/:id', async (req, res) => {
   res.send(researchProgram);
 });
 
-router.delete('/program/:programId/:id', async (req, res) => {
+router.delete('/programs/:programId/:id', async (req, res) => {
   const { id } = req.params;
   const { researchProgram } = req;
   

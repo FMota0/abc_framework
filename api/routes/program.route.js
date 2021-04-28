@@ -29,16 +29,16 @@ router.post('/programs', async (req, res) => {
   res.send(newResearchProgram);
 });
 
-router.get('/program/:programId', verifyOwner, async (req, res) => {
+router.get('/programs/:programId', verifyOwner, async (req, res) => {
   res.send(req.researchProgram);
 });
 
-router.delete('/program/:programId', verifyOwner, async (req, res) => {
+router.delete('/programs/:programId', verifyOwner, async (req, res) => {
   await ResearchProgram.deleteOne({ _id: req.researchProgram._id });
   res.send();
 });
 
-router.put('/program/:programId', verifyOwner, async (req, res) => {
+router.put('/programs/:programId', verifyOwner, async (req, res) => {
   const {
     title,
     description,
