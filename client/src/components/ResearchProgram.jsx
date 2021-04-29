@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import StrategySelector from "./StrategySelector/StrategySelector";
 import { PlasmicResearchProgram } from "./plasmic/abc_framework/PlasmicResearchProgram";
 import { addResearch, deleteResearchProgram, fetchResearchProgram } from "../store/programs/actions";
@@ -12,11 +13,14 @@ import Input from "./Input";
 import Select from "./Select/Select";
 import { selectedStrategyTitle, STRATEGIES, strategyMethods } from "../constants";
 import Button from "./Button";
+import { RESEARCH_DESCRIPTION_ERROR, RESEARCH_DESCRIPTION_OPTIONS, RESEARCH_TITLE_ERROR, RESEARCH_TITLE_OPTIONS, RESEARCH_LINK_OPTIONS, RESEARCH_LINK_ERROR } from "../constants/form";
 
 function ResearchProgram() {
 
   const dispatch = useDispatch();
   const { id } = useParams();
+
+  const { register, handleSubmit, formState: { errors } } = useForm();
   
   useEffect(() => {
     dispatch(fetchResearchProgram(id));
@@ -70,35 +74,44 @@ function ResearchProgram() {
             key="research-program-add-title"
             label="Título"
             textbox={{
+              ...register("title", RESEARCH_TITLE_OPTIONS),
               value: newResearch.title,
               onChange: (e) => setNewResearch(r => ({
                 ...r,
                 title: e.target.value,
               })),
             }}
+            invalid={!!errors.title}
+            error={RESEARCH_TITLE_ERROR}
           />,
           <Input
             key="research-program-add-description"
             label="Descrição"
             multiline
             textarea={{
+              ...register("description", RESEARCH_DESCRIPTION_OPTIONS),
               value: newResearch.description,
               onChange: (e) => setNewResearch(r => ({
                 ...r,
                 description: e.target.value,
               })),
             }}
+            invalid={!!errors.description}
+            error={RESEARCH_DESCRIPTION_ERROR}
           />,
           <Input
             key="research-program-add-link"
             label="Link"
             textbox={{
+              ...register("link", RESEARCH_LINK_OPTIONS),
               value: newResearch.link,
               onChange: (e) => setNewResearch(r => ({
                 ...r,
                 link: e.target.value,
               }))
             }}
+            invalid={!!errors.link}
+            error={RESEARCH_LINK_ERROR}
           />,
           <Select
             key="research-program-add-strategy"
@@ -128,11 +141,11 @@ function ResearchProgram() {
           <Button
             key="research-program-add-btn"
             button={{
-              onClick: () => {
+              onClick: handleSubmit(() => {
                 dispatch(addResearch(id, newResearch));
                 setWithAddResearch(false);
                 setNewResearch(emptyResearch);
-              }
+              })
             }}
           >
             Adicionar
