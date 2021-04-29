@@ -22,8 +22,10 @@ const httpWithFallback = async (func: any) => {
     const res = await func(); 
     return res;
   } catch (e) {
-    history.push(`/`);
-    localStorage.setItem("authToken", "");
+    if (e.message === "Request failed with status code 401") {
+      history.push(`/`);
+      localStorage.setItem("authToken", "");
+    }
     throw e;
   }
 }
