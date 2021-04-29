@@ -15,9 +15,10 @@ function Tooltip({
     position: "absolute",
     top: position.y + 10,
     left: position.x + 10,
-    backgroundColor: "black",
+    backgroundColor: "#151515",
     color: "white",
     padding: 5,
+    borderRadius: 5,
   };
   return (
     <div style={containerStyle}>

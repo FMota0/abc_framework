@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
@@ -17,9 +17,12 @@ import {
   axisStyle,
   legendsStyle,
   quadStyle,
+  textStyleHover,
+  textStyleSelected,
 } from "./styles";
 import { getNumberOfResearchesByStrategy } from "../../store/programs/selectors";
 import Tooltip from "./Tooltip";
+import { pick } from "ramda";
 
 function MethodSelector() {
   const { id } = useParams();
@@ -37,27 +40,47 @@ function MethodSelector() {
   const [hovering, setHovering] = useState(null);
   const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0});
 
+  const svgRef = useRef(null);
+
   const getSliceStyle = (strategy) => {
     return {
       ...sliceStyle,
-      ...(selected === strategy ? sliceStyleSelected : {}),
       ...(hovering === strategy ? sliceStyleHover : {}),
-    }
+      ...(selected === strategy ? sliceStyleSelected : {}),
+    };
+  };
+
+  const getTextSliceStyle = (strategy) => {
+    return {
+      ...textStyle,
+      ...(hovering === strategy ? textStyleHover : {}),
+      ...(selected === strategy ? textStyleSelected : {}),
+    };
   };
 
   const handleMouseOver = (strategy) => {
     return (e) => {
+      const pos = svgRef && svgRef.current && pick(["top", "left"], svgRef.current.getBoundingClientRect());
       setTooltipPos({
-        x: e.nativeEvent.layerX,
-        y: e.nativeEvent.layerY,
+        x: e.clientX - (pos.left || 0),
+        y: e.clientY - (pos.top || 0),
       });
       setHovering(strategy);
-    }
+    };
+  };
+
+  const propsStrategySlice = (strategy) => {
+    return {
+      onMouseMove: handleMouseOver(strategy),
+      onMouseLeave: () => setHovering(null),
+      onClick: () => setSelected(strategy),
+    };
   };
 
   return (
     <>
       <svg
+        ref={svgRef}
         width="100%"
         height="100%"
         viewBox="0 0 2048 2048"
@@ -82,11 +105,7 @@ function MethodSelector() {
             </g>
             <g
               id="base" transform="matrix(2.08644,0,0,2.15716,27.7258,-107.433)"
-              onMouseOver={handleMouseOver(StrategyTypes.FieldExperiments)}
-              onMouseLeave={() => setHovering(null)}
-              onClick={() => {
-                setSelected(StrategyTypes.FieldExperiments);
-              }}
+              {...propsStrategySlice(StrategyTypes.FieldExperiments)}
             >
                 <path
                   d="M813,524.5C813,438.437 777.653,355.899 714.734,295.044L477.5,524.5L813,524.5Z"
@@ -104,14 +123,14 @@ function MethodSelector() {
                               hovering === StrategyTypes.FieldExperiments ? 
                               (
                                 <>
-                                  <text x="337px" y="254.61px" style={textStyle}>Experimentos de</text>
-                                  <text x="337px" y="274.231px" style={textStyle}>campo - ({numberOfResearches.FieldExperiments})</text>
+                                  <text x="337px" y="254.61px" style={getTextSliceStyle(StrategyTypes.FieldExperiments)}>Experimentos de</text>
+                                  <text x="337px" y="274.231px" style={getTextSliceStyle(StrategyTypes.FieldExperiments)}>campo - ({numberOfResearches.FieldExperiments})</text>
                                 </>
                               )
                               : 
                               (
                                 <>
-                                  <text x="337px" y="264.61px" style={textStyle}>Exp. de campo</text>
+                                  <text x="337px" y="264.61px" style={getTextSliceStyle(StrategyTypes.FieldExperiments)}>Exp. de campo</text>
                                 </>
                               )
                             }
@@ -122,11 +141,7 @@ function MethodSelector() {
             </g>
             <g 
               id="base1" transform="matrix(2.08644,0,0,2.15716,27.7258,-107.433)"
-              onMouseOver={handleMouseOver(StrategyTypes.ExperimentalSimulations)}
-              onMouseLeave={() => setHovering(null)}
-              onClick={() => {
-                setSelected(StrategyTypes.ExperimentalSimulations);
-              }}
+              {...propsStrategySlice(StrategyTypes.ExperimentalSimulations)}
             >
                 <path
                   d="M714.734,295.044C651.816,234.188 566.48,200 477.5,200L477.5,524.5L714.734,295.044Z"
@@ -144,13 +159,13 @@ function MethodSelector() {
                             hovering === StrategyTypes.ExperimentalSimulations ?
                             (
                               <>
-                                <text x="364px" y="773.097px" style={textStyle}>Simulações</text>
-                                <text x="364px" y="792.719px" style={textStyle}>Experimentais - ({numberOfResearches.ExperimentalSimulations})</text>
+                                <text x="364px" y="773.097px" style={getTextSliceStyle(StrategyTypes.ExperimentalSimulations)}>Simulações</text>
+                                <text x="364px" y="792.719px" style={getTextSliceStyle(StrategyTypes.ExperimentalSimulations)}>Experimentais - ({numberOfResearches.ExperimentalSimulations})</text>
                               </>
                             )
                             :
                             (
-                              <text x="384px" y="783.097px" style={textStyle}>Simu. Exp.</text>  
+                              <text x="384px" y="783.097px" style={getTextSliceStyle(StrategyTypes.ExperimentalSimulations)}>Simu. Exp.</text>  
                             )
                           }
                         </g>
@@ -160,11 +175,7 @@ function MethodSelector() {
             </g>
             <g
               id="base2" transform="matrix(2.08644,0,0,2.15716,27.7258,-107.433)"
-              onMouseOver={handleMouseOver(StrategyTypes.LaboratoryExperiments)}
-              onMouseLeave={() => setHovering(null)}
-              onClick={() => {
-                setSelected(StrategyTypes.LaboratoryExperiments);
-              }}
+              {...propsStrategySlice(StrategyTypes.LaboratoryExperiments)}
             >
                 <path
                   d="M477.5,200C388.52,200 303.184,234.188 240.266,295.044L477.5,524.5L477.5,200Z"
@@ -182,13 +193,13 @@ function MethodSelector() {
                             hovering === StrategyTypes.LaboratoryExperiments ?
                             (
                               <>
-                                <text x="337px" y="254.61px" style={textStyle}>Experimentos de</text>
-                                <text x="337px" y="274.231px" style={textStyle}>laboratório - ({numberOfResearches.LaboratoryExperiments})</text>
+                                <text x="337px" y="254.61px" style={getTextSliceStyle(StrategyTypes.LaboratoryExperiments)}>Experimentos de</text>
+                                <text x="337px" y="274.231px" style={getTextSliceStyle(StrategyTypes.LaboratoryExperiments)}>laboratório - ({numberOfResearches.LaboratoryExperiments})</text>
                               </>
                             )
                             :
                             (
-                              <text x="337px" y="264.61px" style={textStyle}>Exp. de lab</text>
+                              <text x="337px" y="264.61px" style={getTextSliceStyle(StrategyTypes.LaboratoryExperiments)}>Exp. de lab</text>
                             )
                           }
                         </g>
@@ -198,11 +209,7 @@ function MethodSelector() {
             </g>
             <g
               id="judgment-studies" transform="matrix(2.08644,0,0,2.15716,27.7258,-107.433)"
-              onMouseOver={handleMouseOver(StrategyTypes.JudgmentStudies)}
-              onMouseLeave={() => setHovering(null)}
-              onClick={() => {
-                setSelected(StrategyTypes.JudgmentStudies);
-              }}
+              {...propsStrategySlice(StrategyTypes.JudgmentStudies)}
             >
                 <path
                   d="M240.266,295.044C177.347,355.899 142,438.437 142,524.5L477.5,524.5L240.266,295.044Z"
@@ -220,13 +227,13 @@ function MethodSelector() {
                             hovering === StrategyTypes.JudgmentStudies ?
                             (
                               <>
-                                <text x="364px" y="773.097px" style={textStyle}>Estudos de</text>
-                                <text x="364px" y="792.719px" style={textStyle}>julgamento - ({numberOfResearches.JudgmentStudies})</text>
+                                <text x="364px" y="773.097px" style={getTextSliceStyle(StrategyTypes.JudgmentStudies)}>Estudos de</text>
+                                <text x="364px" y="792.719px" style={getTextSliceStyle(StrategyTypes.JudgmentStudies)}>julgamento - ({numberOfResearches.JudgmentStudies})</text>
                               </>
                             )
                             :
                             (
-                              <text x="374px" y="783.097px" style={textStyle}>Est. de julg.</text>
+                              <text x="374px" y="783.097px" style={getTextSliceStyle(StrategyTypes.JudgmentStudies)}>Est. de julg.</text>
                             )
                           }
                         </g>
@@ -236,11 +243,7 @@ function MethodSelector() {
             </g>
             <g
               id="base3" transform="matrix(2.08644,0,0,2.15716,27.7258,-107.433)"
-              onMouseOver={handleMouseOver(StrategyTypes.SampleStudies)}
-              onMouseLeave={() => setHovering(null)}
-              onClick={() => {
-                setSelected(StrategyTypes.SampleStudies);
-              }}
+              {...propsStrategySlice(StrategyTypes.SampleStudies)}
             >
                 <path
                   d="M142,524.5C142,610.563 177.347,693.101 240.266,753.956L477.5,524.5L142,524.5Z"
@@ -258,13 +261,13 @@ function MethodSelector() {
                             hovering === StrategyTypes.SampleStudies ?
                             (
                               <>
-                                <text x="364px" y="773.097px" style={textStyle}>Estudos de</text>
-                                <text x="364px" y="792.719px" style={textStyle}>amostra - ({numberOfResearches.SampleStudies})</text>
+                                <text x="364px" y="773.097px" style={getTextSliceStyle(StrategyTypes.SampleStudies)}>Estudos de</text>
+                                <text x="364px" y="792.719px" style={getTextSliceStyle(StrategyTypes.SampleStudies)}>amostra - ({numberOfResearches.SampleStudies})</text>
                               </>
                             )
                             :
                             (
-                              <text x="364px" y="793.097px" style={textStyle}>Est. de amostra</text>
+                              <text x="364px" y="793.097px" style={getTextSliceStyle(StrategyTypes.SampleStudies)}>Est. de amostra</text>
                             )
                           }
                         </g>
@@ -274,11 +277,7 @@ function MethodSelector() {
             </g>
             <g
               id="formal-theory" transform="matrix(2.08644,0,0,2.15716,27.7258,-107.433)"
-              onMouseOver={handleMouseOver(StrategyTypes.FormalTheory)}
-              onMouseLeave={() => setHovering(null)}
-              onClick={() => {
-                setSelected(StrategyTypes.FormalTheory);
-              }}
+              {...propsStrategySlice(StrategyTypes.FormalTheory)}
             >
                 <path
                   d="M240.266,753.956C303.184,814.812 388.52,849 477.5,849L477.5,524.5L240.266,753.956Z"
@@ -294,11 +293,11 @@ function MethodSelector() {
                       {
                         hovering === StrategyTypes.FormalTheory ?
                         (
-                          <text id="label5" x="364px" y="773.097px" style={textStyle}>T<tspan x="373.5px 384.067px " y="773.097px 773.097px ">eo</tspan>ria Formal - ({numberOfResearches.FormalTheory})</text>
+                          <text id="label5" x="364px" y="773.097px" style={getTextSliceStyle(StrategyTypes.FormalTheory)}>T<tspan x="373.5px 384.067px " y="773.097px 773.097px ">eo</tspan>ria Formal - ({numberOfResearches.FormalTheory})</text>
                         )
                         :
                         (
-                          <text id="label5" x="394px" y="763.097px" style={textStyle}>Teo. Formal</text>
+                          <text id="label5" x="394px" y="763.097px" style={getTextSliceStyle(StrategyTypes.FormalTheory)}>Teo. Formal</text>
                         )
                       }
                     </g>
@@ -307,11 +306,7 @@ function MethodSelector() {
             </g>
             <g
               id="base4" transform="matrix(2.08644,0,0,2.15716,27.7258,-107.433)"
-              onMouseOver={handleMouseOver(StrategyTypes.ComputerSimulations)}
-              onMouseLeave={() => setHovering(null)}
-              onClick={() => {
-                setSelected(StrategyTypes.ComputerSimulations);
-              }}
+              {...propsStrategySlice(StrategyTypes.ComputerSimulations)}
             >
                 <path
                   d="M477.5,849C568.511,849 655.617,813.238 718.839,749.917L477.5,524.5L477.5,849Z"
@@ -329,13 +324,13 @@ function MethodSelector() {
                             hovering === StrategyTypes.ComputerSimulations ?
                             (
                               <>
-                                <text x="337px" y="254.61px" style={textStyle}>Simulação de</text>
-                                <text x="337px" y="274.231px" style={textStyle}>computador - ({numberOfResearches.ComputerSimulations})</text>
+                                <text x="337px" y="254.61px" style={getTextSliceStyle(StrategyTypes.ComputerSimulations)}>Simulação de</text>
+                                <text x="337px" y="274.231px" style={getTextSliceStyle(StrategyTypes.ComputerSimulations)}>computador - ({numberOfResearches.ComputerSimulations})</text>
                               </>
                             )
                             :
                             (
-                              <text x="337px" y="274.61px" style={textStyle}>Simu. de comput.</text>
+                              <text x="337px" y="274.61px" style={getTextSliceStyle(StrategyTypes.ComputerSimulations)}>Simu. de comput.</text>
                             )
                           }
                         </g>
@@ -345,11 +340,7 @@ function MethodSelector() {
             </g>
             <g
               id="base5" transform="matrix(2.08644,0,0,2.15716,27.7258,-107.433)"
-              onMouseOver={handleMouseOver(StrategyTypes.FieldStudy)}
-              onMouseLeave={() => setHovering(null)}
-              onClick={() => {
-                setSelected(StrategyTypes.FieldStudy);
-              }}
+              {...propsStrategySlice(StrategyTypes.FieldStudy)}
             >
                 <path
                   d="M714.734,753.956C777.653,693.101 813,610.563 813,524.5L477.5,524.5L714.734,753.956Z"
@@ -365,11 +356,11 @@ function MethodSelector() {
                       {
                         hovering === StrategyTypes.FieldStudy ?
                         (
-                          <text id="label7" x="337px" y="254.61px" style={textStyle}>Estudo de campo - ({numberOfResearches.FieldStudy})</text>  
+                          <text id="label7" x="337px" y="254.61px" style={getTextSliceStyle(StrategyTypes.FieldStudy)}>Estudo de campo - ({numberOfResearches.FieldStudy})</text>  
                         )
                         :
                         (
-                          <text id="label7" x="387px" y="274.61px" style={textStyle}>Est. de campo</text>
+                          <text id="label7" x="387px" y="274.61px" style={getTextSliceStyle(StrategyTypes.FieldStudy)}>Est. de campo</text>
                         )
                       }
                     </g>

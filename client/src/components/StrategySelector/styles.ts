@@ -7,22 +7,22 @@ export const svgStyle = {
 };
 
 export const quarterStyle = {
-  fill: "rgb(183,183,183)",
+  fill: "#272838",
   stroke: "white",
   strokeWidth: "5.32px",
 };
 
 export const sliceStyle = {
-  fill: "rgb(112,112,112)",
+  fill: "#35393C",
   cursor: "pointer",
 };
 
 export const sliceStyleHover = {
-  fill: "rgb(42,42,42)",
+  fill: "#FFF8F0",
 };
 
 export const sliceStyleSelected = {
-  fill: "rgb(62,62,62)",
+  fill: "#E6CCBE",
 };
 
 export const borderStyle = {
@@ -38,6 +38,14 @@ export const textStyle = {
   cursor: "pointer",
 };
 
+export const textStyleHover = {
+  fill: "black",
+};
+
+export const textStyleSelected = {
+  fill: "black",
+};
+
 export const axisStyle = {
   fill: "white",
 };
@@ -51,7 +59,7 @@ export const legendsStyle = {
 export const quadStyle = {
   fontFamily: "ArialMT, Arial, sans-serif",
   fontSize: "40px",
-  fill: "black",
+  fill: "white",
 };
 
 export const abcPointsStyle = {
