@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { strategies } = require('../constants');
 
 const ResearchProgram = mongoose.model('ResearchProgram', {
   title: String,
@@ -9,16 +10,7 @@ const ResearchProgram = mongoose.model('ResearchProgram', {
     description: String,
     strategy: {
       type: String,
-      enum: [
-        "FieldExperiments",
-        "ExperimentalSimulations",
-        "LaboratoryExperiments",
-        "JudgmentStudies",
-        "SampleStudies",
-        "FormalTheory",
-        "ComputerSimulations",
-        "FieldStudy",
-      ],
+      enum: strategies,
     },
     link: String,
     method: String,
