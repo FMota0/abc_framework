@@ -36,7 +36,8 @@ function PlasmicButton__RenderFunc(props) {
       className={classNames(defaultcss.all, projectcss.root_reset, sty.root, {
         [sty.root__type_cinnabar]: hasVariant(variants, "type", "cinnabar"),
         [sty.root__type_crayola]: hasVariant(variants, "type", "crayola"),
-        [sty.root__type_eee90]: hasVariant(variants, "type", "eee90")
+        [sty.root__type_eee90]: hasVariant(variants, "type", "eee90"),
+        [sty.root__type_vermillion]: hasVariant(variants, "type", "vermillion")
       })}
     >
       <button
@@ -47,7 +48,12 @@ function PlasmicButton__RenderFunc(props) {
           [sty.button__size_small]: hasVariant(variants, "size", "small"),
           [sty.button__type_cinnabar]: hasVariant(variants, "type", "cinnabar"),
           [sty.button__type_crayola]: hasVariant(variants, "type", "crayola"),
-          [sty.button__type_eee90]: hasVariant(variants, "type", "eee90")
+          [sty.button__type_eee90]: hasVariant(variants, "type", "eee90"),
+          [sty.button__type_vermillion]: hasVariant(
+            variants,
+            "type",
+            "vermillion"
+          )
         })}
       >
         <p.PlasmicSlot
@@ -76,6 +82,12 @@ function PlasmicButton__RenderFunc(props) {
               variants,
               "type",
               "eee90"
+            ),
+
+            [sty.slotChildren__type_vermillion]: hasVariant(
+              variants,
+              "type",
+              "vermillion"
             )
           })}
         />

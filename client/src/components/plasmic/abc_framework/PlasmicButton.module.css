@@ -19,6 +19,9 @@
 .button__type_eee90 {
   background: #eeeeeee6;
 }
+.button__type_vermillion {
+  background: #e03616;
+}
 .button__size_large {
   padding: 6px 10px;
 }
@@ -44,4 +47,7 @@
 }
 .root__type_eee90:hover .slotChildren__type_eee90 {
   color: #eeeeeee6 /* plasmic-token: frGkWCQWa */;
+}
+.root__type_vermillion:hover .slotChildren__type_vermillion {
+  color: #e03616 /* plasmic-token: vXRDjhYOd */;
 }

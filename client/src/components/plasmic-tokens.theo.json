@@ -31,6 +31,16 @@
       }
     },
     {
+      "name": "Vermilion",
+      "type": "color",
+      "value": "#E03616",
+      "category": "color",
+      "meta": {
+        "projectId": "vpcYHrXbsH6LUnbKFzgKAs",
+        "id": "vXRDjhYOd"
+      }
+    },
+    {
       "name": "background",
       "type": "color",
       "value": "#222831",

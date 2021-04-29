@@ -210,7 +210,7 @@ function PlasmicResearchCard__RenderFunc(props) {
               })}
               type={
                 hasVariant(variants, "withEdit", "withEdit")
-                  ? ["cinnabar"]
+                  ? ["vermillion"]
                   : undefined
               }
             >

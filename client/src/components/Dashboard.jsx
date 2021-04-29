@@ -61,7 +61,7 @@ function Dashboard() {
         content: [
           <p
             key="dashboard-add-h"
-            style={{ color: "white" }}
+            style={{ color: "white", fontSize: 18 }}
           >
             Adicione seu programa de pesquisa
           </p>,
@@ -97,6 +97,9 @@ function Dashboard() {
           <Button
             key="dashboard-add-btn"
             button={{
+              style: {
+                marginTop: "20px",
+              },
               onClick: handleSubmit(() => {
                 dispatch(addResearchProgram(newStudy));
                 setWithAddStudy(false);

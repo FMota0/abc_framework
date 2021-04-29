@@ -66,7 +66,7 @@ function ResearchProgram() {
         content: [
           <p 
             key="research-program-add-h"
-            style={{ color: 'white' }}
+            style={{ color: 'white', fontSize: 18 }}
           >
             Adicione seu programa de pesquisa
           </p>,
@@ -141,6 +141,9 @@ function ResearchProgram() {
           <Button
             key="research-program-add-btn"
             button={{
+              style:{
+                marginTop: "10px",
+              },
               onClick: handleSubmit(() => {
                 dispatch(addResearch(id, newResearch));
                 setWithAddResearch(false);

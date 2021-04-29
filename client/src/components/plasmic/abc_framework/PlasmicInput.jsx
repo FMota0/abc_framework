@@ -60,6 +60,9 @@ function PlasmicInput__RenderFunc(props) {
               "invalid"
             ),
 
+            [sty.slotLabel__invalid_multiline]:
+              hasVariant(variants, "invalid", "invalid") &&
+              hasVariant(variants, "multiline", "multiline"),
             [sty.slotLabel__multiline]: hasVariant(
               variants,
               "multiline",
@@ -135,7 +138,11 @@ function PlasmicInput__RenderFunc(props) {
                   variants,
                   "invalid",
                   "invalid"
-                )
+                ),
+
+                [sty.slotError__invalid_multiline]:
+                  hasVariant(variants, "invalid", "invalid") &&
+                  hasVariant(variants, "multiline", "multiline")
               })}
             />
           </div>
