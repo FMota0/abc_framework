@@ -1,7 +1,7 @@
 export const RESEARCH_PROGRAM_TITLE_OPTIONS = {
   required: true,
   minLength: 4,
-  maxLength: 20,
+  maxLength: 40,
 };
 
 export const RESEARCH_PROGRAM_TITLE_ERROR = 
@@ -10,7 +10,7 @@ export const RESEARCH_PROGRAM_TITLE_ERROR =
 export const RESEARCH_PROGRAM_DESCRIPTION_OPTIONS = {
   required: true,
   minLength: 10,
-  maxLength: 100,
+  maxLength: 150,
 };
 
 export const RESEARCH_PROGRAM_DESCRIPTION_ERROR = 
@@ -19,7 +19,7 @@ export const RESEARCH_PROGRAM_DESCRIPTION_ERROR =
 export const RESEARCH_TITLE_OPTIONS = {
   required: true,
   minLength: 4,
-  maxLength: 30,
+  maxLength: 40,
 };
 
 export const RESEARCH_TITLE_ERROR = 
@@ -28,7 +28,7 @@ export const RESEARCH_TITLE_ERROR =
 export const RESEARCH_DESCRIPTION_OPTIONS = {
   required: true,
   minLength: 10,
-  maxLength: 140,
+  maxLength: 160,
 };
 
 export const RESEARCH_DESCRIPTION_ERROR = 
