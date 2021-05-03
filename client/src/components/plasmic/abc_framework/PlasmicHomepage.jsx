@@ -32,7 +32,6 @@ export const PlasmicHomepage__ArgProps = new Array(
 
 function PlasmicHomepage__RenderFunc(props) {
   const { variants, args, overrides, forNode } = props;
-  null;
   return (
     <React.Fragment>
       <div
@@ -121,9 +120,7 @@ function PlasmicHomepage__RenderFunc(props) {
           <p.PlasmicSlot
             defaultContents={
               <ActionIcon
-                data-plasmic-name={"footerRightIcon"}
-                data-plasmic-override={overrides.footerRightIcon}
-                className={classNames("__wab_instance", sty.footerRightIcon)}
+                className={classNames("__wab_instance", sty.actionIcon__iZpGx)}
                 large={"large"}
               >
                 <div
@@ -146,10 +143,9 @@ function PlasmicHomepage__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "mainIcon", "footerLieftIcon", "footerRightIcon"],
+  root: ["root", "mainIcon", "footerLieftIcon"],
   mainIcon: ["mainIcon"],
-  footerLieftIcon: ["footerLieftIcon"],
-  footerRightIcon: ["footerRightIcon"]
+  footerLieftIcon: ["footerLieftIcon"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -183,7 +179,6 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     mainIcon: makeNodeComponent("mainIcon"),
     footerLieftIcon: makeNodeComponent("footerLieftIcon"),
-    footerRightIcon: makeNodeComponent("footerRightIcon"),
     // Metadata about props expected for PlasmicHomepage
     internalVariantProps: PlasmicHomepage__VariantProps,
     internalArgProps: PlasmicHomepage__ArgProps

@@ -64,7 +64,40 @@
   top: auto;
   flex-shrink: 0;
 }
+.box__ppoz7 {
+  position: relative;
+  top: auto;
+  left: auto;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  min-width: 0;
+  min-height: 0;
+}
+.box__azb70 {
+  color: #ffffff;
+  font-size: 16px;
+}
 .programsList:global(.__wab_instance) {
+  position: relative;
+}
+.researchProgramCard__ds9Hs:global(.__wab_instance) {
+  position: relative;
+}
+.researchProgramCard__bvWc2:global(.__wab_instance) {
+  position: relative;
+}
+.researchProgramCard__bqQx:global(.__wab_instance) {
+  position: relative;
+}
+.researchProgramCard__z0Azf:global(.__wab_instance) {
+  position: relative;
+}
+.researchProgramCard__f0Ut:global(.__wab_instance) {
   position: relative;
 }
 .box__qVb3Y {

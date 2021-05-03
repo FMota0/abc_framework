@@ -72,3 +72,22 @@
 .box > :global(.__wab_flex-container) > :global(.__wab_slot) > * {
   margin-top: 10px;
 }
+.box__yebzF {
+  position: relative;
+  color: #ffffff;
+  text-align: justify;
+  width: auto;
+  display: inline-block;
+}
+.textbox___1BUd5 {
+  width: 100%;
+  min-width: 0;
+}
+.textarea__rWfVl {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+.button__bk8M:global(.__wab_instance) {
+  position: relative;
+}

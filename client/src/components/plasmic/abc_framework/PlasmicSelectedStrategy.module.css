@@ -80,6 +80,26 @@
 .selectedStrategyResearches:global(.__wab_instance) {
   position: relative;
 }
+.researchCard__juIds:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.researchCard__qQxYc:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.researchCard___5V0Di:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+.researchCard__lnOjt:global(.__wab_instance) {
+  position: relative;
+  top: auto;
+  left: auto;
+}
 .svg {
   position: relative;
   object-fit: cover;

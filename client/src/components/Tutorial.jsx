@@ -16,15 +16,15 @@ function Tutorial(props) {
   }, [dispatch])
   return (
     <PlasmicTutorial
-      questions={[
-        ...infos.map((info) => (
+      questions={
+        infos.map((info) => (
           <Question
             key={`tutorial-question-${info._id}`}
             title={info.title}
             answer={info.description}
           />
-        )),
-      ]}
+        ))
+      }
       {...props}
     />
   );
