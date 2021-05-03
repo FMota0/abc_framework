@@ -1,5 +1,6 @@
 import axios, { AxiosTransformer } from "axios";
 import { history } from "../history";
+import { TutorialInfo } from "../store/tutorial/types";
 import { Research, ResearchProgram } from "../types";
 import { ABCUser } from "./types";
 
@@ -92,6 +93,13 @@ const ABCApiService = {
   async editResearch(researchProgramId: string, researchId: string, research: Research): Promise<void> {
     return await httpWithFallback(async () => {
       await http.put(`/programs/${researchProgramId}/${researchId}`, research);
+    });
+  },
+
+  async getTutorialInfos (): Promise<TutorialInfo[]> {
+    return await httpWithFallback(async () => {
+      const response = await http.get(`/tutorial`);
+      return response.data;
     });
   },
 };
