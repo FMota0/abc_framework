@@ -11,22 +11,28 @@ const {
   deleteResearchProgram,
   updateResearchProgram,
 } = require('../controllers/program.controller');
+const { PROGRAM_TITLE_LENGTH, PROGRAM_DESCRIPTION_LENGTH } = require('../constants');
 
 const router = express.Router();
 
 router.use(verifyToken);
-
-router.get('/programs', getUserPrograms);
-
 router.post(
   '/programs',
   [
-    body('title').trim().notEmpty().isLength({ min: 4, max: 40 }),
-    body('description').trim().notEmpty().isLength({ min: 10, max: 150 }),
+    body('title')
+      .trim()
+      .notEmpty()
+      .isLength(PROGRAM_TITLE_LENGTH),
+    body('description')
+      .trim()
+      .notEmpty()
+      .isLength(PROGRAM_DESCRIPTION_LENGTH),
    ],
   verifyBody,
   createResearchProgram
 );
+
+router.get('/programs', getUserPrograms);
 
 router.get(
   '/programs/:programId',
@@ -44,8 +50,8 @@ router.put(
   '/programs/:programId',
   verifyOwner,
   [
-    body('title').trim().notEmpty().isLength({ min: 4, max: 40 }),
-    body('description').trim().notEmpty().isLength({ min: 10, max: 150 }),
+    body('title').trim().notEmpty().isLength(PROGRAM_TITLE_LENGTH),
+    body('description').trim().notEmpty().isLength(PROGRAM_DESCRIPTION_LENGTH),
   ],
   verifyBody,
   updateResearchProgram
